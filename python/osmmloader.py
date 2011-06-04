@@ -22,6 +22,7 @@
 
 """Simple OS MasterMap GML/GZ loader making use of OGR 1.8 """
 
+from __future__ import with_statement
 import sys, os, shutil
 import datetime
 import shlex, subprocess
@@ -31,20 +32,30 @@ class OsmmLoader:
 
   def __init__ (self, config):
     # Read configuraton
-    try:  
+    self.config = config
+    try:
         self.src_dir = config['src_dir']
         self.tmp_dir = config['tmp_dir']
         self.prep_cmd = config['prep_cmd']
-        self.ogr_dir = config['ogr_dir']
         self.ogr_cmd = config['ogr_cmd']
+        self.gfs_file = config['gfs_file']
     except KeyError, key:
         print 'Missing configuration value:', key
         exit(1)
+    self.debug = config.get('debug')
     self.setup()
     self.load()
     self.cleanup()
 
   def setup(self):
+    # Determine if we are in debug mode
+    self.debug =  (str(self.debug).lower() == 'true')
+    if self.debug:
+        print 'Config:', self.config
+    # Check that a valid gfs is file specified
+    if not os.path.exists(self.gfs_file):
+        print 'The gfs file "%s" can not be found. Please specify a valid gfs file in your config (gfs_file=osmm_topo.gfs)' % self.gfs_file
+        exit(1)
     # Check for the existence of the GDAL_DATA environment
     # variable required by ogr2ogr
     if not 'GDAL_DATA' in os.environ:
@@ -71,29 +82,41 @@ class OsmmLoader:
   def load (self):
     # Create string templates for the commands
     prep_cmd = Template(self.prep_cmd)
-    ogr_cmd = Template(self.ogr_dir + self.ogr_cmd)
+    ogr_cmd = Template(self.ogr_cmd)
     num_files = 0
     for root, dirs, files in os.walk(self.src_dir):
         for name in files:
             file_parts = os.path.splitext(name)
             ext = file_parts[1].lower()
             if ext in ['.gz', '.gml']:
-                file_path = "'" + os.path.join(root, name) + "'"
-                print "Processing: %s" % (file_path)
+                file_path = os.path.join(root, name)
+                print "Processing: %s" % file_path
                 # Run the script to prepare the GML
                 prepared_file = os.path.join(self.tmp_dir, file_parts[0] + '.prepared')
-                prep_args = shlex.split(prep_cmd.substitute(file_path=file_path))
+                if self.debug:
+                    print 'Prepared file:', prepared_file
+                prep_args = shlex.split(prep_cmd.substitute(file_path='\'' + file_path + '\''))
+                if self.debug:
+                    print 'Prep command:', ' '.join(prep_args)
                 f = open(prepared_file, 'w')
                 rtn = subprocess.call(prep_args, stdout=f)
                 f.close()
-                print "Loading: %s" % (file_path)
+                # Copy over the template gfs file used by ogr2ogr
+                # to read the GML attributes, determine the geometry type etc.
+                # Using a template so we have control over the geometry type
+                # for each table
+                shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                 # Run OGR
-                ogr_args = shlex.split(ogr_cmd.substitute(file_path=prepared_file))
+                print "Loading: %s" % file_path
+                ogr_args = shlex.split(ogr_cmd.substitute(file_path='\'' + prepared_file + '\''))
+                if self.debug:
+                    print 'OGR command:', ' '.join(ogr_args)
                 rtn = subprocess.call(ogr_args)
                 # Increment the file count
                 num_files += 1
-                # Clean up by deleting the temporary prepared file
-                os.remove(prepared_file)
+                if not self.debug:
+                  # Clean up by deleting the temporary prepared file
+                  os.remove(prepared_file)
     print "Loaded %i file%s" % (num_files, '' if num_files == 1 else 's')
 
 def main():
@@ -104,10 +127,10 @@ def main():
   if os.path.exists(config_file):
 	# Build a dict of configuration
     with open(config_file, 'r') as f:
-      config = dict([line.replace('\n','').split('=',1) for line in f.readlines()])
+      config = dict([line.replace('\n','').split('=',1) for line in f.readlines() if len(line.replace('\n','')) and line[0:1] != '#'])
     # Build a dict of arguments passed on the command line that
     # override those in the config file
-    overrides = dict([arg[2:].split('=',1) for arg in sys.argv[2:]])
+    overrides = dict([arg.split('=',1) for arg in sys.argv[2:]])
     config.update(overrides)
     loader = OsmmLoader(config)
   else:
