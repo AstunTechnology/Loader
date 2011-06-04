@@ -53,9 +53,9 @@ class OsmmLoader:
     if self.debug:
         print 'Config:', self.config
     # Check that a valid gfs is file specified
-    if not os.path.exists(self.gfs_file):
-        print 'The gfs file "%s" can not be found. Please specify a valid gfs file in your config (gfs_file=osmm_topo.gfs)' % self.gfs_file
-        exit(1)
+    if not os.path.isfile(self.gfs_file):
+        self.gfs_file = None
+        print 'No valid gfs file found, output schema and geometry types will be determed dynamically by OGR'
     # Check for the existence of the GDAL_DATA environment
     # variable required by ogr2ogr
     if not 'GDAL_DATA' in os.environ:
@@ -73,11 +73,12 @@ class OsmmLoader:
       exit(1)
 
   def cleanup(self):
-    try:
-      shutil.rmtree(self.tmp_dir)
-    except OSError:
-      print 'Could not remove temp directory: ', self.tmp_dir, '. You may need to delete it yourself'
-      exit(1)
+    if not self.debug:
+        try:
+          shutil.rmtree(self.tmp_dir)
+        except OSError:
+          print 'Could not remove temp directory: ', self.tmp_dir, '. You may need to delete it yourself'
+          exit(1)
 
   def load (self):
     # Create string templates for the commands
@@ -105,7 +106,8 @@ class OsmmLoader:
                 # to read the GML attributes, determine the geometry type etc.
                 # Using a template so we have control over the geometry type
                 # for each table
-                shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
+                if self.gfs_file:
+                    shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                 # Run OGR
                 print "Loading: %s" % file_path
                 ogr_args = shlex.split(ogr_cmd.substitute(file_path='\'' + prepared_file + '\''))
@@ -121,7 +123,7 @@ class OsmmLoader:
 
 def main():
   if len(sys.argv) < 2:
-    print 'usage: python osmmloader.py config_file'
+    print 'usage: python osmmloader.py osmmloader.config [key=value]'
     sys.exit(1)
   config_file = sys.argv[1]
   if os.path.exists(config_file):
