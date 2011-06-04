@@ -28,7 +28,7 @@ First configure the loader by editing 'osmmloader.config' specifying:
 
 Then run from the commandline:
 
-'python osmmloader.py config_file'
+'python osmmloader.py osmmloader.config'
 
 Additional arguments can be passed to override the values in the config file (usefull when running more than one instance of the loader) for example to specify a different source directory ('src_dir'):
 
