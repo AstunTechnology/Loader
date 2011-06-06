@@ -6,7 +6,7 @@ Contact: support [at] astuntechnology.com
 
 A very simple OS MasterMap loader written in Python that makes use of [OGR 1.8](http://www.gdal.org/ogr/). Source data can be in GML or GZip (.gz) format and can be output to any of the [formats supported by OGR](http://www.gdal.org/ogr/ogr_formats.html).
 
-## Dependancies ##
+## Dependencies ##
 
 * OGR 1.8
   * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suit of tools for translating and manipulation geospatial data.
