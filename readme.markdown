@@ -6,6 +6,16 @@ Contact: support [at] astuntechnology.com
 
 A very simple OS MasterMap loader written in Python that makes use of [OGR 1.8](http://www.gdal.org/ogr/). Source data can be in GML or GZip (.gz) format and can be output to any of the [formats supported by OGR](http://www.gdal.org/ogr/ogr_formats.html).
 
+## Dependancies ##
+
+* OGR 1.8
+  * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suit of tools for translating and manipulation geospatial data.
+  * *Windows* users can use [OSGeo4W](http://trac.osgeo.org/osgeo4w/) (choose Advanced install and select GDAL under the Commandline_Utilities section). You can then run the loader using the OSGeo4W Shell which will have OGR available.
+  * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
+
+* Python 2.5
+  * Python 2.5 or above (not 3.x) is required. Most modern *Linux* operating systems will already have 2.5 or above. *Windows* users can download Python  from the [Python Downloads page](http://www.python.org/download/releases/).
+
 ## Usage ##
 
 First configure the loader by editing 'osmmloader.config' specifying:
