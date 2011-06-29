@@ -85,6 +85,8 @@ def main():
     parser.parse(file)
   else:
     print 'Could not find input file: ' + inputfile
+    sys.exit(1)
+  sys.exit(0)
 
 if __name__ == '__main__':
   main()
