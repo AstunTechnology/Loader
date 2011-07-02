@@ -129,7 +129,11 @@ class OsmmLoader:
                 if self.debug:
                     print 'Prep command:', ' '.join(prep_args)
                 f = open(prepared_file, 'w')
-                rtn = subprocess.call(prep_args, stdout=f)
+                sErr = open(os.devnull, 'w')
+                sIn = open(os.devnull, 'r')
+                rtn = subprocess.call(prep_args, stdout=f, stderr=sErr, stdin=sIn)
+                sErr.close()
+                sIn.close()
                 f.close()
                 if rtn != 0 and not self.standalone:
                   self.status = (1, 'Processing stage failed with code ' + str(rtn))
