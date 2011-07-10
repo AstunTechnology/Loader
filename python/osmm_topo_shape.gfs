@@ -135,10 +135,10 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>qgsAnchPos</Name>
-      <ElementPath>textRendering|qgsAnchPos</ElementPath>
+      <Name>qAnchorPos</Name>
+      <ElementPath>textRendering|qAnchorPos</ElementPath>
       <Type>String</Type>
-      <Width>11</Width>
+      <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>font</Name>
@@ -146,8 +146,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>qgsFont</Name>
-      <ElementPath>textRendering|qgsFont</ElementPath>
+      <Name>qFont</Name>
+      <ElementPath>textRendering|qFont</ElementPath>
       <Type>String</Type>
       <Width>14</Width>
     </PropertyDefn>
@@ -162,8 +162,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>qgsOrient</Name>
-      <ElementPath>textRendering|qgsOrient</ElementPath>
+      <Name>qOrientatn</Name>
+      <ElementPath>textRendering|qOrientatn</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -224,8 +224,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>qgsOrient</Name>
-      <ElementPath>textRendering|qgsOrient</ElementPath>
+      <Name>qOrientatn</Name>
+      <ElementPath>textRendering|qOrientatn</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>

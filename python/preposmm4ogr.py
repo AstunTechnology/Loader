@@ -63,8 +63,8 @@ class osmmHandler(ContentHandler):
       self.fonts = ('Garamond','Arial','Roman','ScriptC') 
     
     # AC - the possible text placement positions used by QGIS   
-    self.anchorPosition = ('Below Left','Left','Above Left','Below','Over',
-                           'Above', 'Below Right','Right','Above Right')
+    self.anchorPosition = ('Bottom Left','Left','Top Left','Bottom','Over',
+                           'Top', 'Bottom Right','Right','Top Right')
 
   def startDocument(self):
     self.output('<?xml version="1.0" ?>')
@@ -92,11 +92,11 @@ class osmmHandler(ContentHandler):
     
     # Create QGIS specific elements
     if name == 'osgb:orientation':
-      self.qgsElement = '<qgsOrient>'
+      self.qgsElement = '<qOrientatn>'
     elif name == 'osgb:anchorPosition':
-      self.qgsElement = '<qgsAnchPos>'
+      self.qgsElement = '<qAnchorPos>'
     elif name == 'osgb:font':
-      self.qgsElement = '<qgsFont>'
+      self.qgsElement = '<qFont>'
     
     tmp = '<' + name
     for (name, value) in attrs.items():
@@ -116,13 +116,13 @@ class osmmHandler(ContentHandler):
       
       # Create QGIS specific element content
       if self.name == 'osgb:orientation':
-        self.qgsElement += str(float(ch) / 10) + '</qgsOrient>'
+        self.qgsElement += str(float(ch) / 10) + '</qOrientatn>'
       elif self.name == 'osgb:anchorPosition':
         position = int(ch)
         if position < 0 or position >= len(self.anchorPosition):
           position = 4
         posString = self.anchorPosition[position]
-        self.qgsElement += posString + '</qgsAnchPos>'
+        self.qgsElement += posString + '</qAnchorPos>'
       elif self.name == 'osgb:font':
         fontNumber = int(ch)
         fontString = ''
@@ -130,7 +130,7 @@ class osmmHandler(ContentHandler):
           fontString = self.fonts[fontNumber]
         except:
           fontString = 'unknown font (' + str(fontNumber) + ')'
-        self.qgsElement += fontString + '</qgsFont>'
+        self.qgsElement += fontString + '</qFont>'
         
       if self.outputToShape and ( self.name == 'osgb:theme' or self.name == 'osgb:descriptiveGroup' or self.name == 'osgb:descriptiveTerm' ):
         self.topoTerms += ch
