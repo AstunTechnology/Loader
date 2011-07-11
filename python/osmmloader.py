@@ -33,18 +33,31 @@ class OsmmLoader:
   def __init__ (self, config):
     # Read configuraton
     self.config = config
+    self.status = (0, '')
     try:
         self.src_dir = config['src_dir']
         self.tmp_dir = config['tmp_dir']
         self.prep_cmd = config['prep_cmd']
         self.ogr_cmd = config['ogr_cmd']
         self.gfs_file = config['gfs_file']
+        if 'out_dir' in config:
+          self.out_dir = config['out_dir']
+        if 'standalone' in config:
+          self.standalone = config['standalone']
+        else:
+          self.standalone = True
+          
     except KeyError, key:
-        print 'Missing configuration value:', key
-        exit(1)
+        if not self.standalone:
+          self.status = (1, 'Missing configuration value:' + key)
+          return self
+        else:
+          print 'Missing configuration value:', key
+          exit(1)
     self.debug = config.get('debug')
-    self.setup()
-    self.load()
+    retVal = self.setup()
+    if retVal:
+      self.load()
     self.cleanup()
 
   def setup(self):
@@ -59,8 +72,12 @@ class OsmmLoader:
     # Check for the existence of the GDAL_DATA environment
     # variable required by ogr2ogr
     if not 'GDAL_DATA' in os.environ:
-        print 'Please ensure that the GDAL_DATA environment variable is set and try again'
-        exit(1)
+        if not self.standalone:
+            self.status = (1, 'Please ensure that the GDAL_DATA environment variable is set and try again')
+            return False
+        else:
+            print 'Please ensure that the GDAL_DATA environment variable is set and try again'
+            exit(1)
     # Create a temp directory as a child to the temp
     # directory specified to hold all of our working
     # files and to make cleaning up simple
@@ -69,16 +86,28 @@ class OsmmLoader:
     try:
       os.mkdir(self.tmp_dir)
     except OSError:
-      print 'Could not create temp directory: ', self.tmp_dir
-      exit(1)
+      if not self.standalone:
+        self.status = (1, 'Could not create temp directory: ' + self.tmp_dir)
+        return False
+      else:
+        print 'Could not create temp directory: ', self.tmp_dir
+        exit(1)
+    return True
 
   def cleanup(self):
     if not self.debug:
         try:
           shutil.rmtree(self.tmp_dir)
         except OSError:
-          print 'Could not remove temp directory: ', self.tmp_dir, '. You may need to delete it yourself'
-          exit(1)
+          if not self.standalone:
+            self.status = (1, 'Could not remove temp directory: ' + self.tmp_dir + '. You may need to delete it yourself')
+            return
+          else:
+            print 'Could not remove temp directory: ', self.tmp_dir, '. You may need to delete it yourself'
+            exit(1)
+            
+  def getStatus(self):
+    return self.status
 
   def load (self):
     # Create string templates for the commands
@@ -100,8 +129,15 @@ class OsmmLoader:
                 if self.debug:
                     print 'Prep command:', ' '.join(prep_args)
                 f = open(prepared_file, 'w')
-                rtn = subprocess.call(prep_args, stdout=f)
+                sErr = open(os.devnull, 'w')
+                sIn = open(os.devnull, 'r')
+                rtn = subprocess.call(prep_args, stdout=f, stderr=sErr, stdin=sIn)
+                sErr.close()
+                sIn.close()
                 f.close()
+                if rtn != 0 and not self.standalone:
+                  self.status = (1, 'Processing stage failed with code ' + str(rtn))
+                  return
                 # Copy over the template gfs file used by ogr2ogr
                 # to read the GML attributes, determine the geometry type etc.
                 # Using a template so we have control over the geometry type
@@ -110,10 +146,18 @@ class OsmmLoader:
                     shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                 # Run OGR
                 print "Loading: %s" % file_path
+                
+                # This will set the out_path only if $out_path is present
+                self.out_dir = os.path.join(self.out_dir, file_parts[0])
+                ogr_cmd = Template( ogr_cmd.safe_substitute(out_path='\'' + self.out_dir + '\'') )
+                
                 ogr_args = shlex.split(ogr_cmd.substitute(file_path='\'' + prepared_file + '\''))
                 if self.debug:
                     print 'OGR command:', ' '.join(ogr_args)
                 rtn = subprocess.call(ogr_args)
+                if rtn != 0 and not self.standalone:
+                  self.status = (1, 'Conversion stage failed with code ' + str(rtn))
+                  return
                 # Increment the file count
                 num_files += 1
                 if not self.debug:

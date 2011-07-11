@@ -11,7 +11,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -21,43 +21,33 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>calculatedAreaValue</Name>
+      <Name>calcArea</Name>
       <ElementPath>calculatedAreaValue</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>make</Name>
@@ -66,12 +56,12 @@
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
@@ -89,7 +79,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -99,38 +89,28 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>make</Name>
@@ -139,20 +119,26 @@
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>anchorPosition</Name>
+      <Name>anchorPosn</Name>
       <ElementPath>textRendering|anchorPosition</ElementPath>
       <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>qAnchorPos</Name>
+      <ElementPath>textRendering|qAnchorPos</ElementPath>
+      <Type>String</Type>
+      <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>font</Name>
@@ -160,14 +146,25 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
+      <Name>qFont</Name>
+      <ElementPath>textRendering|qFont</ElementPath>
+      <Type>String</Type>
+      <Width>14</Width>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>height</Name>
       <ElementPath>textRendering|height</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>orientation</Name>
+      <Name>orientatn</Name>
       <ElementPath>textRendering|orientation</ElementPath>
       <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>qOrientatn</Name>
+      <ElementPath>textRendering|qOrientatn</ElementPath>
+      <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>textString</Name>
@@ -188,7 +185,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -198,57 +195,52 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>orientation</Name>
+      <Name>orientatn</Name>
       <ElementPath>orientation</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>qOrientatn</Name>
+      <ElementPath>textRendering|qOrientatn</ElementPath>
+      <Type>Real</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>referenceToFeature</Name>
+      <Name>refToFtr</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
     </PropertyDefn>
@@ -264,7 +256,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -274,44 +266,34 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
+      <Name>accuracyP</Name>
       <ElementPath>accuracyOfPosition</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>make</Name>
@@ -320,12 +302,12 @@
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
@@ -343,7 +325,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -353,52 +335,42 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
+      <Name>accuracyP</Name>
       <ElementPath>accuracyOfPosition</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>heightAboveDatum</Name>
+      <Name>heightAD</Name>
       <ElementPath>heightAboveDatum|heightAboveDatum</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfHeightAboveDatum</Name>
+      <Name>accuracyH</Name>
       <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
@@ -410,18 +382,18 @@
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>referenceToFeature</Name>
+      <Name>refToFtr</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
     </PropertyDefn>
@@ -438,7 +410,7 @@
       <Width>20</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>featureCode</Name>
+      <Name>featurCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -448,69 +420,59 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
+      <Name>versnDate</Name>
       <ElementPath>versionDate</ElementPath>
       <Type>String</Type>
       <Width>10</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-      <Width>25</Width>
+      <Name>themes</Name>
+      <ElementPath>themes</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
+      <Name>accuracyP</Name>
       <ElementPath>accuracyOfPosition</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
+      <Name>descGroups</Name>
+      <ElementPath>descriptiveGroups</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
-      <Type>StringList</Type>
+      <Name>descrTerms</Name>
+      <ElementPath>descriptiveTerms</ElementPath>
+      <Type>String</Type>
+      <Width>254</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>descriptiveGroup</Name>
-      <ElementPath>descriptiveGroup</ElementPath>
-      <Type>StringList</Type>
-      <Width>35</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
-      <Type>StringList</Type>
-      <Width>36</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>nonBoundingLine</Name>
+      <Name>nonBoundLn</Name>
       <ElementPath>nonBoundingLine</ElementPath>
       <Type>String</Type>
       <Width>5</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>heightAboveDatum</Name>
+      <Name>heightAD</Name>
       <ElementPath>heightAboveDatum|heightAboveDatum</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfHeightAboveDatum</Name>
+      <Name>accuracyD</Name>
       <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>heightAboveGroundLevel</Name>
+      <Name>heightAGL</Name>
       <ElementPath>heightAboveGroundLevel|heightAboveGroundLevel</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>accuracyOfHeightAboveGroundLevel</Name>
+      <Name>accuracyGL</Name>
       <ElementPath>heightAboveGroundLevel|accuracyOfHeightAboveGroundLevel</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
@@ -522,12 +484,12 @@
       <Width>12</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalLevel</Name>
+      <Name>physLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>physicalPresence</Name>
+      <Name>physPresnc</Name>
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
