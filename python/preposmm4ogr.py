@@ -39,52 +39,52 @@ from xml.sax import saxutils
 
 class osmmHandler(ContentHandler):
 
-  def __init__ (self):
-    a = 0
+    def __init__ (self):
+        a = 0
 
-  def startDocument(self):
-    self.output('<?xml version="1.0" ?>')
+    def startDocument(self):
+        self.output('<?xml version="1.0" ?>')
 
-  def startElement(self, name, attrs):
-    tmp = '<' + name
-    for (name, value) in attrs.items():
-      if name == 'srsName':
-        value = 'EPSG:27700'
-      tmp += ' %s=%s' % (name, saxutils.quoteattr(value))
-    tmp += '>'
-    self.output(tmp)
-    # Add a fid element if we find a fid attribute
-    fid = attrs.get('fid',"")
-    if len(fid) > 0:
-      self.output('<fid>'  + fid + '</fid>')
-    return
+    def startElement(self, name, attrs):
+        tmp = '<' + name
+        for (name, value) in attrs.items():
+            if name == 'srsName':
+                value = 'EPSG:27700'
+            tmp += ' %s=%s' % (name, saxutils.quoteattr(value))
+        tmp += '>'
+        self.output(tmp)
+        # Add a fid element if we find a fid attribute
+        fid = attrs.get('fid',"")
+        if len(fid) > 0:
+            self.output('<fid>'  + fid + '</fid>')
+        return
 
-  def characters (self, ch):
-    if len(ch.strip()) > 0:
-      self.output(saxutils.escape(ch))
+    def characters (self, ch):
+        if len(ch.strip()) > 0:
+            self.output(saxutils.escape(ch))
 
-  def endElement(self, name):
-    self.output('</' + name + '>')
+    def endElement(self, name):
+        self.output('</' + name + '>')
 
-  def output(self, str):
-    sys.stdout.write(str.encode('utf-8'))
+    def output(self, str):
+        sys.stdout.write(str.encode('utf-8'))
 
 def main():
-  if len(sys.argv) != 2:
-    print 'usage: python preposmm4ogr.py gmlfile'
-    sys.exit(1)
-  inputfile = sys.argv[1]
-  if os.path.exists(inputfile):
-    parser = make_parser()
-    parser.setContentHandler(osmmHandler())
-    if os.path.splitext(inputfile)[1].lower() == '.gz':
-        file = gzip.open(inputfile, 'r')
+    if len(sys.argv) != 2:
+        print 'usage: python preposmm4ogr.py gmlfile'
+        sys.exit(1)
+    inputfile = sys.argv[1]
+    if os.path.exists(inputfile):
+        parser = make_parser()
+        parser.setContentHandler(osmmHandler())
+        if os.path.splitext(inputfile)[1].lower() == '.gz':
+            file = gzip.open(inputfile, 'r')
+        else:
+            # Assume non compressed gml, xml or no extension
+            file = open(inputfile, 'r')
+        parser.parse(file)
     else:
-		# Assume non compressed gml, xml or no extension
-        file = open(inputfile, 'r')
-    parser.parse(file)
-  else:
-    print 'Could not find input file: ' + inputfile
+        print 'Could not find input file: ' + inputfile
 
 if __name__ == '__main__':
-  main()
+    main()
