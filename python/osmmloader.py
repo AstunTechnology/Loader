@@ -28,10 +28,46 @@ import datetime
 import shlex, subprocess
 from string import Template
 
+class LoaderError(Exception):
+    def __init__(self, message=''):
+        Exception.__init__(self, message)
+
+class ConfigError(LoaderError):
+    pass
+
+class MissingConfigError(ConfigError):
+    def __init__(self, key):
+        Exception.__init__(self, 'Missing configuration value: %s' % key)
+        self.key = key
+
+class CreateTempDirError(IOError):
+    def __init__(self, errno, strerror, filename):
+        strerror = 'Could not create temp directory (%s)' % strerror.lower()
+        IOError.__init__(self, errno, strerror, filename)
+
+class RemoveTempDirError(OSError):
+    def __init__(self, errno, strerror, filename):
+        strerror = 'Could not remove temp directory (%s)' % strerror.lower()
+        OSError.__init__(self, errno, strerror, filename)
+
 class OsmmLoader:
 
-  def __init__ (self, config):
-    # Read configuraton
+    """Simple OS MasterMap Loader wrapping ogr2ogr.
+    Usage:
+        loader = OsmmLoader()
+        loader.run(config)
+    For a full list of config see read_config"""
+
+  def __init__ (self):
+    pass
+
+  def run(self, config):
+    self.read_config(config)
+    self.setup()
+    self.load()
+    self.cleanup()
+
+  def read_config(self, config):
     self.config = config
     try:
         self.src_dir = config['src_dir']
@@ -40,13 +76,9 @@ class OsmmLoader:
         self.ogr_cmd = config['ogr_cmd']
         self.gfs_file = config['gfs_file']
     except KeyError, key:
-        print 'Missing configuration value:', key
-        exit(1)
+        raise MissingConfigError(key)
     self.debug = config.get('debug')
-    self.setup()
-    self.load()
-    self.cleanup()
-
+    
   def setup(self):
     # Determine if we are in debug mode
     self.debug =  (str(self.debug).lower() == 'true')
@@ -59,8 +91,7 @@ class OsmmLoader:
     # Check for the existence of the GDAL_DATA environment
     # variable required by ogr2ogr
     if not 'GDAL_DATA' in os.environ:
-        print 'Please ensure that the GDAL_DATA environment variable is set and try again'
-        exit(1)
+        raise ConfigError('Please ensure that the GDAL_DATA environment variable is set and try again')
     # Create a temp directory as a child to the temp
     # directory specified to hold all of our working
     # files and to make cleaning up simple
@@ -68,17 +99,15 @@ class OsmmLoader:
     self.tmp_dir = os.path.join(self.tmp_dir, 'osmmloader_' + timestamp)
     try:
       os.mkdir(self.tmp_dir)
-    except OSError:
-      print 'Could not create temp directory: ', self.tmp_dir
-      exit(1)
+    except (OSError), ex:
+      raise CreateTempDirError(ex.errno, ex.strerror, self.tmp_dir)
 
   def cleanup(self):
     if not self.debug:
         try:
           shutil.rmtree(self.tmp_dir)
-        except OSError:
-          print 'Could not remove temp directory: ', self.tmp_dir, '. You may need to delete it yourself'
-          exit(1)
+        except OSError, ex:
+          raise RemoveTempDirError(ex.errno, ex.strerror, self.tmp_dir)
 
   def load (self):
     # Create string templates for the commands
@@ -124,7 +153,7 @@ class OsmmLoader:
 def main():
   if len(sys.argv) < 2:
     print 'usage: python osmmloader.py osmmloader.config [key=value]'
-    sys.exit(1)
+    exit(1)
   config_file = sys.argv[1]
   if os.path.exists(config_file):
 	# Build a dict of configuration
@@ -134,7 +163,15 @@ def main():
     # override those in the config file
     overrides = dict([arg.split('=',1) for arg in sys.argv[2:]])
     config.update(overrides)
-    loader = OsmmLoader(config)
+    try:
+        loader = OsmmLoader()
+        loader.run(config)
+    except (MissingConfigError, ConfigError), ex:
+        print ex
+        exit(1)
+    except (CreateTempDirError, RemoveTempDirError), ex:
+        print '%s: %s' % (ex.strerror, ex.filename)
+        exit(1)
   else:
     print 'Could not find config file:', config_file
 
