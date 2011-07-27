@@ -11,8 +11,7 @@ The process goes like this:
 
 A bash shell script might look like this:
 
-<code>
-
+```
 # Assumes current directory is osmmloader/postgres/pgdump
 
 # (Re)create the tables in Postgres
@@ -32,8 +31,7 @@ cd ../postgres/pgdump
 
 # Create spatial indexes
 psql -d mapbase -U postgres -f create-indexes.sql
-
-</code>
+```
 
 ## Dependencies ##
 
