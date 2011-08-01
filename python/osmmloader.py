@@ -122,13 +122,14 @@ class OsmmLoader:
                     file_path = os.path.join(root, name)
                     print "Processing: %s" % file_path
                     # Run the script to prepare the GML
-                    prepared_file = os.path.join(self.tmp_dir, file_parts[0] + '.prepared')
+                    prepared_filename = file_parts[0]
+                    prepared_filepath = os.path.join(self.tmp_dir, prepared_filename)
                     if self.debug:
-                        print 'Prepared file:', prepared_file
+                        print 'Prepared file:', prepared_filepath
                     prep_args = shlex.split(prep_cmd.substitute(file_path='\'' + file_path + '\''))
                     if self.debug:
                         print 'Prep command:', ' '.join(prep_args)
-                    f = open(prepared_file, 'w')
+                    f = open(prepared_filepath, 'w')
                     rtn = subprocess.call(prep_args, stdout=f)
                     f.close()
                     # Copy over the template gfs file used by ogr2ogr
@@ -139,7 +140,7 @@ class OsmmLoader:
                         shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                     # Run OGR
                     print "Loading: %s" % file_path
-                    ogr_args = shlex.split(ogr_cmd.substitute(file_path='\'' + prepared_file + '\''))
+                    ogr_args = shlex.split(ogr_cmd.substitute(base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
                     if self.debug:
                         print 'OGR command:', ' '.join(ogr_args)
                     rtn = subprocess.call(ogr_args)
@@ -147,7 +148,7 @@ class OsmmLoader:
                     num_files += 1
                     if not self.debug:
                       # Clean up by deleting the temporary prepared file
-                      os.remove(prepared_file)
+                      os.remove(prepared_filepath)
         print "Loaded %i file%s" % (num_files, '' if num_files == 1 else 's')
 
 def main():
