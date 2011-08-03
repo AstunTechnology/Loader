@@ -39,13 +39,65 @@ from xml.sax import saxutils
 
 class osmmHandler(ContentHandler):
 
-    def __init__ (self):
+    def __init__ (self, outputToShape):
         a = 0
+        
+        self.outputToShape = outputToShape
+
+        self.lastName = ''
+        self.buildingTopoTerms = False
+        self.topoTerms = ''
+        self.qgsElement = ''
+     
+        # AC - define the fonts to use when rendering in QGIS
+        if os.name is 'posix': 
+            # Will probably need different font names
+            self.fonts = ('Garamond','Arial','Roman','ScriptC')  
+        elif os.name is 'nt':
+           # Ordnance Survey use 
+           #   'Lutheran','Normal','Light Roman','Suppressed text'
+           self.fonts = ('GothicE','Monospac821 BT','Consolas','ScriptC','Arial Narrow') 
+        elif os.name is 'mac':
+           # Will probably need different font name
+           self.fonts = ('Garamond','Arial','Roman','ScriptC') 
+     
+        # AC - the possible text placement positions used by QGIS   
+        self.anchorPosition = ('Bottom Left','Left','Top Left','Bottom','Over',
+                               'Top', 'Bottom Right','Right','Top Right')
 
     def startDocument(self):
         self.output('<?xml version="1.0" ?>')
 
     def startElement(self, name, attrs):
+        
+        self.name = name
+
+     
+        if self.buildingTopoTerms and self.topoTerms[-1] != '|':
+            self.topoTerms += '|'
+     
+        if self.buildingTopoTerms and name != self.lastName:
+            # We must now have collected all the values for a group of topo terms,
+            # now output them
+            outString = '<' + self.lastName + 's>'
+            #outString += saxutils.escape(self.topoTerms[:-1])
+            outString += self.topoTerms[:-1]
+            outString += '</' + self.lastName + 's>'
+            self.output(outString)
+            self.buildingTopoTerms = False
+            self.topoTerms = ''
+       
+        if self.outputToShape and ( name == 'osgb:theme' or name == 'osgb:descriptiveGroup' or name == 'osgb:descriptiveTerm' ):
+            self.buildingTopoTerms = True
+     
+        # Create QGIS specific elements
+        if name == 'osgb:orientation':
+            self.qgsElement = '<qOrientatn>'
+        elif name == 'osgb:anchorPosition':
+            self.qgsElement = '<qAnchorPos>'
+        elif name == 'osgb:font':
+            self.qgsElement = '<qFont>'
+        
         tmp = '<' + name
         for (name, value) in attrs.items():
             if name == 'srsName':
@@ -60,23 +112,56 @@ class osmmHandler(ContentHandler):
         return
 
     def characters (self, ch):
+        
         if len(ch.strip()) > 0:
+            
+            # Create QGIS specific element content
+            if self.name == 'osgb:orientation':
+                self.qgsElement += str(float(ch) / 10) + '</qOrientatn>'
+            elif self.name == 'osgb:anchorPosition':
+                position = int(ch)
+                if position < 0 or position >= len(self.anchorPosition):
+                    position = 4
+                posString = self.anchorPosition[position]
+                self.qgsElement += posString + '</qAnchorPos>'
+            elif self.name == 'osgb:font':
+                fontNumber = int(ch)
+                fontString = ''
+                try:
+                    fontString = self.fonts[fontNumber]
+                except:
+                    fontString = 'unknown font (' + str(fontNumber) + ')'
+                self.qgsElement += fontString + '</qFont>'
+         
+            if self.outputToShape and ( self.name == 'osgb:theme' or self.name == 'osgb:descriptiveGroup' or self.name == 'osgb:descriptiveTerm' ):
+                self.topoTerms += ch
+            
             self.output(saxutils.escape(ch))
 
     def endElement(self, name):
         self.output('</' + name + '>')
+        if len(self.qgsElement) > 0:
+            self.output(self.qgsElement)
+            self.qgsElement = ''
+        self.lastName = self.name
 
     def output(self, str):
         sys.stdout.write(str.encode('utf-8'))
 
 def main():
-    if len(sys.argv) != 2:
-        print 'usage: python preposmm4ogr.py gmlfile'
+    if len(sys.argv) < 2:
+        print 'usage: python preposmm4ogr.py [--output-to-shape] gmlfile'
         sys.exit(1)
-    inputfile = sys.argv[1]
+    outputToShape = False
+    if len(sys.argv) == 3:
+        for arg in sys.argv:
+            if arg == '--output-to-shape':
+                outputToShape = True
+   
+    inputfile = sys.argv[-1]
     if os.path.exists(inputfile):
         parser = make_parser()
-        parser.setContentHandler(osmmHandler())
+        parser.setContentHandler(osmmHandler(outputToShape))
         if os.path.splitext(inputfile)[1].lower() == '.gz':
             file = gzip.open(inputfile, 'r')
         else:

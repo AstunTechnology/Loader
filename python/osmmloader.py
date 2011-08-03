@@ -68,16 +68,18 @@ class OsmmLoader:
       self.cleanup()
 
     def read_config(self, config):
-      self.config = config
-      try:
-          self.src_dir = config['src_dir']
-          self.tmp_dir = config['tmp_dir']
-          self.prep_cmd = config['prep_cmd']
-          self.ogr_cmd = config['ogr_cmd']
-          self.gfs_file = config['gfs_file']
-      except KeyError, key:
-          raise MissingConfigError(key)
-      self.debug = config.get('debug')
+        self.config = config
+        try:
+            self.src_dir = config['src_dir']
+            self.tmp_dir = config['tmp_dir']
+            self.prep_cmd = config['prep_cmd']
+            self.ogr_cmd = config['ogr_cmd']
+            self.gfs_file = config['gfs_file']
+            if 'out_dir' in config:
+                self.out_dir = config['out_dir']
+        except KeyError, key:
+            raise MissingConfigError(key)
+        self.debug = config.get('debug')
 
     def setup(self):
         # Determine if we are in debug mode
@@ -130,7 +132,11 @@ class OsmmLoader:
                     if self.debug:
                         print 'Prep command:', ' '.join(prep_args)
                     f = open(prepared_filepath, 'w')
-                    rtn = subprocess.call(prep_args, stdout=f)
+                    sErr = open(os.devnull, 'w')
+                    sIn = open(os.devnull, 'r')
+                    rtn = subprocess.call(prep_args, stdout=f, stderr=sErr, stdin=sIn)
+                    sErr.close()
+                    sIn.close()
                     f.close()
                     # Copy over the template gfs file used by ogr2ogr
                     # to read the GML attributes, determine the geometry type etc.
@@ -140,6 +146,9 @@ class OsmmLoader:
                         shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                     # Run OGR
                     print "Loading: %s" % file_path
+                    # This will set the out_path only if $out_path is present
+                    self.out_dir = os.path.join(self.out_dir, file_parts[0])
+                    ogr_cmd = Template( ogr_cmd.safe_substitute(out_path='\'' + self.out_dir + '\'') )
                     ogr_args = shlex.split(ogr_cmd.substitute(base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
                     if self.debug:
                         print 'OGR command:', ' '.join(ogr_args)
