@@ -71,6 +71,7 @@ class OsmmLoader:
       self.config = config
       try:
           self.src_dir = config['src_dir']
+          self.out_dir = config['out_dir']
           self.tmp_dir = config['tmp_dir']
           self.prep_cmd = config['prep_cmd']
           self.ogr_cmd = config['ogr_cmd']
@@ -140,7 +141,7 @@ class OsmmLoader:
                         shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, file_parts[0] + '.gfs'))
                     # Run OGR
                     print "Loading: %s" % file_path
-                    ogr_args = shlex.split(ogr_cmd.substitute(base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
+                    ogr_args = shlex.split(ogr_cmd.substitute(output_dir='\'' + self.out_dir + '\'',base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
                     if self.debug:
                         print 'OGR command:', ' '.join(ogr_args)
                     rtn = subprocess.call(ogr_args)
