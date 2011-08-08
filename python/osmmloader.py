@@ -131,7 +131,11 @@ class OsmmLoader:
                     if self.debug:
                         print 'Prep command:', ' '.join(prep_args)
                     f = open(prepared_filepath, 'w')
-                    rtn = subprocess.call(prep_args, stdout=f)
+                    std_err = open(os.devnull, 'w')
+                    std_in = open(os.devnull, 'r')
+                    rtn = subprocess.call(prep_args, stdout=f, stderr=std_err, stdin=std_in)
+                    std_err.close()
+                    std_in.close()
                     f.close()
                     # Copy over the template gfs file used by ogr2ogr
                     # to read the GML attributes, determine the geometry type etc.
