@@ -162,8 +162,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>qOrientatn</Name>
-      <ElementPath>textRendering|qOrientatn</ElementPath>
+      <Name>orientDeg</Name>
+      <ElementPath>textRendering|orientDeg</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
