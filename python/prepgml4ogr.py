@@ -38,7 +38,6 @@ from xml.sax.handler import ContentHandler
 from xml.sax import saxutils
 
 import prep_osmm
-import timer
 
 class gmlhandler(ContentHandler):
 
@@ -134,7 +133,6 @@ def main():
             # Assume non compressed gml, xml or no extension
             file = open(inputfile, 'r')
 
-        #with timer.Timer():
         parser.parse(file)
 
     else:

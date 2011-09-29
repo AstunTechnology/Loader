@@ -1,6 +1,5 @@
 import os
 from lxml import etree
-from timer import Timer
 
 class prep_osmm():
 
