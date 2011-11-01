@@ -88,12 +88,12 @@ class gmlhandler(ContentHandler):
         else:
             self.output('</' + name + '>')
         if name in self.preparer.feat_types:
-            self.recording = False            
+            self.recording = False
             self.output(self.preparer.prepare_feature(''.join(self.buffer)))
             self.buffer = []
 
     def output(self, str):
-        sys.stdout.write(str.encode('utf-8'))
+        sys.stdout.write(str.encode('utf_8'))
 
 class prep_gml():
 
@@ -104,7 +104,7 @@ class prep_gml():
         return self.feat_types
 
     def prepare_feature(self, feat_str):
-        return feat_str
+        return feat_str.encode('latin_1', 'xmlcharrefreplace')
 
 def main():
     if len(sys.argv) < 2:

@@ -20,28 +20,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>calculatedAreaValue</Name>
-      <ElementPath>calculatedAreaValue</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -69,21 +49,6 @@
       <ElementPath>physicalPresence</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>CartographicText</Name>
@@ -106,23 +71,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -166,11 +116,6 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>orientation</Name>
-      <ElementPath>textRendering|orientation</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>orientDeg</Name>
       <ElementPath>textRendering|orientDeg</ElementPath>
       <Type>Real</Type>
@@ -178,21 +123,6 @@
     <PropertyDefn>
       <Name>textString</Name>
       <ElementPath>textString</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -217,23 +147,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -245,11 +160,6 @@
       <Name>descriptiveTerm</Name>
       <ElementPath>descriptiveTerm</ElementPath>
       <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>orientation</Name>
-      <ElementPath>orientation</ElementPath>
-      <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>orientDeg</Name>
@@ -270,21 +180,6 @@
       <Name>referenceToFeature</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
@@ -307,28 +202,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
-      <ElementPath>accuracyOfPosition</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -354,21 +229,6 @@
     <PropertyDefn>
       <Name>physicalPresence</Name>
       <ElementPath>physicalPresence</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -393,28 +253,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
-      <ElementPath>accuracyOfPosition</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -426,16 +266,6 @@
       <Name>descriptiveTerm</Name>
       <ElementPath>descriptiveTerm</ElementPath>
       <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>heightAboveDatum</Name>
-      <ElementPath>heightAboveDatum|heightAboveDatum</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfHeightAboveDatum</Name>
-      <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>make</Name>
@@ -456,21 +286,6 @@
       <Name>referenceToFeature</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
@@ -494,28 +309,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>versionDate</Name>
-      <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>theme</Name>
       <ElementPath>theme</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfPosition</Name>
-      <ElementPath>accuracyOfPosition</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>changeDate</Name>
-      <ElementPath>changeHistory|changeDate</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange</Name>
-      <ElementPath>changeHistory|reasonForChange</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -534,26 +329,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>heightAboveDatum</Name>
-      <ElementPath>heightAboveDatum|heightAboveDatum</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfHeightAboveDatum</Name>
-      <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>heightAboveGroundLevel</Name>
-      <ElementPath>heightAboveGroundLevel|heightAboveGroundLevel</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>accuracyOfHeightAboveGroundLevel</Name>
-      <ElementPath>heightAboveGroundLevel|accuracyOfHeightAboveGroundLevel</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>make</Name>
       <ElementPath>make</ElementPath>
       <Type>String</Type>
@@ -566,21 +341,6 @@
     <PropertyDefn>
       <Name>physicalPresence</Name>
       <ElementPath>physicalPresence</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>

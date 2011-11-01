@@ -131,11 +131,7 @@ class OsmmLoader:
                     if self.debug:
                         print 'Prep command:', ' '.join(prep_args)
                     f = open(prepared_filepath, 'w')
-                    std_err = open(os.devnull, 'w')
-                    std_in = open(os.devnull, 'r')
-                    rtn = subprocess.call(prep_args, stdout=f, stderr=std_err, stdin=std_in)
-                    std_err.close()
-                    std_in.close()
+                    rtn = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
                     f.close()
                     # Copy over the template gfs file used by ogr2ogr
                     # to read the GML attributes, determine the geometry type etc.
@@ -148,12 +144,12 @@ class OsmmLoader:
                     ogr_args = shlex.split(ogr_cmd.substitute(output_dir='\'' + self.out_dir + '\'',base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
                     if self.debug:
                         print 'OGR command:', ' '.join(ogr_args)
-                    rtn = subprocess.call(ogr_args)
+                    rtn = subprocess.call(ogr_args, stderr=sys.stderr)
                     # Increment the file count
                     num_files += 1
                     if not self.debug:
-                      # Clean up by deleting the temporary prepared file
-                      os.remove(prepared_filepath)
+                        # Clean up by deleting the temporary prepared file
+                        os.remove(prepared_filepath)
         print "Loaded %i file%s" % (num_files, '' if num_files == 1 else 's')
 
 def main():
@@ -169,6 +165,7 @@ def main():
         # override those in the config file
         overrides = dict([arg.split('=',1) for arg in sys.argv[2:]])
         config.update(overrides)
+        # Kick off the loader with the specified configuration
         try:
             loader = OsmmLoader()
             loader.run(config)

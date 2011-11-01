@@ -23,7 +23,7 @@ class prep_osmm():
         feat_elm = etree.fromstring(feat_str)
         feat_elm = self._prepare_feat_elm(feat_elm)
 
-        return etree.tostring(feat_elm, encoding="UTF-8", pretty_print=False)
+        return etree.tostring(feat_elm, encoding="UTF-8", pretty_print=False).decode('utf_8');
 
     def _prepare_feat_elm(self, feat_elm):
 
