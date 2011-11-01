@@ -5,6 +5,12 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+      <Width>7</Width>
+    </PropertyDefn>    
+    <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
@@ -48,6 +54,12 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+      <Width>7</Width>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
@@ -70,6 +82,12 @@
     <GeometryType>2</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+      <Width>7</Width>
+    </PropertyDefn>    
+    <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
@@ -86,6 +104,12 @@
     <ElementPath>RoadCLine</ElementPath>
     <GeometryType>2</GeometryType>
     <SRSName>EPSG:27700</SRSName>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+      <Width>7</Width>
+    </PropertyDefn>
     <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
@@ -115,6 +139,12 @@
     <ElementPath>Area</ElementPath>
     <GeometryType>3</GeometryType>
     <SRSName>EPSG:27700</SRSName>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+      <Width>7</Width>
+    </PropertyDefn>
     <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
