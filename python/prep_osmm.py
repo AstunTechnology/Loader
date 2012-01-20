@@ -3,7 +3,8 @@ from lxml import etree
 
 class prep_osmm():
 
-    def __init__ (self):
+    def __init__ (self, inputfile):
+        self.inputfile = inputfile
         self.feat_types = [
             'BoundaryLine',
             'CartographicSymbol',
@@ -28,6 +29,7 @@ class prep_osmm():
     def _prepare_feat_elm(self, feat_elm):
 
         feat_elm = self._add_fid_elm(feat_elm)
+        feat_elm = self._add_filename_elm(feat_elm)
         feat_elm = self._add_orientation_degree_elms(feat_elm)
         feat_elm = self._add_lists_elms(feat_elm)
         
@@ -41,6 +43,13 @@ class prep_osmm():
 
         return feat_elm
         
+    def _add_filename_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "filename")
+        elm.text = self.inputfile
+
+        return feat_elm
 
     def _add_orientation_degree_elms(self, feat_elm):
 
