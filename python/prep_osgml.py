@@ -80,7 +80,7 @@ class prep_vml(prep_osgml):
             'Area'
         ]
 
-class prep_osmm(prep_osgml):
+class prep_osmm_topo(prep_osgml):
     """
     Preperation class for OS MasterMap features which in addition to the work performed by
     `prep_osgml` adds `themes`, `descriptiveGroups` and `descriptiveTerms` elements containing
@@ -121,15 +121,15 @@ class prep_osmm(prep_osgml):
             elm.text = self.list_seperator.join(text_list)
         return feat_elm
 
-class prep_osmm_qgis(prep_osmm):
+class prep_osmm_topo_qgis(prep_osmm_topo):
     """
     Preperation class for OS MasterMap features which in addition to the work performed by
-    `prep_osmm` adds QGIS specific label attributes such as `qFont` and `aAnchorPos`.
+    `prep_osmm_topo` adds QGIS specific label attributes such as `qFont` and `aAnchorPos`.
 
     """
 
     def __init__ (self, filename):
-        prep_osmm.__init__(self, filename)
+        prep_osmm_topo.__init__(self, filename)
 
         # AC - define the fonts to use when rendering in QGIS
         if os.name is 'posix': 
@@ -149,7 +149,7 @@ class prep_osmm_qgis(prep_osmm):
 
     def _prepare_feat_elm(self, feat_elm):
 
-        feat_elm = prep_osmm._prepare_feat_elm(self, feat_elm)
+        feat_elm = prep_osmm_topo._prepare_feat_elm(self, feat_elm)
         feat_elm = self._add_qgis_elms(feat_elm)
 
         return feat_elm
@@ -177,7 +177,7 @@ class prep_osmm_qgis(prep_osmm):
 
         return feat_elm
 
-class prep_itn(prep_osgml):
+class prep_osmm_itn(prep_osgml):
     """
     Preperation class for OS MasterMap ITN features.
 
@@ -217,5 +217,37 @@ class prep_itn(prep_osgml):
                     value = '1' if value == '+' else '0'
                 sub_elm = etree.SubElement(elm, name)
                 sub_elm.text = value
+
+        return feat_elm
+
+class prep_addressbase():
+    """
+    Simple preperation of AddressBase data
+
+    """
+    def __init__ (self, inputfile):
+        self.inputfile = inputfile
+        self.feat_types = ['Address']
+
+    def get_feat_types(self):
+        return self.feat_types
+
+    def prepare_feature(self, feat_str):
+
+        # Parse the xml string into something useful
+        feat_elm = etree.fromstring(feat_str)
+        feat_elm = self._prepare_feat_elm(feat_elm)
+        
+        return etree.tostring(feat_elm, encoding='UTF-8', pretty_print=True).decode('utf_8');
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._drop_gmlid(feat_elm)
+        
+        return feat_elm
+
+    def _drop_gmlid(self, feat_elm):
+
+        feat_elm.attrib.pop('id')
 
         return feat_elm
