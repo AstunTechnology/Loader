@@ -1,4 +1,5 @@
-# A simple loader for geographic data in GML and KML (that needs some preparation before loading via ogr2ogr) #
+# A simple loader for geographic data in GML and KML #
+(that needs some preparation before loading via ogr2ogr)
 
 Author: Matt Walker, Astun Technology Ltd.
 
