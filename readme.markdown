@@ -12,7 +12,7 @@ The loader was originally written to load Ordnance Survey OS MasterMap Topograph
 ## Dependencies ##
 
 * OGR 1.8
-  * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suit of tools for translating and manipulation geospatial data.
+  * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suite of tools for translating and manipulation geospatial data.
   * *Windows* users can use [OSGeo4W](http://trac.osgeo.org/osgeo4w/) (choose Advanced install and select GDAL under the Commandline_Utilities section). You can then run the loader using the OSGeo4W Shell which will have OGR available.
   * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
 
