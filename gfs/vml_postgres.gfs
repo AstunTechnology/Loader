@@ -43,7 +43,7 @@
       <Name>orientDeg</Name>
       <ElementPath>textRendering|orientDeg</ElementPath>
       <Type>Real</Type>
-    </PropertyDefn>    
+    </PropertyDefn>
     <PropertyDefn>
       <Name>textString</Name>
       <ElementPath>textString</ElementPath>

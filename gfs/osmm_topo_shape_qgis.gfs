@@ -371,7 +371,8 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>accuracyH</Name>
-      <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
+      <ElementPath>
+      heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
@@ -462,18 +463,21 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>accuracyD</Name>
-      <ElementPath>heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
+      <ElementPath>
+      heightAboveDatum|accuracyOfHeightAboveDatum</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>heightAGL</Name>
-      <ElementPath>heightAboveGroundLevel|heightAboveGroundLevel</ElementPath>
+      <ElementPath>
+      heightAboveGroundLevel|heightAboveGroundLevel</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>accuracyGL</Name>
-      <ElementPath>heightAboveGroundLevel|accuracyOfHeightAboveGroundLevel</ElementPath>
+      <ElementPath>
+      heightAboveGroundLevel|accuracyOfHeightAboveGroundLevel</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>

@@ -128,6 +128,7 @@
       <Name>alt_language_sao_text</Name>
       <ElementPath>altLanguageSaoText</ElementPath>
       <Type>String</Type>
+    </PropertyDefn>
     <PropertyDefn>
       <Name>pao_start_number</Name>
       <ElementPath>paoStartNumber</ElementPath>
@@ -207,7 +208,7 @@
       <Name>os_topo_toid</Name>
       <ElementPath>osTopoToid</ElementPath>
       <Type>String</Type>
-    <PropertyDefn>
+      <PropertyDefn></PropertyDefn>
       <Name>os_topo_toid_version</Name>
       <ElementPath>osTopoToidVersion</ElementPath>
       <Type>Integer</Type>

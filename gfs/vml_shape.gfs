@@ -9,7 +9,7 @@
       <ElementPath>fid</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
-    </PropertyDefn>    
+    </PropertyDefn>
     <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
@@ -86,7 +86,7 @@
       <ElementPath>fid</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
-    </PropertyDefn>    
+    </PropertyDefn>
     <PropertyDefn>
       <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>

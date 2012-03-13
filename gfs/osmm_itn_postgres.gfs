@@ -90,7 +90,8 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>directedNode_orientation</Name>
-      <ElementPath>directedNode|directedNode_orientation</ElementPath>
+      <ElementPath>
+      directedNode|directedNode_orientation</ElementPath>
       <Type>IntegerList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -186,7 +187,8 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>classification</Name>
-      <ElementPath>environmentQualifier|classification</ElementPath>
+      <ElementPath>
+      environmentQualifier|classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -196,7 +198,8 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>directedLink_orientation</Name>
-      <ElementPath>directedLink|directedLink_orientation</ElementPath>
+      <ElementPath>
+      directedLink|directedLink_orientation</ElementPath>
       <Type>IntegerList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -226,17 +229,20 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>day</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|day</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|day</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>startTime</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>endTime</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -246,22 +252,26 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>namedTime</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|namedTime</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|namedTime</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>startDate</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedDate|startDate</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedDate|startDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>endDate</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedDate|endDate</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedDate|endDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>namedDate</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|namedDate</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|namedDate</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -307,12 +317,14 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>classification</Name>
-      <ElementPath>environmentQualifier|classification</ElementPath>
+      <ElementPath>
+      environmentQualifier|classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>referenceToRoadLink_ref</Name>
-      <ElementPath>referenceToRoadLink|referenceToRoadLink_ref</ElementPath>
+      <ElementPath>
+      referenceToRoadLink|referenceToRoadLink_ref</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -327,12 +339,14 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>feet</Name>
-      <ElementPath>vehicleQualifier|maxCompositeHeight|feet</ElementPath>
+      <ElementPath>
+      vehicleQualifier|maxCompositeHeight|feet</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inches</Name>
-      <ElementPath>vehicleQualifier|maxCompositeHeight|inches</ElementPath>
+      <ElementPath>
+      vehicleQualifier|maxCompositeHeight|inches</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -357,12 +371,14 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>startTime</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>endTime</Name>
-      <ElementPath>dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
+      <ElementPath>
+      dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
