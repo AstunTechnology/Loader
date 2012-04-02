@@ -54,7 +54,7 @@ class RemoveTempDirError(OSError):
 
 class Loader:
 
-    """Simple OS MasterMap Loader wrapping ogr2ogr.
+    """Simple GML & KML Loader wrapping ogr2ogr.
     Usage:
         loader = Loader()
         loader.run(config)

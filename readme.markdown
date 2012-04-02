@@ -17,7 +17,10 @@ The loader was originally written to load Ordnance Survey OS MasterMap Topograph
   * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
 
 * Python 2.5 or 3
-  * Python 2.5 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.5 or above. *Windows* users can download Python  from the [Python Downloads page](http://www.python.org/download/releases/).
+  * Python 2.5 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.5 or above. *Windows* users can download Python from the [Python Downloads page](http://www.python.org/download/releases/).
+  * Python lxml module for parsing and manipulating XML, Windows users can download from the [lxml project page](http://pypi.python.org/pypi/lxml/2.3/), *Linux* users can usually install via their package manager (Ubuntu users would use: `sudo apt-get install python-lxml`)
+
+Further install details are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
 
 ## Usage ##
 
@@ -45,3 +48,5 @@ Then run from the commandline:
 Additional arguments can be passed to override the values in the config file (useful when running more than one instance of the loader) for example to specify a different source directory ('src_dir'):
 
 'python loader.py config_file src_dir=./data/tq'
+
+Some configuration examples are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
