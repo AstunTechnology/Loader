@@ -16,8 +16,8 @@ The loader was originally written to load Ordnance Survey OS MasterMap Topograph
   * *Windows* users can use [OSGeo4W](http://trac.osgeo.org/osgeo4w/) (choose Advanced install and select GDAL under the Commandline_Utilities section). You can then run the loader using the OSGeo4W Shell which will have OGR available.
   * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
 
-* Python 2.5 or 3
-  * Python 2.5 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.5 or above. *Windows* users can download Python from the [Python Downloads page](http://www.python.org/download/releases/).
+* Python 2.6+ or 3
+  * Python 2.6 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.6 or above. *Windows* users can download Python from the [Python Downloads page](http://www.python.org/download/releases/).
   * Python lxml module for parsing and manipulating XML, Windows users can download from the [lxml project page](http://pypi.python.org/pypi/lxml/2.3/), *Linux* users can usually install via their package manager (Ubuntu users would use: `sudo apt-get install python-lxml`)
 
 Further install details are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
