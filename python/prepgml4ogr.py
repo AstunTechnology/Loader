@@ -26,7 +26,7 @@
     The parser changes the srsName attribute to EPSG:27700 and
     promotes the fid attribute to a child element.
     Output is via stdout and is UTF-8 encoded.
-    
+
     usage: python prepgml4ogr.py file.gml
 '''
 
@@ -38,9 +38,10 @@ from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 from xml.sax import saxutils
 
+
 class gmlhandler(ContentHandler):
 
-    def __init__ (self, preparer):
+    def __init__(self, preparer):
         # The class that will prepare the features
         self.preparer = preparer
         self.feat = None
@@ -80,7 +81,7 @@ class gmlhandler(ContentHandler):
             self.output(tmp)
         return
 
-    def characters (self, ch):
+    def characters(self, ch):
         if len(ch.strip()) > 0:
             if self.recording:
                 self.buffer.append(saxutils.escape(ch))
@@ -104,9 +105,10 @@ class gmlhandler(ContentHandler):
     def output(self, str):
         sys.stdout.write(str.encode('utf_8').decode('utf_8'))
 
+
 class prep_gml():
 
-    def __init__ (self, inputfile):
+    def __init__(self, inputfile):
         self.feat_types = []
 
     def get_feat_types(self):
@@ -115,9 +117,10 @@ class prep_gml():
     def prepare_feature(self, feat_str):
         return feat_str
 
+
 def main():
     if len(sys.argv) < 2:
-        print('usage: python prepgml4ogr.py gmlfile [[prep_module.]prep_class]')
+        print('usage: python prepgml4ogr.py file [[prep_module.]prep_class]')
         sys.exit(1)
 
     inputfile = sys.argv[1]
@@ -133,7 +136,7 @@ def main():
             pass
         prep_class = get_preparer(prep_class)
         preparer = prep_class(os.path.basename(inputfile))
-        
+
         parser = make_parser()
         parser.setContentHandler(gmlhandler(preparer))
 
@@ -151,6 +154,7 @@ def main():
 
     else:
         print('Could not find input file: ' + inputfile)
+
 
 def get_preparer(prep_class):
     parts = prep_class.split('.')
