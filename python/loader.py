@@ -187,9 +187,16 @@ def main():
         exit(1)
     config_file = sys.argv[1]
     if os.path.exists(config_file):
-        # Build a dict of configuration
+        # Build a dict of configuration expanding
+        # any environment variables found in the values
+        config = []
         with open(config_file, 'r') as f:
-            config = dict([line.replace('\n', '').split('=', 1) for line in f.readlines() if len(line.replace('\n', '')) and line[0:1] != '#'])
+            for line in f.readlines():
+                line = line.replace('\n', '').strip()
+                if len(line) and line[0:1] != '#':
+                    parts = line.split('=', 1)
+                    config.append([parts[0], os.path.expandvars(parts[1])])
+            config = dict(config)
         # Build a dict of arguments passed on the command line that
         # override those in the config file
         overrides = dict([arg.split('=', 1) for arg in sys.argv[2:]])
