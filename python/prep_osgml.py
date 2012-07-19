@@ -225,6 +225,9 @@ class prep_osmm_itn(prep_osgml):
             'FerryNode',
             'InformationPoint',
             'Road',
+            'RoadNode',
+            'RoadNodeInformation',
+            'RoadLink',
             'RoadLinkInformation',
             'RoadRouteInformation'
         ]
@@ -238,7 +241,7 @@ class prep_osmm_itn(prep_osgml):
 
     def _expose_links(self, feat_elm):
 
-        link_list = feat_elm.xpath('//networkMember | //directedLink | //directedNode | //referenceToRoadLink')
+        link_list = feat_elm.xpath('//networkMember | //directedLink | //directedNode | //referenceToRoadLink | //referenceToRoadNode | //referenceToTopographicArea')
         for elm in link_list:
             for name in elm.attrib:
                 value = elm.get(name)

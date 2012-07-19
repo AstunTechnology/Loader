@@ -29,7 +29,7 @@ First configure the loader by editing 'loader.config' specifying:
 ### Basic configuration ###
 
 * 'src_dir'
-  * The directory containing your source files. All supported files in the specified directory and it's descendants will be loaded.
+  * The directory containing your source files.  All supported files in the specified directory and it's decendents will be loaded.
 * 'out_dir'
   * The directory used to store the translated data if writing to a file based format such as ESRI Shape, MapInfo TAB etc.
 * 'tmp_dir'
@@ -41,6 +41,8 @@ First configure the loader by editing 'loader.config' specifying:
 * 'gfs_file'
   * OGR .gfs file used to define the feature attributes and geometry type of the feautes read from the GML again choose a suitable gfs file for your source data such as ../gfs/osmm_topo_postgres.gfs for loading OS MasterMap Topo in to PostgreSQL.
 
+Note: Environment variables can be used with any of the options by using a token of the form: $HOME, ${HOME} or %TEMP% (Windows only)
+
 Then run from the commandline:
 
 'python loader.py loader.config'
@@ -50,3 +52,14 @@ Additional arguments can be passed to override the values in the config file (us
 'python loader.py config_file src_dir=./data/tq'
 
 Some configuration examples are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
+
+## To-do ##
+
+* Documentation
+  * Use of environment variables in the config file
+  * Document the available tokens that can be used in the ogr_cmd, post_cmd
+  * Using an alternative Python interpretor with OSGeo4W by specifying PYTHONHOME and the full path to the interpretor on Windows
+
+* OS MasterMap ITN
+    * Test load on national cover
+    * PostgreSQL scripts to join it all up

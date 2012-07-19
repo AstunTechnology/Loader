@@ -189,16 +189,16 @@ def main():
     if os.path.exists(config_file):
         # Build a dict of configuration expanding
         # any environment variables found in the values
-        config = []
-        with open(config_file, 'r') as f:
+        config = {}
+        with open(config_file, 'rU') as f:
             for line in f.readlines():
                 line = line.replace('\n', '').strip()
                 if len(line) and line[0:1] != '#':
                     parts = line.split('=', 1)
-                    config.append([parts[0], os.path.expandvars(parts[1])])
-            config = dict(config)
+                    config[parts[0]] = os.path.expandvars(parts[1])
         # Build a dict of arguments passed on the command line that
-        # override those in the config file
+        # override those in the config file, no need to expand environment
+        # variables as the shell will take care of it
         overrides = dict([arg.split('=', 1) for arg in sys.argv[2:]])
         config.update(overrides)
         # Kick off the loader with the specified configuration
