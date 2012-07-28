@@ -72,9 +72,9 @@ class prep_osgml():
 
     def _add_filename_elm(self, feat_elm):
 
-        # Create an element with the fid
+        # Create an element with the filename
         elm = etree.SubElement(feat_elm, "filename")
-        elm.text = self.inputfile
+        elm.text = os.path.basename(self.inputfile)
 
         return feat_elm
 

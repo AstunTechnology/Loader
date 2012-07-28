@@ -60,6 +60,9 @@ Some configuration examples are available on the [project wiki](https://github.c
   * Document the available tokens that can be used in the ogr_cmd, post_cmd
   * Using an alternative Python interpretor with OSGeo4W by specifying PYTHONHOME and the full path to the interpretor on Windows
 
+* loader.py
+    * Add exception and message when source data is not found
+
 * OS MasterMap ITN
     * Test load on national cover
     * PostgreSQL scripts to join it all up

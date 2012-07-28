@@ -135,7 +135,7 @@ def main():
         except IndexError:
             pass
         prep_class = get_preparer(prep_class)
-        preparer = prep_class(os.path.basename(inputfile))
+        preparer = prep_class(inputfile)
 
         parser = make_parser()
         parser.setContentHandler(gmlhandler(preparer))
