@@ -103,7 +103,10 @@ class gmlhandler(ContentHandler):
             self.buffer = []
 
     def output(self, str):
-        sys.stdout.write(str.encode('utf_8').decode('utf_8'))
+        try:
+            sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace').decode('utf_8'))
+        except UnicodeEncodeError:
+            sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace'))
 
 
 class prep_gml():
