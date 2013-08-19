@@ -430,7 +430,7 @@
   <GMLFeatureClass>
     <Name>TopographicLine</Name>
     <ElementPath>TopographicLine</ElementPath>
-    <GeometryType>2</GeometryType>
+    <GeometryType>5</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
       <Name>fid</Name>
