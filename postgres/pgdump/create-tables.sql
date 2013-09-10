@@ -1,4 +1,4 @@
--- Drops any existing OSMM related tables and creates fresh tables ready to receive data
+﻿-- Drops any existing OSMM related tables and creates fresh tables ready to receive data
 
 DROP TABLE IF EXISTS "osmm"."boundaryline" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'boundaryline' AND f_table_schema = 'osmm';
@@ -18,6 +18,10 @@ ALTER TABLE "osmm"."boundaryline" ADD COLUMN "descriptiveterm" varchar[];
 ALTER TABLE "osmm"."boundaryline" ADD COLUMN "make" varchar;
 ALTER TABLE "osmm"."boundaryline" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm"."boundaryline" ADD COLUMN "physicalpresence" varchar;
+ALTER TABLE "osmm"."boundaryline" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."boundaryline" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."boundaryline" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."boundaryline" ADD COLUMN "descriptiveterms" varchar;
 
 DROP TABLE IF EXISTS "osmm"."cartographicsymbol" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'cartographicsymbol' AND f_table_schema = 'osmm';
@@ -37,6 +41,10 @@ ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "orientation" INTEGER;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "physicalpresence" varchar;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "referencetofeature" VARCHAR;
+ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "descriptiveterms" varchar;
 
 DROP TABLE IF EXISTS "osmm"."cartographictext" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'cartographictext' AND f_table_schema = 'osmm';
@@ -60,6 +68,12 @@ ALTER TABLE "osmm"."cartographictext" ADD COLUMN "font" INTEGER;
 ALTER TABLE "osmm"."cartographictext" ADD COLUMN "height" FLOAT8;
 ALTER TABLE "osmm"."cartographictext" ADD COLUMN "orientation" INTEGER;
 ALTER TABLE "osmm"."cartographictext" ADD COLUMN "textstring" varchar;
+ALTER TABLE "osmm"."cartographictext" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."cartographictext" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."cartographictext" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."cartographictext" ADD COLUMN "descriptiveterms" varchar;
+ALTER TABLE "osmm"."cartographictext" ADD COLUMN "orientdeg" varchar;
+
 
 DROP TABLE IF EXISTS "osmm"."topographicarea" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicarea' AND f_table_schema = 'osmm';
@@ -79,6 +93,10 @@ ALTER TABLE "osmm"."topographicarea" ADD COLUMN "descriptiveterm" varchar[];
 ALTER TABLE "osmm"."topographicarea" ADD COLUMN "make" varchar;
 ALTER TABLE "osmm"."topographicarea" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm"."topographicarea" ADD COLUMN "physicalpresence" varchar;
+ALTER TABLE "osmm"."topographicarea" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."topographicarea" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."topographicarea" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."topographicarea" ADD COLUMN "descriptiveterms" varchar;
 
 DROP TABLE IF EXISTS "osmm"."topographicline" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicline' AND f_table_schema = 'osmm';
@@ -103,6 +121,11 @@ ALTER TABLE "osmm"."topographicline" ADD COLUMN "accuracyofheightabovegroundleve
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "make" varchar;
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "physicalpresence" varchar;
+ALTER TABLE "osmm"."topographicline" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."topographicline" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."topographicline" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."topographicline" ADD COLUMN "descriptiveterms" varchar;
+
 
 DROP TABLE IF EXISTS "osmm"."topographicpoint" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicpoint' AND f_table_schema = 'osmm';
@@ -125,3 +148,8 @@ ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "make" varchar;
 ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "physicalpresence" varchar;
 ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "referencetofeature" VARCHAR;
+ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "filename" varchar;
+ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "themes" varchar;
+ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "descriptivegroups" varchar;
+ALTER TABLE "osmm"."topographicpoint" ADD COLUMN "descriptiveterms" varchar;
+
