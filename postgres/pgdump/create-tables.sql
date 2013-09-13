@@ -45,6 +45,7 @@ ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "filename" varchar;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "themes" varchar;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "descriptivegroups" varchar;
 ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "descriptiveterms" varchar;
+ALTER TABLE "osmm"."cartographicsymbol" ADD COLUMN "orientdeg" varchar;
 
 DROP TABLE IF EXISTS "osmm"."cartographictext" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'cartographictext' AND f_table_schema = 'osmm';

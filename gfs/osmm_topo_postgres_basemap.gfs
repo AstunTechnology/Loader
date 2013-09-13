@@ -173,7 +173,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>orientDeg</Name>
-      <ElementPath>textRendering|orientDeg</ElementPath>
+      <ElementPath>orientDeg</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
