@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS "osmm"."topographicline" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicline' AND f_table_schema = 'osmm';
 
 CREATE TABLE "osmm"."topographicline" ( OGC_FID SERIAL, CONSTRAINT "topographicline_pk" PRIMARY KEY (OGC_FID) );
-SELECT AddGeometryColumn('osmm','topographicline','wkb_geometry',27700,'LINESTRING',2);
+SELECT AddGeometryColumn('osmm','topographicline','wkb_geometry',27700,'MULTILINESTRING',2);
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "fid" varchar;
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "featurecode" INTEGER;
 ALTER TABLE "osmm"."topographicline" ADD COLUMN "version" INTEGER;
