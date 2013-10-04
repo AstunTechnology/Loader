@@ -22,14 +22,14 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "10053" #"0000 Multiple surface (garden)"
+			EXPRESSION "10053"
 			STYLE
 				#COLOR 255 255 204
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION ([featurecode] EQ 10111 OR [featurecode] == 20014 ) # "0000 Natural surface"
+			EXPRESSION ([featurecode] EQ 10111 OR [featurecode] == 20014 )
 			STYLE
 				#COLOR 204 255 153
 				OUTLINECOLOR 212 212 212
@@ -37,34 +37,34 @@ LAYER
 		END
 
 		CLASS
-			EXPRESSION "10056" # "0000 Manmade surface"
+			EXPRESSION "10056"
 			STYLE
 				#COLOR 204 255 153
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "10054" #"0000 Manmade surface or step"
+			EXPRESSION "10054"
 			STYLE
 				#COLOR 204 204 153
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "10172" #"0000 Road"
+			EXPRESSION "10172"
 			STYLE
 				COLOR 220 220 220
 				OUTLINECOLOR 220 220 220
 			END
 		END
 		CLASS
-			EXPRESSION "10089" #"0400 Inland water"
+			EXPRESSION "10089"
 			STYLE
 				COLOR 224 238 253   
 			END
 		END
 		CLASS
-			EXPRESSION ([featurecode] EQ 20006 OR [featurecode] == 20022 ) #"0384 Nonconiferous trees"
+			EXPRESSION ([featurecode] EQ 20006 OR [featurecode] == 20022 )
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -72,21 +72,21 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "10123" #"0000 Path or track"
+			EXPRESSION "10123"
 			STYLE
 				COLOR 220 220 220
 				OUTLINECOLOR 220 220 220
 			END
 		END
 		CLASS
-			EXPRESSION "10185" #"0000 Structure"
+			EXPRESSION "10185"
 			STYLE
 				#COLOR 255 204 204  	
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "20012" # "0392 Scrub"
+			EXPRESSION "20012"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -94,7 +94,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "20013" #"0379 Coniferous Trees"
+			EXPRESSION "20013"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 204 204 204
@@ -102,7 +102,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "20008" #"0386 Orchard"
+			EXPRESSION "20008"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -110,7 +110,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "20023" # multiple - "0390 Rough grassland"
+			EXPRESSION "20023"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -118,7 +118,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "10062" # "0323 Glasshouse"
+			EXPRESSION "10062"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -126,14 +126,14 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "10183" # ??"0000 Unknown surface"
+			EXPRESSION "10183"
 			STYLE
 				#COLOR 204 204 153
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "20006" #"0385 Nonconiferous - scattered"
+			EXPRESSION "20006"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -141,7 +141,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "20002" #"0382 Marsh reeds or saltmarsh"
+			EXPRESSION "20002"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 212 212 212
@@ -149,7 +149,7 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "0000" #Road traffic calming
+			EXPRESSION "0000"
 			STYLE
 				COLOR 0 0 0
 				OUTLINECOLOR 255 255 255
@@ -157,21 +157,21 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "10145" #"0000 Unclassified (or broken)"
+			EXPRESSION "10145"
 			STYLE
 				#COLOR 255 255 153
 				OUTLINECOLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "10167" #"0000 Railway"
+			EXPRESSION "10167"
 			STYLE
 				COLOR 224 224 224
 				OUTLINECOLOR 204 204 204
 			END
 		END
 		CLASS
-			EXPRESSION "20005" #"0380 Coniferous - scattered"
+			EXPRESSION "20005"
 			STYLE
 				#COLOR 224 224 224
 				OUTLINECOLOR 212 212 212
@@ -204,41 +204,41 @@ LAYER
 		OPACITY 50
 		CLASSITEM "featurecode"
 		CLASS
-			EXPRESSION "0030 Obstructing feature"
+			EXPRESSION
 			STYLE
 				COLOR 212 212 212
 			END
 		END
 		#([FEATURECODE] == 10102 OR [FEATURECODE] == 10133)
 		CLASS
-			EXPRESSION ([featurecode] == 10017 OR [featurecode] == 10019 OR [featurecode] == 1002) #"0001 Building outline"
+			EXPRESSION ([featurecode] == 10017 OR [featurecode] == 10019 OR [featurecode] == 1002)
 			STYLE
 				COLOR 0 0 0
 				WIDTH 1
 			END
 		END
 		CLASS
-			EXPRESSION "10019" #"0001 Building outline"
+			EXPRESSION "10019"
 			STYLE
 				COLOR 0 0 0
 				WIDTH 1
 			END
 		END
 		CLASS
-			EXPRESSION "10023" #"0001 Building outline"
+			EXPRESSION "10023"
 			STYLE
 				COLOR 0 0 0
 				WIDTH 1
 			END
 		END
 		CLASS
-			EXPRESSION "10113" #"0032 Path line or edge / limit"
+			EXPRESSION "10113"
 			STYLE
 
 			END
 		END
 		CLASS
-			EXPRESSION "10168" #"0032 Path line or edge / limit"
+			EXPRESSION "10168"
 			STYLE
 				SYMBOL "dashed"
 				SIZE 1
@@ -247,7 +247,7 @@ LAYER
 			END
 		END  	
 		CLASS
-			EXPRESSION "10173" #"0021 Road or track edge"
+			EXPRESSION "10173"
 			STYLE
 				SYMBOL "dashed"
 				SIZE 1
@@ -255,31 +255,31 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION "0059 Inland water edge / limit"
+			EXPRESSION
 			STYLE
 				COLOR 224 238 253
 			END
 		END
 		CLASS
-			EXPRESSION "10018" #"0030 Building division"
+			EXPRESSION "10018"
 			STYLE
 				COLOR 0 0 0
 			END
 		END
 		CLASS
-			EXPRESSION "0000 Polygon closing link"
+			EXPRESSION
 			STYLE
 				COLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "0000 Property closing inferred"
+			EXPRESSION
 			STYLE
 				COLOR 212 212 212
 			END
 		END
 		CLASS
-			EXPRESSION "0004 Building outline - o'head"
+			EXPRESSION
 			STYLE
 				COLOR 0 0 0
 				WIDTH 2
