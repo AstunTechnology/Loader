@@ -1,0 +1,35 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>LandRegParcels</Name>
+    <ElementPath>PREDEFINED</ElementPath>
+    <GeometryType>3</GeometryType>
+    <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
+    <PropertyDefn>
+      <Name>INSPIREID</Name>
+      <ElementPath>INSPIREID</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>LABEL</Name>
+      <ElementPath>LABEL</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>NATIONALCADASTRALREFERENCE</Name>
+      <ElementPath>NATIONALCADASTRALREFERENCE</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>VALIDFROM</Name>
+      <ElementPath>VALIDFROM</ElementPath>
+      <Type>String</Type>
+      <Width>24</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>BEGINLIFESPANVERSION</Name>
+      <ElementPath>BEGINLIFESPANVERSION</ElementPath>
+      <Type>String</Type>
+      <Width>24</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>
