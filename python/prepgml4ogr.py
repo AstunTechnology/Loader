@@ -44,13 +44,19 @@ class gmlhandler(ContentHandler):
     def __init__(self, preparer):
         # The class that will prepare the features
         self.preparer = preparer
+        # Flag to indicate if we have encountered the first element yet
+        self.first_elm = True
         self.feat = None
         self.recording = False
 
-    def startDocument(self):
-        self.output('<?xml version="1.0" ?>')
-
     def startElement(self, name, attrs):
+        if self.first_elm:
+            # Output the xml declaration prior to the first element,
+            # done here instead of in startDocument to allow us to avoid
+            # outputting the declaration when we try and parse non XML content
+            # as can happen when we parse all files in a zip archive
+            self.first_elm = False
+            output('<?xml version="1.0" ?>')
         try:
             name = name.split(':')[1]
         except IndexError:
@@ -78,7 +84,7 @@ class gmlhandler(ContentHandler):
         if self.recording:
             self.buffer.append(tmp)
         else:
-            self.output(tmp)
+            output(tmp)
         return
 
     def characters(self, ch):
@@ -86,7 +92,7 @@ class gmlhandler(ContentHandler):
             if self.recording:
                 self.buffer.append(saxutils.escape(ch))
             else:
-                self.output(saxutils.escape(ch))
+                output(saxutils.escape(ch))
 
     def endElement(self, name):
         try:
@@ -96,17 +102,18 @@ class gmlhandler(ContentHandler):
         if self.recording:
             self.buffer.append('</' + name + '>')
         else:
-            self.output('</' + name + '>')
+            output('</' + name + '>')
         if name in self.preparer.feat_types:
             self.recording = False
-            self.output(self.preparer.prepare_feature(''.join(self.buffer)))
+            output(self.preparer.prepare_feature(''.join(self.buffer)))
             self.buffer = []
 
-    def output(self, str):
-        try:
-            sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace').decode('utf_8'))
-        except UnicodeEncodeError:
-            sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace'))
+
+def output(str):
+    try:
+        sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace').decode('utf_8'))
+    except UnicodeEncodeError:
+        sys.stdout.write(str.encode('utf_8', 'xmlcharrefreplace'))
 
 
 class prep_gml():
@@ -143,17 +150,22 @@ def main():
         parser = make_parser()
         parser.setContentHandler(gmlhandler(preparer))
 
-        if os.path.splitext(inputfile)[1].lower() == '.gz':
-            file = gzip.open(inputfile, 'r')
-        elif os.path.splitext(inputfile)[1].lower() == '.zip':
+        if os.path.splitext(inputfile)[1].lower() == '.zip':
             archive = zipfile.ZipFile(inputfile, 'r')
             for filename in archive.namelist():
                 file = archive.open(filename)
+                try:
+                    parser.parse(file)
+                except:
+                    # Ignore any files that can't be parsed
+                    pass
         else:
-            # Assume non compressed gml, xml or no extension
-            file = open(inputfile, 'r')
-
-        parser.parse(file)
+            if os.path.splitext(inputfile)[1].lower() == '.gz':
+                file = gzip.open(inputfile, 'r')
+            else:
+                # Assume non compressed gml, xml or no extension
+                file = open(inputfile, 'r')
+            parser.parse(file)
 
     else:
         print('Could not find input file: ' + inputfile)
