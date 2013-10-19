@@ -56,9 +56,18 @@ class prep_osgml():
 
     def _prepare_feat_elm(self, feat_elm):
 
+        feat_elm = self._set_srs(feat_elm)
         feat_elm = self._add_fid_elm(feat_elm)
         feat_elm = self._add_filename_elm(feat_elm)
         feat_elm = self._add_orientation_degree_elms(feat_elm)
+
+        return feat_elm
+
+    def _set_srs(self, feat_elm):
+
+        srs_elms = feat_elm.xpath('//*[@srsName]')
+        for elm in srs_elms:
+            elm.attrib['srsName'] = 'EPSG:27700'
 
         return feat_elm
 

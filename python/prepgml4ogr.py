@@ -23,8 +23,7 @@
 ''' SAX parser implementation to prepare an Ordnance Survey
     GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.8
     or above.
-    The parser changes the srsName attribute to EPSG:27700 and
-    promotes the fid attribute to a child element.
+    The parser promotes the fid attribute to a child element.
     Output is via stdout and is UTF-8 encoded.
 
     usage: python prepgml4ogr.py file.gml
@@ -75,10 +74,6 @@ class gmlhandler(ContentHandler):
                 name = name.split(':')[1]
             except IndexError:
                 pass
-            # Update all srsName attributes to EPSG:27700
-            # TODO This should be done in prep_osgml
-            if name == 'srsName':
-                value = 'EPSG:27700'
             tmp += ' %s=%s' % (name, saxutils.quoteattr(value))
         tmp += '>'
         if self.recording:
