@@ -299,3 +299,85 @@ class prep_addressbase():
         feat_elm.attrib.pop('id')
 
         return feat_elm
+
+
+class prep_addressbase_premium(prep_addressbase):
+    """
+    Preperation of AddressBase Premium data
+
+    """
+    def __init__(self, inputfile):
+        prep_addressbase.__init__(self, inputfile)
+        self.feat_types = ['BasicLandPropertyUnit', 'Street']
+
+    def prepare_feature(self, feat_str):
+
+        # Parse the xml string into something useful
+        feat_elm = etree.fromstring(feat_str)
+
+        # Manipulate the feature
+        feat_elm = self._prepare_feat_elm(feat_elm)
+
+        # In this instance we are not returning a string representing a single
+        # element as we are unnesting features in the AddressBase Premium GML.
+        # We end up returning a string of several elements which are wrapped in
+        # the output document with either a streetMember or
+        # basicLandPropertyUnitMember element which result it valid XML
+        elms = [etree.tostring(feat_elm,
+                               encoding='UTF-8',
+                               pretty_print=True).decode('utf_8')]
+
+        for elm in self.member_elms:
+            elms.append(
+                etree.tostring(elm, encoding='UTF-8',
+                               pretty_print=True).decode('utf_8'))
+
+        return ''.join(elms)
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = prep_addressbase._prepare_feat_elm(self, feat_elm)
+        feat_elm = self._to_multipoint(feat_elm)
+        self.member_elms = self._extract_child_members(feat_elm)
+
+        return feat_elm
+
+    def _to_multipoint(self, feat_elm):
+        """ Move Street streetStart and streetEnd Point elements into a
+        MultiPoint """
+
+        if feat_elm.tag == 'Street':
+
+            multi_elm = etree.SubElement(etree.SubElement(feat_elm, 'geom'),
+                                         'MultiPoint')
+            point_elms = feat_elm.xpath('//Point')
+            for point_elm in point_elms:
+                etree.SubElement(multi_elm, 'pointMember').append(point_elm)
+
+        return feat_elm
+
+    def _extract_child_members(self, feat_elm):
+        """ Unnest BLPU and Street feature types adding a reference to uprn or
+        usrn as appropriate """
+
+        if feat_elm.tag == 'BasicLandPropertyUnit':
+            uprn = feat_elm.findtext('uprn')
+            child_elms = feat_elm.xpath("""//Classification |
+                                           //LandPropertyIdentifier |
+                                           //ApplicationCrossReference |
+                                           //DeliveryPointAddress |
+                                           //Organisation""")
+            for elm in child_elms:
+                elm.getparent().remove(elm)
+                sub_elm = etree.SubElement(elm, 'uprn')
+                sub_elm.text = uprn
+
+        if feat_elm.tag == 'Street':
+            usrn = feat_elm.findtext('usrn')
+            child_elms = feat_elm.xpath("//StreetDescriptiveIdentifier")
+            for elm in child_elms:
+                elm.getparent().remove(elm)
+                sub_elm = etree.SubElement(elm, 'usrn')
+                sub_elm.text = usrn
+
+        return child_elms
