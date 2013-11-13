@@ -5,13 +5,13 @@ Author: Matt Walker, Astun Technology Ltd.
 
 Contact: support [at] astuntechnology.com
 
-A simple GML loader written in Python that makes use of [OGR 1.8](http://www.gdal.org/ogr/). Source data can be in GML or KML format (including compressed files in GZ or ZIP format) and can be output to any of the [formats supported by OGR](http://www.gdal.org/ogr/ogr_formats.html). The source data can be prepared using a simple Python to both make it suitable for loading with OGR (useful with complex feature types) or to add value by deriving attributes.
+A simple GML loader written in Python that makes use of [OGR 1.9](http://www.gdal.org/ogr/). Source data can be in GML or KML format (including compressed files in GZ or ZIP format) and can be output to any of the [formats supported by OGR](http://www.gdal.org/ogr/ogr_formats.html). The source data can be prepared using a simple Python to both make it suitable for loading with OGR (useful with complex feature types) or to add value by deriving attributes.
 
 The loader was originally written to load Ordnance Survey OS MasterMap Topographic Layer data in GML/GZ format but has since been used to load other GML and KML data.
 
 ## Dependencies ##
 
-* OGR 1.8
+* OGR 1.9
   * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suite of tools for translating and manipulation geospatial data.
   * *Windows* users can use [OSGeo4W](http://trac.osgeo.org/osgeo4w/) (choose Advanced install and select GDAL under the Commandline_Utilities section). You can then run the loader using the OSGeo4W Shell which will have OGR available.
   * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).

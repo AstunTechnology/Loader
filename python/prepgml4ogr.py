@@ -21,7 +21,7 @@
 ## THE SOFTWARE.
 
 ''' SAX parser implementation to prepare an Ordnance Survey
-    GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.8
+    GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.9
     or above.
     The parser promotes the fid attribute to a child element.
     Output is via stdout and is UTF-8 encoded.

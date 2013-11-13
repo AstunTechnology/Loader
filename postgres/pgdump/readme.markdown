@@ -17,7 +17,7 @@ A bash shell script might look like this:
 # (Re)create the tables in Postgres
 psql -d mapbase -U postgres -f create-tables.sql
 
-export GDAL_DATA=/usr/share/gdal/1.8
+export GDAL_DATA=/usr/share/gdal/1.9
 
 # Run the OSMM loader
 cd ../../python
@@ -35,5 +35,7 @@ psql -d mapbase -U postgres -f create-indexes.sql
 
 ## Dependencies ##
 
+* OGR 1.9
+    * OGR 1.9 is recommended to avoid the known issue with OGR 1.8 related to loading single features into a geometry column of type MULTI
 * OGR 1.8.1
-  * If you want to avoid (no fatal) error messages when loading the SQL dump files then you need GDAL >= 1.8.1 in order to use the create_schema layer creation option (-lco create_schema=off).
+  * If you intend to use OGR 1.8 and want to avoid (no fatal) error messages when loading the SQL dump files then you need GDAL >= 1.8.1 in order to use the create_schema layer creation option (-lco create_schema=off).
