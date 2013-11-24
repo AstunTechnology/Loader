@@ -248,6 +248,7 @@
   <GMLFeatureClass>
     <Name>BoundaryLine</Name>
     <ElementPath>BoundaryLine</ElementPath>
+    <GeometryType>5</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
       <Name>fid</Name>
