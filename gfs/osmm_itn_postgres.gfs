@@ -154,6 +154,7 @@
   <GMLFeatureClass>
     <Name>RoadRouteInformation</Name>
     <ElementPath>RoadRouteInformation</ElementPath>
+    <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
       <Name>version</Name>

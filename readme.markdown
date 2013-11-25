@@ -66,3 +66,5 @@ Some configuration examples are available on the [project wiki](https://github.c
 * OS MasterMap ITN
     * Test load on national cover
     * PostgreSQL scripts to join it all up
+    * Add ferryterminal, roadpartiallinkinformation, roadpartialrouteinformation types
+
