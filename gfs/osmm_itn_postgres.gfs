@@ -53,6 +53,7 @@
   <GMLFeatureClass>
     <Name>FerryLink</Name>
     <ElementPath>FerryLink</ElementPath>
+    <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
@@ -391,6 +392,7 @@
   <GMLFeatureClass>
     <Name>Road</Name>
     <ElementPath>Road</ElementPath>
+    <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
@@ -501,6 +503,7 @@
   <GMLFeatureClass>
     <Name>RoadNodeInformation</Name>
     <ElementPath>RoadNodeInformation</ElementPath>
+    <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
