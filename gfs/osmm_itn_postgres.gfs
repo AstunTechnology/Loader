@@ -499,6 +499,16 @@
       <ElementPath>length</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>filename</Name>
+      <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadNodeInformation</Name>
@@ -539,6 +549,16 @@
       <ElementPath>environmentQualifier|classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>filename</Name>
+      <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadNode</Name>
@@ -573,6 +593,16 @@
     <PropertyDefn>
       <Name>descriptiveGroup</Name>
       <ElementPath>descriptiveGroup</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>filename</Name>
+      <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
