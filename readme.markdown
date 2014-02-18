@@ -1,7 +1,7 @@
 # A simple loader for geographic data in GML and KML #
 (that needs some preparation before loading via ogr2ogr)
 
-Author: Matt Walker, Astun Technology Ltd.
+Author: Astun Technology Ltd.
 
 Contact: support [at] astuntechnology.com
 
@@ -13,52 +13,47 @@ The loader was originally written to load Ordnance Survey OS MasterMap Topograph
 
 * OGR 1.9
   * OGR is part of the [GDAL](http://www.gdal.org/ogr/) suite of tools for translating and manipulation geospatial data.
-  * *Windows* users can use [OSGeo4W](http://trac.osgeo.org/osgeo4w/) (choose Advanced install and select GDAL under the Commandline_Utilities section). You can then run the loader using the OSGeo4W Shell which will have OGR available.
-  * *Linux* users see [GDAL Downloads](http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries).
 
 * Python 2.6+ or 3
-  * Python 2.6 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.6 or above. *Windows* users can download Python from the [Python Downloads page](http://www.python.org/download/releases/).
-  * Python lxml module for parsing and manipulating XML, Windows users can download from the [lxml project page](http://pypi.python.org/pypi/lxml/2.3/), *Linux* users can usually install via their package manager (Ubuntu users would use: `sudo apt-get install python-lxml`)
+  * Python 2.6 or above (including 3) is required. Most modern *Linux* operating systems will already have 2.6 or above.
+  * Python lxml module for parsing and manipulating XML
 
-Further install details are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
+__Installation details are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)__
 
 ## Usage ##
 
-First configure the loader by editing 'loader.config' specifying:
+First configure Loader by editing `loader.config` specifying:
 
 ### Basic configuration ###
 
-* 'src_dir'
-  * The directory containing your source files.  All supported files in the specified directory and it's decendents will be loaded.
-* 'out_dir'
+* `src_dir`
+  * The directory containing your source files or an individual file. All supported files in the specified directory and it's descendants will be loaded.
+* `out_dir`
   * The directory used to store the translated data if writing to a file based format such as ESRI Shape, MapInfo TAB etc.
-* 'tmp_dir'
+* `tmp_dir`
   * The directory used to store temporary working files during loading.
-* 'ogr_cmd'
+* `ogr_cmd`
   * The ogr2ogr command that will be used to load the data. Here you can specify the destination format and any associated settings (for example database connection details if you are writing to PostGIS).
-* 'prep_cmd'
+* `prep_cmd`
   * The command used to prepare the source data so it is suitable for loading with OGR, choose one that is suitable for your source data such as prep_osgml.prep_osmm_topo for OS MasterMap Topo.
-* 'gfs_file'
-  * OGR .gfs file used to define the feature attributes and geometry type of the feautes read from the GML again choose a suitable gfs file for your source data such as ../gfs/osmm_topo_postgres.gfs for loading OS MasterMap Topo in to PostgreSQL.
+* `post_cmd`
+ * An optional command to be run once OGR has created it's output. Called once per file, useful for loading SQL dump files etc.
+* `gfs_file`
+  * OGR .gfs file used to define the feature attributes and geometry type of the features read from the GML again choose a suitable gfs file for your source data such as ../gfs/osmm_topo_postgres.gfs for loading OS MasterMap Topo in to PostgreSQL.
 
-Note: Environment variables can be used with any of the options by using a token of the form: $HOME, ${HOME} or %TEMP% (Windows only)
+See `python/loader.config` for further explanation and details of available tokens. Environment variables can be used with any of the options by using a token of the form: $HOME, ${HOME} or %TEMP% (Windows only)
 
-Then run from the commandline:
+Then run from the command-line:
 
-'python loader.py loader.config'
+    python loader.py loader.config
 
-Additional arguments can be passed to override the values in the config file (useful when running more than one instance of the loader) for example to specify a different source directory ('src_dir'):
+Additional arguments can be passed to override the values in the config file (useful when running more than one instance of the loader) for example to specify a different source directory (`src_dir`):
 
-'python loader.py config_file src_dir=./data/tq'
+    python loader.py config_file src_dir=./data/tq
 
-Some configuration examples are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)
+__Some configuration examples are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)__
 
 ## To-do ##
-
-* Documentation
-  * Use of environment variables in the config file
-  * Document the available tokens that can be used in the ogr_cmd, post_cmd
-  * Using an alternative Python interpretor with OSGeo4W by specifying PYTHONHOME and the full path to the interpretor on Windows
 
 * loader.py
     * Add exception and message when source data is not found
@@ -67,4 +62,3 @@ Some configuration examples are available on the [project wiki](https://github.c
     * Test load on national cover
     * PostgreSQL scripts to join it all up
     * Add ferryterminal, roadpartiallinkinformation, roadpartialrouteinformation types
-
