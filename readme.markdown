@@ -49,11 +49,17 @@ Then run from the command-line:
 
 Additional arguments can be passed to override the values in the config file (useful when running more than one instance of the loader) for example to specify a different source directory (`src_dir`):
 
-    python loader.py config_file src_dir=./data/tq
+    python loader.py loader.config src_dir=./data/tq
 
 __Some configuration examples are available on the [project wiki](https://github.com/AstunTechnology/Loader/wiki)__
 
 ## To-do ##
+
+* Data
+    * OS OSMM Water Layer
+        * Improve support for elements that require an external code list by fetching the code list when it's available
+        * Support for nil attributes such as: `<net:inNetwork nilReason="missing" xsi:nil="true" />`, `<hy-n:length xsi:nil="true" uom="m" nilReason="missing" />, `<water:level xsi:nil="true" nilReason="missing" />`
+        * Add example to wiki
 
 * loader.py
     * Add exception and message when source data is not found
