@@ -56,15 +56,21 @@ __Some configuration examples are available on the [project wiki](https://github
 ## To-do ##
 
 * Data
-    * OS OSMM Water Layer
+    * OS OSMM Water Network Layer
         * Improve support for elements that require an external code list by fetching the code list when it's available
         * Support for nil attributes such as: `<net:inNetwork nilReason="missing" xsi:nil="true" />`, `<hy-n:length xsi:nil="true" uom="m" nilReason="missing" />, `<water:level xsi:nil="true" nilReason="missing" />`
         * Add example to wiki
 
 * loader.py
     * Add exception and message when source data is not found
+    * Use standard logging instead of print
 
 * OS MasterMap ITN
     * Test load on national cover
     * PostgreSQL scripts to join it all up
     * Add ferryterminal, roadpartiallinkinformation, roadpartialrouteinformation types
+
+* Potential improvements due to changes in OGR
+    * Use `--config GML_GFS_TEMPLATE path/to/file.gfs` to specify template instead of copying template file for each source file (requires GDAL 1.9.0)
+    * Use `--config GML_READ_MODE SEQUENTIAL_LAYERS` with GML files that include multiple feature types that appear sequentially to avoid the GML being scanned multiple times (requires GDAL 1.9.0)
+    * Make use of ability to use GML attributes as feature attributes using the element@attribute syntax in the GFS file (and remove relevant prep logic that creates an element to hold the attribute values) (requires GDAL 1.11.0)
