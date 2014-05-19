@@ -100,11 +100,7 @@ class Loader:
         # Check that a valid gfs is file specified
         if not os.path.isfile(self.gfs_file):
             self.gfs_file = None
-            print("No valid gfs file found, output schema and geometry types will be determed dynamically by OGR")
-        # Check for the existence of the GDAL_DATA environment
-        # variable required by ogr2ogr
-        if not 'GDAL_DATA' in os.environ:
-            raise ConfigError('Please ensure that the GDAL_DATA environment variable is set and try again')
+            print("No valid gfs file found, output schema and geometry types will be determined dynamically by OGR")
         # Create a temp directory as a child to the temp
         # directory specified to hold all of our working
         # files and to make cleaning up simple
