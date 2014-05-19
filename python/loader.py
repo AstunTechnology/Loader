@@ -28,10 +28,10 @@ from __future__ import with_statement
 import sys
 import os
 import shutil
-import datetime
 import shlex
 import subprocess
 from string import Template
+import tempfile
 
 
 class LoaderError(Exception):
@@ -108,10 +108,8 @@ class Loader:
         # Create a temp directory as a child to the temp
         # directory specified to hold all of our working
         # files and to make cleaning up simple
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.tmp_dir = os.path.join(self.tmp_dir, 'loader_' + timestamp)
         try:
-            os.mkdir(self.tmp_dir)
+            self.tmp_dir = tempfile.mkdtemp(dir=self.tmp_dir)
         except (OSError) as ex:
             raise CreateTempDirError(ex.errno, ex.strerror, self.tmp_dir)
 
