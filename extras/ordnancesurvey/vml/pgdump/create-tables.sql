@@ -1,3 +1,6 @@
+-- Drops any existing VML related tables and creates fresh tables ready to
+-- receive data.
+
 DROP TABLE IF EXISTS "vml"."text" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'text' AND f_table_schema = 'vml';
 
