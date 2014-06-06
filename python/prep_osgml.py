@@ -120,6 +120,46 @@ class prep_vml(prep_osgml):
         ]
 
 
+class prep_vmd(prep_osgml):
+
+    def __init__(self, inputfile):
+        prep_osgml.__init__(self, inputfile)
+        self.feat_types = [
+            'AdministrativeBoundary',
+            'Airport',
+            'Building',
+            'ElectricityTransmissionLine',
+            'Foreshore',
+            'Glasshouse',
+            'HeritageSite',
+            'Land',
+            'NamedPlace',
+            'Woodland',
+            'Ornament',
+            'PublicAmenity',
+            'RailwayStation',
+            'RailwayTrack',
+            'RailwayTunnel',
+            'Road',
+            'MotorwayJunction',
+            'RoadTunnel',
+            'Roundabout',
+            'SpotHeight',
+            'SurfaceWater_Area',
+            'SurfaceWater_Line',
+            'TidalBoundary',
+            'TidalWater'
+        ]
+
+    def _add_fid_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "fid")
+        elm.text = feat_elm.get('id')
+
+        return feat_elm
+
+
 class prep_osmm_topo(prep_osgml):
     """
     Preperation class for OS MasterMap features which in addition to the work
