@@ -315,8 +315,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>dtfNumber</Name>
-      <ElementPath>dtfNumber</ElementPath>
+      <Name>dftNumber</Name>
+      <ElementPath>dftNumber</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
