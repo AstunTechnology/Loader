@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 """
 A collection of classes used to manipulate Ordnance Survey GB GML data,
 used with prepgml4ogr.py.
@@ -207,7 +205,7 @@ class prep_osmm_topo_qgis(prep_osmm_topo):
 
         # AC - the possible text placement positions used by QGIS
         self.anchorPosition = ('Bottom Left', 'Left', 'Top Left', 'Bottom',
-                                'Over', 'Top',  'Bottom Right', 'Right', 'Top Right')
+                               'Over', 'Top', 'Bottom Right', 'Right', 'Top Right')
 
     def _prepare_feat_elm(self, feat_elm):
 
