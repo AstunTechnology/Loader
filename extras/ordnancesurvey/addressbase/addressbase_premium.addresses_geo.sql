@@ -74,7 +74,6 @@ COMMENT ON VIEW addressbase_premium.addresses_geo
 
      Author: Mike Saunt, Astun Technology Ltd
      Version 0.1 - 15th November 2013
-     © Copyright 2013
 
     https://github.com/AstunTechnology/Loader
 ';
