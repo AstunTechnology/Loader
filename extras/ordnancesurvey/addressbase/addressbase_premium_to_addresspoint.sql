@@ -1,6 +1,5 @@
 -- View: addressbase_premium.address_point
 
-DROP VIEW addressbase_premium.address_point;
 
 CREATE OR REPLACE VIEW addressbase_premium.address_point AS 
  SELECT deliverypointaddress.rmudprn AS OSAPR,  
@@ -26,15 +25,11 @@ CREATE OR REPLACE VIEW addressbase_premium.address_point AS
    FROM addressbase_premium.deliverypointaddress deliverypointaddress
    LEFT JOIN addressbase_premium.basiclandpropertyunit blpu ON deliverypointaddress.uprn = blpu.uprn;
 
-ALTER TABLE addressbase_premium.address_point
-  OWNER TO postgres;
-GRANT ALL ON TABLE addressbase_premium.address_point TO postgres;
-COMMENT ON VIEW addressbase_premium.address_point
   IS 'Address Base Premium formated to look similar to Address Point!
 
-     Author: Andy Berry, Wrexham County Borough Council
-	 www.dragontail.co.uk
-     Version 1.0 17-06-2014
-     Released under the GNU GENERAL PUBLIC LICENSE
+     Author: Andy Berry
+     www.dragontail.co.uk
+     Version 1.1 30-06-2014
+
 ';
 
