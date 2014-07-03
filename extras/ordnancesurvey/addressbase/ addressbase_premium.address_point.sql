@@ -29,7 +29,7 @@ COMMENT ON VIEW addressbase_premium.address_point
 
      Author: Andy Berry
      www.dragontail.co.uk
-     Version 1.1 30-06-2014
+     Version 1.2 03-07-2014
 
 ';
 
