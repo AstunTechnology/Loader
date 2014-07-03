@@ -24,7 +24,7 @@ CREATE OR REPLACE VIEW addressbase_premium.address_point AS
 		replace(deliverypointaddress.processdate, '-', '') AS processdate
    FROM addressbase_premium.deliverypointaddress deliverypointaddress
    LEFT JOIN addressbase_premium.basiclandpropertyunit blpu ON deliverypointaddress.uprn = blpu.uprn;
-
+COMMENT ON VIEW addressbase_premium.address_point
   IS 'Address Base Premium formated to look similar to Address Point!
 
      Author: Andy Berry
