@@ -388,6 +388,7 @@ class prep_addressbase_premium(prep_addressbase):
                                            //Organisation""")
             for elm in child_elms:
                 elm.getparent().remove(elm)
+                elm = self._add_lang_elm(elm)
                 sub_elm = etree.SubElement(elm, 'uprn')
                 sub_elm.text = uprn
 
@@ -396,10 +397,23 @@ class prep_addressbase_premium(prep_addressbase):
             child_elms = feat_elm.xpath("//StreetDescriptiveIdentifier")
             for elm in child_elms:
                 elm.getparent().remove(elm)
+                elm = self._add_lang_elm(elm)
                 sub_elm = etree.SubElement(elm, 'usrn')
                 sub_elm.text = usrn
 
         return child_elms
+
+    def _add_lang_elm(self, feat_elm):
+
+        if feat_elm.tag in ['StreetDescriptiveIdentifier', 'LandPropertyIdentifier']:
+            elm = etree.SubElement(feat_elm, "lang")
+            try:
+                lang = feat_elm.xpath('.//@lang')[0]
+            except IndexError:
+                lang = 'en'
+            elm.text = lang
+
+        return feat_elm
 
 
 class prep_osmm_water():
