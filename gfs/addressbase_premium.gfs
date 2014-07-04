@@ -119,6 +119,7 @@
             <Name>schemeVersion</Name>
             <ElementPath>schemeVersion</ElementPath>
             <Type>String</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>startDate</Name>
