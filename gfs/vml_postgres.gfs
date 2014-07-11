@@ -49,6 +49,16 @@
       <ElementPath>textString</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>tile</Name>
+      <ElementPath>tile</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>creationDate</Name>
+      <ElementPath>creationDate</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>VectorMapPoint</Name>
@@ -80,6 +90,16 @@
       <ElementPath>orientDeg</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>tile</Name>
+      <ElementPath>tile</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>creationDate</Name>
+      <ElementPath>creationDate</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Line</Name>
@@ -99,6 +119,16 @@
     <PropertyDefn>
       <Name>featureDescription</Name>
       <ElementPath>featureDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>tile</Name>
+      <ElementPath>tile</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>creationDate</Name>
+      <ElementPath>creationDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -132,6 +162,16 @@
       <ElementPath>roadName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>tile</Name>
+      <ElementPath>tile</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>creationDate</Name>
+      <ElementPath>creationDate</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Area</Name>
@@ -151,6 +191,16 @@
     <PropertyDefn>
       <Name>featureDescription</Name>
       <ElementPath>featureDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>tile</Name>
+      <ElementPath>tile</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>creationDate</Name>
+      <ElementPath>creationDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
