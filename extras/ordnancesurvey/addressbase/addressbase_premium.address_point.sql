@@ -15,7 +15,7 @@ CREATE OR REPLACE VIEW addressbase_premium.address_point AS
 		deliverypointaddress.dependentlocality AS dependentlocality,
 		deliverypointaddress.doubledependentlocality AS doubledependentlocality,
 		NULL AS county,
-		substr(deliverypointaddress.postcode,1,4)||right(deliverypointaddress.postcode,3) AS postcode,
+		replace(deliverypointaddress.postcode, ' ','') AS postcode,
 		round(st_x(blpu.wkb_geometry)*10) as X,
 		round(st_y(blpu.wkb_geometry)*10) as Y,
 		NULL AS source_flag,
