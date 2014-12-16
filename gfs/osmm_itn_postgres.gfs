@@ -153,6 +153,62 @@
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
+    <Name>FerryTerminal</Name>
+    <ElementPath>FerryTerminal</ElementPath>
+    <GeometryType>100</GeometryType>
+    <SRSName>EPSG:27700</SRSName>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>version</Name>
+      <ElementPath>version</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>versionDate</Name>
+      <ElementPath>versionDate</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>changeDate</Name>
+      <ElementPath>changeHistory|changeDate</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>reasonForChange</Name>
+      <ElementPath>changeHistory|reasonForChange</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>descriptiveGroup</Name>
+      <ElementPath>descriptiveGroup</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>descriptiveTerm</Name>
+      <ElementPath>descriptiveTerm</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>referenceToNetwork_ref</Name>
+      <ElementPath>referenceToNetwork|referenceToNetwork_ref</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>filename</Name>
+      <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+  </GMLFeatureClass>
+  <GMLFeatureClass>
     <Name>RoadRouteInformation</Name>
     <ElementPath>RoadRouteInformation</ElementPath>
     <GeometryType>1</GeometryType>
