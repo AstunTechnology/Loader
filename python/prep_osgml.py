@@ -280,14 +280,14 @@ class prep_osmm_itn(prep_osgml):
         prep_osgml.__init__(self, filename)
 
         self.feat_types = [
+            'Road',
+            'RoadLink',
+            'RoadNode',
             'FerryLink',
             'FerryNode',
             'FerryTerminal',
             'InformationPoint',
-            'Road',
-            'RoadNode',
             'RoadNodeInformation',
-            'RoadLink',
             'RoadLinkInformation',
             'RoadRouteInformation'
         ]
