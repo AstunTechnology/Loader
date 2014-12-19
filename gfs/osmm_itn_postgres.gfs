@@ -5,6 +5,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -12,11 +17,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -40,8 +40,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -55,6 +55,11 @@
     <ElementPath>FerryLink</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -62,11 +67,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -85,19 +85,19 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>directedNode_ref</Name>
-      <ElementPath>directedNode|directedNode_ref</ElementPath>
+      <Name>directedNode_href</Name>
+      <ElementPath>directedNode|directedNode_href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>directedNode_orientation</Name>
       <ElementPath>
       directedNode|directedNode_orientation</ElementPath>
-      <Type>IntegerList</Type>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -112,6 +112,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -119,11 +124,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -142,8 +142,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -173,11 +173,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>changeDate</Name>
       <ElementPath>changeHistory|changeDate</ElementPath>
       <Type>StringList</Type>
@@ -195,12 +190,17 @@
     <PropertyDefn>
       <Name>descriptiveTerm</Name>
       <ElementPath>descriptiveTerm</ElementPath>
-      <Type>String</Type>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>referenceToNetwork_ref</Name>
-      <ElementPath>referenceToNetwork|referenceToNetwork_ref</ElementPath>
+      <Name>referenceToNetwork_href</Name>
+      <ElementPath>referenceToNetwork|referenceToNetwork_href</ElementPath>
       <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
+      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>filename</Name>
@@ -214,6 +214,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -221,11 +226,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -244,36 +244,65 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
-      <ElementPath>
-      environmentQualifier|classification</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>directedLink_ref</Name>
-      <ElementPath>directedLink|directedLink_ref</ElementPath>
+      <Name>directedLink_href</Name>
+      <ElementPath>directedLink|directedLink_href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>directedLink_orientation</Name>
       <ElementPath>
       directedLink|directedLink_orientation</ElementPath>
-      <Type>IntegerList</Type>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
+      <Name>dateTimeQualifier_summary</Name>
+      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>type</Name>
+      <Name>vehicleQualifier_type</Name>
       <ElementPath>vehicleQualifier|type</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>instruction</Name>
+      <Name>vehicleQualifier_type_exceptFor</Name>
+      <ElementPath>vehicleQualifier|type_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use</Name>
+      <ElementPath>vehicleQualifier|use</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use_exceptFor</Name>
+      <ElementPath>vehicleQualifier|use_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxHeight</Name>
+      <ElementPath>vehicleQualifier|maxHeight</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_feet</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|feet</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_inches</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|inches</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_classification</Name>
+      <ElementPath>environmentQualifier|classification</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_instruction</Name>
       <ElementPath>environmentQualifier|instruction</ElementPath>
-      <Type>String</Type>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>distanceFromStart</Name>
@@ -281,56 +310,9 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>use</Name>
-      <ElementPath>vehicleQualifier|use</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>day</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|day</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>startTime</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>endTime</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>load</Name>
-      <ElementPath>vehicleQualifier|load</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namedTime</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|namedTime</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>startDate</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedDate|startDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>endDate</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedDate|endDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namedDate</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|namedDate</ElementPath>
-      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>filename</Name>
@@ -344,6 +326,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -351,11 +338,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -374,16 +356,60 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>referenceToRoadLink_href</Name>
       <ElementPath>
-      environmentQualifier|classification</ElementPath>
+      referenceToRoadLink|referenceToRoadLink_href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>referenceToRoadLink_ref</Name>
-      <ElementPath>
-      referenceToRoadLink|referenceToRoadLink_ref</ElementPath>
-      <Type>String</Type>
+      <Name>dateTimeQualifier_summary</Name>
+      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_type</Name>
+      <ElementPath>vehicleQualifier|type</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_type_exceptFor</Name>
+      <ElementPath>vehicleQualifier|type_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use</Name>
+      <ElementPath>vehicleQualifier|use</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use_exceptFor</Name>
+      <ElementPath>vehicleQualifier|use_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxHeight</Name>
+      <ElementPath>vehicleQualifier|maxHeight</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_feet</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|feet</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_inches</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|inches</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_classification</Name>
+      <ElementPath>environmentQualifier|classification</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_instruction</Name>
+      <ElementPath>environmentQualifier|instruction</ElementPath>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>distanceFromStart</Name>
@@ -391,52 +417,8 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>feet</Name>
-      <ElementPath>
-      vehicleQualifier|maxCompositeHeight|feet</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>inches</Name>
-      <ElementPath>
-      vehicleQualifier|maxCompositeHeight|inches</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>maxHeight</Name>
-      <ElementPath>vehicleQualifier|maxHeight</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>type</Name>
-      <ElementPath>vehicleQualifier|type</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>use</Name>
-      <ElementPath>vehicleQualifier|use</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>instruction</Name>
-      <ElementPath>environmentQualifier|instruction</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>startTime</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedTime|startTime</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>endTime</Name>
-      <ElementPath>
-      dateTimeQualifier|specifiedPeriod|specifiedTime|endTime</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -450,6 +432,11 @@
     <ElementPath>Road</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -457,11 +444,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -480,23 +462,23 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
+      <Name>descriptiveTerm</Name>
+      <ElementPath>descriptiveTerm</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>roadName</Name>
       <ElementPath>roadName</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkMember_ref</Name>
-      <ElementPath>networkMember|networkMember_ref</ElementPath>
+      <Name>networkMember_href</Name>
+      <ElementPath>networkMember|networkMember_href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerm</Name>
-      <ElementPath>descriptiveTerm</ElementPath>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -511,6 +493,11 @@
     <GeometryType>2</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -518,11 +505,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -556,8 +538,29 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>directedNode_href</Name>
+      <ElementPath>directedNode|directedNode_href</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>directedNode_orientation</Name>
+      <ElementPath>
+      directedNode|directedNode_orientation</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>directedNode_gradeSeparation</Name>
+      <ElementPath>directedNode|directedNode_gradeSeparation</ElementPath>
+      <Type>IntegerList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>referenceToTopographicArea_href</Name>
+      <ElementPath>referenceToTopographicArea|referenceToTopographicArea_href</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -571,6 +574,11 @@
     <ElementPath>RoadNodeInformation</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -578,11 +586,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -601,13 +604,70 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
-      <ElementPath>environmentQualifier|classification</ElementPath>
+      <Name>referenceToRoadNode_href</Name>
+      <ElementPath>
+      referenceToRoadNode|referenceToRoadNode_href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>referenceToRoadNode_gradeSeparation</Name>
+      <ElementPath>
+      referenceToRoadNode|referenceToRoadNode_gradeSeparation</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>dateTimeQualifier_summary</Name>
+      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_type</Name>
+      <ElementPath>vehicleQualifier|type</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_type_exceptFor</Name>
+      <ElementPath>vehicleQualifier|type_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use</Name>
+      <ElementPath>vehicleQualifier|use</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_use_exceptFor</Name>
+      <ElementPath>vehicleQualifier|use_exceptFor</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxHeight</Name>
+      <ElementPath>vehicleQualifier|maxHeight</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_feet</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|feet</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>vehicleQualifier_maxCompositeHeight_inches</Name>
+      <ElementPath>vehicleQualifier|maxCompositeHeight|inches</ElementPath>
+      <Type>RealList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_classification</Name>
+      <ElementPath>environmentQualifier|classification</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>environmentQualifier_instruction</Name>
+      <ElementPath>environmentQualifier|instruction</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -622,6 +682,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>version</Name>
       <ElementPath>version</ElementPath>
       <Type>Integer</Type>
@@ -629,11 +694,6 @@
     <PropertyDefn>
       <Name>versionDate</Name>
       <ElementPath>versionDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>theme</Name>
-      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -652,8 +712,13 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
+      <Name>referenceToTopographicArea_href</Name>
+      <ElementPath>referenceToTopographicArea|referenceToTopographicArea_href</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>theme</Name>
+      <ElementPath>theme</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>

@@ -295,24 +295,41 @@ class prep_osmm_itn(prep_osgml):
     def _prepare_feat_elm(self, feat_elm):
 
         feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
-        feat_elm = self._expose_links(feat_elm)
+        feat_elm = self._expose_attributes(feat_elm)
+        feat_elm = self._add_datetime_summary(feat_elm)
 
         return feat_elm
 
-    def _expose_links(self, feat_elm):
+    def _expose_attributes(self, feat_elm):
 
-        link_list = feat_elm.xpath('//networkMember | //directedLink | //directedNode | //referenceToRoadLink | //referenceToRoadNode | //referenceToTopographicArea | //referenceToNetwork')
-        for elm in link_list:
+        elm_list = feat_elm.xpath("""//networkMember |
+                                    //directedLink |
+                                    //directedNode |
+                                    //referenceToRoadLink |
+                                    //referenceToRoadNode |
+                                    //referenceToTopographicArea |
+                                    //referenceToNetwork |
+                                    //vehicleQualifier/type |
+                                    //vehicleQualifier/use""")
+        for elm in elm_list:
             for name in elm.attrib:
                 value = elm.get(name)
-                if name == 'href':
-                    name = '%s_%s' % (elm.tag, 'ref')
-                    value = value[1:]
-                elif name == 'orientation':
-                    name = '%s_%s' % (elm.tag, name)
-                    value = '1' if value == '+' else '0'
-                sub_elm = etree.SubElement(elm, name)
+                name = '%s_%s' % (elm.tag, name)
+                sub_elm = etree.SubElement(elm if not elm.text else elm.getparent(), name)
                 sub_elm.text = value
+
+        return feat_elm
+
+    def _add_datetime_summary(self, feat_elm):
+
+        def elm_str(elm):
+            return elm.tag + ((': ' + elm.text) if elm.text else '')
+
+        for elm in feat_elm.xpath('//dateTimeQualifier'):
+            # Create a basic summary by listing tag names and values
+            value = ', '.join(map(elm_str, elm.xpath(".//*")))
+            sub_elm = etree.SubElement(elm, 'summary')
+            sub_elm.text = value
 
         return feat_elm
 
