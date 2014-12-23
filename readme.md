@@ -41,7 +41,7 @@ First configure Loader by editing `loader.config` specifying:
 * `gfs_file`
   * OGR .gfs file used to define the feature attributes and geometry type of the features read from the GML again choose a suitable gfs file for your source data such as ../gfs/osmm_topo_postgres.gfs for loading OS MasterMap Topo into PostgreSQL.
 
-See `python/loader.config` for further explanation and details of available tokens. Environment variables can be used with any of the options by using a token of the form: $HOME, ${HOME} or %TEMP% (Windows only)
+See `python/loader.config` for further explanation and details of available tokens. Environment variables can be used with any of the options by using a token of the form: `$HOME`, `${HOME}` or `%TEMP%` (Windows only)
 
 Then run from the command-line:
 
@@ -63,7 +63,7 @@ __Some configuration examples are available on the [project wiki](https://github
         * Add example to wiki
 
     * OS MasterMap ITN
-        * Create lookups (either as views as with [`road_roadlink`](.extras/ordnancesurvey/osmm/itn/views.sql) or tables):
+        * Create lookups (either as views as with [`road_roadlink`](extras/ordnancesurvey/osmm/itn/views.sql) or tables):
             * `roadrouteinformation_roadlink`
                 * inc. `order` of directed link in array
             * `ferrylink_ferrynode`
