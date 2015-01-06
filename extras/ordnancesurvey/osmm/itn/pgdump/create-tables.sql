@@ -1,6 +1,6 @@
 -- Drops any existing OSMM ITN tables and creates fresh tables ready to receive data
 
-DROP TABLE "osmm_itn"."road" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."road" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'road' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."road" (OGC_FID SERIAL, CONSTRAINT "road_pk" PRIMARY KEY (OGC_FID));
@@ -16,7 +16,7 @@ ALTER TABLE "osmm_itn"."road" ADD COLUMN "networkmember_href" varchar[];
 ALTER TABLE "osmm_itn"."road" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."road" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."roadlink" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."roadlink" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'roadlink' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."roadlink" (OGC_FID SERIAL, CONSTRAINT "roadlink_pk" PRIMARY KEY (OGC_FID));
@@ -37,7 +37,7 @@ ALTER TABLE "osmm_itn"."roadlink" ADD COLUMN "referencetotopographicarea_href" v
 ALTER TABLE "osmm_itn"."roadlink" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."roadlink" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."roadnode" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."roadnode" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'roadnode' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."roadnode" ( OGC_FID SERIAL, CONSTRAINT "roadnode_pk" PRIMARY KEY (OGC_FID));
@@ -52,7 +52,7 @@ ALTER TABLE "osmm_itn"."roadnode" ADD COLUMN "referencetotopographicarea_href" V
 ALTER TABLE "osmm_itn"."roadnode" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."roadnode" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."ferrylink" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."ferrylink" CASCADE;
 
 CREATE TABLE "osmm_itn"."ferrylink" (OGC_FID SERIAL, CONSTRAINT "ferrylink_pk" PRIMARY KEY (OGC_FID));
 ALTER TABLE "osmm_itn"."ferrylink" ADD COLUMN "fid" VARCHAR;
@@ -66,7 +66,7 @@ ALTER TABLE "osmm_itn"."ferrylink" ADD COLUMN "directednode_orientation" varchar
 ALTER TABLE "osmm_itn"."ferrylink" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."ferrylink" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."ferrynode" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."ferrynode" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'ferrynode' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."ferrynode" (OGC_FID SERIAL, CONSTRAINT "ferrynode_pk" PRIMARY KEY (OGC_FID));
@@ -80,7 +80,8 @@ ALTER TABLE "osmm_itn"."ferrynode" ADD COLUMN "descriptivegroup" VARCHAR;
 ALTER TABLE "osmm_itn"."ferrynode" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."ferrynode" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."ferryterminal" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."ferryterminal" CASCADE;
+
 CREATE TABLE "osmm_itn"."ferryterminal" (OGC_FID SERIAL, CONSTRAINT "ferryterminal_pk" PRIMARY KEY (OGC_FID));
 ALTER TABLE "osmm_itn"."ferryterminal" ADD COLUMN "fid" VARCHAR;
 ALTER TABLE "osmm_itn"."ferryterminal" ADD COLUMN "version" INTEGER;
@@ -93,7 +94,7 @@ ALTER TABLE "osmm_itn"."ferryterminal" ADD COLUMN "referencetonetwork_href" varc
 ALTER TABLE "osmm_itn"."ferryterminal" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."ferryterminal" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."informationpoint" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."informationpoint" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'informationpoint' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."informationpoint" (OGC_FID SERIAL, CONSTRAINT "informationpoint_pk" PRIMARY KEY (OGC_FID));
@@ -108,7 +109,8 @@ ALTER TABLE "osmm_itn"."informationpoint" ADD COLUMN "junctionname" VARCHAR;
 ALTER TABLE "osmm_itn"."informationpoint" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."informationpoint" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."roadnodeinformation" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."roadnodeinformation" CASCADE;
+
 CREATE TABLE "osmm_itn"."roadnodeinformation" (OGC_FID SERIAL, CONSTRAINT "roadnodeinformation_pk" PRIMARY KEY (OGC_FID));
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "fid" VARCHAR;
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "version" INTEGER;
@@ -118,7 +120,7 @@ ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "reasonforchange" VARCHA
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "descriptivegroup" VARCHAR;
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "referencetoroadnode_href" VARCHAR;
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "referencetoroadnode_gradeseparation" INTEGER;
-ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "datetimequalifier_summary" varchar[];
+ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "datetimequalifier" json;
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "vehiclequalifier_type" varchar[];
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "vehiclequalifier_type_exceptfor" varchar[];
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "vehiclequalifier_use" varchar[];
@@ -131,7 +133,7 @@ ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "environmentqualifier_in
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."roadnodeinformation" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."roadlinkinformation" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."roadlinkinformation" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'roadlinkinformation' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."roadlinkinformation" (OGC_FID SERIAL, CONSTRAINT "roadlinkinformation_pk" PRIMARY KEY (OGC_FID));
@@ -143,7 +145,7 @@ ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "changedate" varchar[];
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "reasonforchange" varchar[];
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "descriptivegroup" VARCHAR;
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "referencetoroadlink_href" VARCHAR;
-ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "datetimequalifier_summary" varchar[];
+ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "datetimequalifier" json;
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "vehiclequalifier_type" varchar[];
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "vehiclequalifier_type_exceptfor" varchar[];
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "vehiclequalifier_use" varchar[];
@@ -157,7 +159,7 @@ ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "distancefromstart" FLOA
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "theme" VARCHAR;
 ALTER TABLE "osmm_itn"."roadlinkinformation" ADD COLUMN "filename" VARCHAR;
 
-DROP TABLE "osmm_itn"."roadrouteinformation" CASCADE;
+DROP TABLE IF EXISTS "osmm_itn"."roadrouteinformation" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'roadrouteinformation' AND f_table_schema = 'osmm_itn';
 
 CREATE TABLE "osmm_itn"."roadrouteinformation" (OGC_FID SERIAL, CONSTRAINT "roadrouteinformation_pk" PRIMARY KEY (OGC_FID));
@@ -170,7 +172,7 @@ ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "reasonforchange" varch
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "descriptivegroup" VARCHAR;
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "directedlink_href" varchar[];
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "directedlink_orientation" varchar[];
-ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "datetimequalifier_summary" varchar[];
+ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "datetimequalifier" json;
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "vehiclequalifier_type" varchar[];
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "vehiclequalifier_type_exceptfor" varchar[];
 ALTER TABLE "osmm_itn"."roadrouteinformation" ADD COLUMN "vehiclequalifier_use" varchar[];

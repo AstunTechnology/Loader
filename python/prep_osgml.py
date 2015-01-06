@@ -5,7 +5,10 @@ used with prepgml4ogr.py.
 
 import os
 import re
+import json
+import lxml
 from lxml import etree
+from lxml import objectify
 
 
 class prep_osgml():
@@ -271,7 +274,7 @@ class prep_osmm_topo_qgis(prep_osmm_topo):
 
 class prep_osmm_itn(prep_osgml):
     """
-    Preperation class for OS MasterMap ITN features.
+    Preparation class for OS MasterMap ITN features.
 
     """
 
@@ -297,6 +300,7 @@ class prep_osmm_itn(prep_osgml):
         feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
         feat_elm = self._expose_attributes(feat_elm)
         feat_elm = self._add_datetime_summary(feat_elm)
+        feat_elm = self._add_datetime_json(feat_elm)
 
         return feat_elm
 
@@ -330,6 +334,17 @@ class prep_osmm_itn(prep_osgml):
             value = ', '.join(map(elm_str, elm.xpath(".//*")))
             sub_elm = etree.SubElement(feat_elm, 'dateTimeQualifier_summary')
             sub_elm.text = value
+
+        return feat_elm
+
+    def _add_datetime_json(self, feat_elm):
+        """ Add a JSON representation of dateTimeQualifier elements """
+
+        elms = feat_elm.xpath('//dateTimeQualifier')
+        if elms:
+            objs = [objectify.fromstring(etree.tostring(elm)) for elm in elms]
+            sub_elm = etree.SubElement(feat_elm, 'dateTimeQualifier_json')
+            sub_elm.text = ObjectifyJSONEncoder().encode(objs)
 
         return feat_elm
 
@@ -536,3 +551,39 @@ class prep_osmm_water():
                 elm.text = matches[0]
 
         return feat_elm
+
+
+class ObjectifyJSONEncoder(json.JSONEncoder):
+    """ JSON encoder that can handle simple lxml objectify types,
+        based on the original: https://gist.github.com/aisipos/345559, extended
+        to accommodate encoding child nodes with the same tag name as a list.
+
+        Usage:
+
+        >>> import json
+        >>> import lxml
+        >>> from lxml import objectify
+        >>> obj = objectify.fromstring("<author><name>W. Shakespeare</name><play>Twelfth Night</play><play>As You Like It</play></author>")
+        >>> json.dumps(obj, cls=ObjectifyJSONEncoder)
+        '{"play": ["Twelfth Night", "As You Like It"], "name": "W. Shakespeare"}'
+
+    """
+    def default(self, o):
+        if isinstance(o, lxml.objectify.IntElement):
+            return int(o)
+        if isinstance(o, lxml.objectify.NumberElement) or isinstance(o, lxml.objectify.FloatElement):
+            return float(o)
+        if isinstance(o, lxml.objectify.ObjectifiedDataElement):
+            return str(o)
+        if hasattr(o, '__dict__'):
+            # objectify elements act like dicts to allow access to child nodes
+            # via their tag name.  If an element has more than one child of the
+            # same name the dict only contains the first value against the tag
+            # name; to ensure all children are encoded create a list of child
+            # node values and assign it to the key that matches their tag name.
+            d = o.__dict__.copy()
+            for k in d.keys():
+                if len(d[k]) > 1:
+                    d[k] = [i for i in d[k]]
+            return d
+        return json.JSONEncoder.default(self, o)

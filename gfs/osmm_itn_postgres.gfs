@@ -448,9 +448,9 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier_summary</ElementPath>
-      <Type>StringList</Type>
+      <Name>dateTimeQualifier</Name>
+      <ElementPath>dateTimeQualifier_json</ElementPath>
+      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>vehicleQualifier_type</Name>
@@ -550,9 +550,9 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier_summary</ElementPath>
-      <Type>StringList</Type>
+      <Name>dateTimeQualifier</Name>
+      <ElementPath>dateTimeQualifier_json</ElementPath>
+      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>vehicleQualifier_type</Name>
@@ -662,9 +662,9 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier_summary</ElementPath>
-      <Type>StringList</Type>
+      <Name>dateTimeQualifier</Name>
+      <ElementPath>dateTimeQualifier_json</ElementPath>
+      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>vehicleQualifier_type</Name>
