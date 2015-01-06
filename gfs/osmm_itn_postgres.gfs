@@ -449,7 +449,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <ElementPath>dateTimeQualifier_summary</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -551,7 +551,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <ElementPath>dateTimeQualifier_summary</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -663,7 +663,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>dateTimeQualifier_summary</Name>
-      <ElementPath>dateTimeQualifier|summary</ElementPath>
+      <ElementPath>dateTimeQualifier_summary</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>

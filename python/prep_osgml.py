@@ -328,7 +328,7 @@ class prep_osmm_itn(prep_osgml):
         for elm in feat_elm.xpath('//dateTimeQualifier'):
             # Create a basic summary by listing tag names and values
             value = ', '.join(map(elm_str, elm.xpath(".//*")))
-            sub_elm = etree.SubElement(elm, 'summary')
+            sub_elm = etree.SubElement(feat_elm, 'dateTimeQualifier_summary')
             sub_elm.text = value
 
         return feat_elm
