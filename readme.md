@@ -63,15 +63,7 @@ __Some configuration examples are available on the [project wiki](https://github
         * Add example to wiki
 
     * OS MasterMap ITN
-        * Create lookups (either as views as with [`road_roadlink`](extras/ordnancesurvey/osmm/itn/views.sql) or tables):
-            * `roadrouteinformation_roadlink`
-                * inc. `order` of directed link in array
-            * `ferrylink_ferrynode`
-            * `ferryterminal_ferrynode`
-            * `ferryterminal_roadnode`
         * Add `roadpartiallinkinformation,` `roadpartialrouteinformation` feature types
-        * Improve handling of `dateTimeQualifier`
-            * Individual feature types for period?
 
 * Core `loader.py`
     * Add exception and message when source data is not found
