@@ -1,5 +1,10 @@
 -- Drops any existing OSMM ITN tables and creates fresh tables ready to receive data
 
+-- NOTE: The roadnodeinformation, roadlinkinformation and roadrouteinformation
+-- tables all define a datetimequalifier column of type JSON. The JSON data
+-- type was introduced in PostgreSQL 9.2, if you are loading into an earlier
+-- version of PostgreSQL you will need to update the column type to be TEXT.
+
 DROP TABLE IF EXISTS "osmm_itn"."road" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'road' AND f_table_schema = 'osmm_itn';
 
