@@ -9,11 +9,11 @@ The files in this directory are provided to help you get started, you should upd
     # Assumes current directory is the root of the repository
 
     # (Re)create the tables in Postgres
-    psql -d postgis -U postgres -f extras/ordnancesurvey/addressbase/premium/pgdump/create-tables.sql
+    psql -U postgres -d postgis -f extras/ordnancesurvey/addressbase/premium/pgdump/create-tables.sql
 
-    # Run the OSMM loader from the python directory using the AddressBase
+    # Run the Loader from the python directory using the AddressBase
     # Premium PGDump config in this directory
     (cd python && python loader.py ../extras/ordnancesurvey/addressbase/premium/pgdump/loader.config)
 
     # Create spatial indexes
-    psql -d postgis -U postgres -f extras/ordnancesurvey/addressbase/premium/pgdump/create-indexes.sql
+    psql -U postgres -d postgis -f extras/ordnancesurvey/addressbase/premium/pgdump/create-indexes.sql
