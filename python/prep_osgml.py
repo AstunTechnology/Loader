@@ -315,7 +315,21 @@ class prep_osmm_itn(prep_osgml):
                                     //referenceToNetwork |
                                     //vehicleQualifier/type |
                                     //vehicleQualifier/use""")
+
+        # Default attribute values for optional attributes
+        defaults = {
+            'directedNode': {'gradeSeparation': '0'},
+            'referenceToRoadNode': {'gradeSeparation': '0'}
+        }
+
         for elm in elm_list:
+
+            # Assign default values to optional attributes
+            if elm.tag in defaults.keys():
+                for key, val in defaults[elm.tag].items():
+                    if key not in elm.attrib:
+                        elm.attrib[key] = val
+
             for name in elm.attrib:
                 value = elm.get(name)
                 name = '%s_%s' % (elm.tag, name)
