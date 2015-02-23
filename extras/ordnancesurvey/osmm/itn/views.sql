@@ -10,12 +10,14 @@ FROM
 -- Lookup between roadlink and the roadnodes at it's start and end
 CREATE OR REPLACE VIEW osmm_itn.roadlink_roadnode AS
 SELECT a.roadlink_fid,
+       replace(a.roadnode_fid::text, '#', '') AS roadnode_fid,
        a.directednode_orientation,
-       a.directednode_gradeseparation,
-       replace(a.roadnode_fid::text, '#', '') AS roadnode_fid
+       a.directednode_gradeseparation
 FROM
     (SELECT roadlink.fid AS roadlink_fid,
-            unnest(roadlink.directednode_href) AS roadnode_fid
+            unnest(roadlink.directednode_href) AS roadnode_fid,
+            unnest(roadlink.directednode_orientation) AS directednode_orientation,
+            unnest(roadlink.directednode_gradeseparation) AS directednode_gradeseparation
      FROM osmm_itn.roadlink) AS a;
 
 -- Lookup between ferrylink and ferrynode on fid
