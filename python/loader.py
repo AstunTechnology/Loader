@@ -106,15 +106,16 @@ class Loader:
                 for file_name in files:
                     ext = os.path.splitext(file_name)[1].lower()
                     if ext in ['.gz', '.gml', '.zip', '.kml']:
-                        self.load_file(root, file_name)
-                        num_files += 1
+                        if self.load_file(root, file_name):
+                            num_files += 1
         else:
             (root, file_name) = os.path.split(self.src_dir)
-            self.load_file(root, file_name)
-            num_files += 1
+            if self.load_file(root, file_name):
+                num_files += 1
         print("Loaded %i file%s" % (num_files, "" if num_files == 1 else "s"))
 
     def load_file(self, root, name):
+        exit_status = 0
         file_parts = os.path.splitext(name)
         file_path = os.path.join(root, name)
         print("Processing: %s" % file_path)
@@ -126,9 +127,10 @@ class Loader:
         prep_args = shlex.split(self.prep_cmd.safe_substitute(file_path='\'' + file_path + '\''))
         if self.debug:
             print("Prep command: %s" % " ".join(prep_args))
-        f = open(prepared_filepath, 'w')
-        subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
-        f.close()
+        with open(prepared_filepath, 'w') as f:
+            exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
+            if exit_status is not 0:
+                return False
         # Copy over the template gfs file used by ogr2ogr
         # to read the GML attributes, determine the geometry type etc.
         # Using a template so we have control over the geometry type
@@ -140,7 +142,9 @@ class Loader:
         ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
-        subprocess.call(ogr_args, stderr=sys.stderr)
+        exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
+        if exit_status is not 0:
+            return False
         # If there is a post command defined then run it,
         # commonly used to do some post processing of the
         # output created by ogr2ogr
@@ -149,11 +153,14 @@ class Loader:
             post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
             if self.debug:
                 print("Post command: %s" % " ".join(post_args))
-            subprocess.call(post_args, stderr=sys.stderr)
+            exit_status = subprocess.call(post_args, stderr=sys.stderr)
+            if exit_status is not 0:
+                return False
         if not self.debug:
             # Clean up by deleting the temporary prepared file
             os.remove(prepared_filepath)
 
+        return True
 
 def main():
     if len(sys.argv) < 2:
