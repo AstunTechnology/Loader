@@ -98,7 +98,6 @@ class Loader:
 
     def load(self):
         # Create string templates for the commands
-        self.prep_cmd = Template(self.prep_cmd)
         self.ogr_cmd = Template(self.ogr_cmd)
         num_files = 0
         if os.path.isdir(self.src_dir):
@@ -114,43 +113,51 @@ class Loader:
                 num_files += 1
         print("Loaded %i file%s" % (num_files, "" if num_files == 1 else "s"))
 
-    def load_file(self, root, name):
+    def load_file(self, root, file_name):
         exit_status = 0
-        file_parts = os.path.splitext(name)
-        file_path = os.path.join(root, name)
+
+        file_path = os.path.join(root, file_name)
         print("Processing: %s" % file_path)
-        # Run the script to prepare the GML
-        prepared_filename = os.path.splitext(name)[0]
-        prepared_filepath = os.path.join(self.tmp_dir, prepared_filename)
+
+        # Run the script to prepare the GML if one is defined, otherwise just
+        # copy the existing file to the tmp directory
+        prep_file_name = os.path.splitext(file_name)[0]
+        prep_file_path = os.path.join(self.tmp_dir, prep_file_name)
         if self.debug:
-            print("Prepared file: %s" % prepared_filepath)
-        prep_args = shlex.split(self.prep_cmd.safe_substitute(file_path='\'' + file_path + '\''))
-        if self.debug:
-            print("Prep command: %s" % " ".join(prep_args))
-        with open(prepared_filepath, 'w') as f:
-            exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
-            if exit_status is not 0:
-                return False
+            print("Prepared file: %s" % prep_file_path)
+        if self.prep_cmd:
+            prep_args = shlex.split(Template(self.prep_cmd).safe_substitute(file_path='\'' + file_path + '\''))
+            if self.debug:
+                print("Prep command: %s" % " ".join(prep_args))
+            with open(prep_file_path, 'w') as f:
+                exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
+                if exit_status is not 0:
+                    return False
+        else:
+            shutil.copy(file_path, prep_file_path)
+
         # Copy over the template gfs file used by ogr2ogr
         # to read the GML attributes, determine the geometry type etc.
         # Using a template so we have control over the geometry type
         # for each table
         if self.gfs_file:
-            shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, prepared_filename + '.gfs'))
+            shutil.copy(self.gfs_file, os.path.join(self.tmp_dir, prep_file_name + '.gfs'))
+
         # Run ogr2ogr to do the actual load
         print("Loading: %s" % file_path)
-        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
+        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
         exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
         if exit_status is not 0:
             return False
+
         # If there is a post command defined then run it,
         # commonly used to do some post processing of the
         # output created by ogr2ogr
         if self.post_cmd:
             post_cmd = Template(self.post_cmd)
-            post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prepared_filename + '\'', file_path='\'' + prepared_filepath + '\''))
+            post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
             if self.debug:
                 print("Post command: %s" % " ".join(post_args))
             exit_status = subprocess.call(post_args, stderr=sys.stderr)
@@ -158,9 +165,10 @@ class Loader:
                 return False
         if not self.debug:
             # Clean up by deleting the temporary prepared file
-            os.remove(prepared_filepath)
+            os.remove(prep_file_path)
 
         return True
+
 
 def main():
     if len(sys.argv) < 2:
