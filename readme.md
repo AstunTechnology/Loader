@@ -66,6 +66,7 @@ __Some configuration examples are available on the [project wiki](https://github
         * Add `roadpartiallinkinformation,` `roadpartialrouteinformation` feature types
 
 * Core `loader.py`
+    * Specify gfs file via command-line using `GML_GFS_TEMPLATE path_to_template.gfs`
     * Add exception and message when source data is not found
     * Identify errors with subprocess calls and raise
     * Use standard logging instead of print
