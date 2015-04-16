@@ -70,21 +70,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
@@ -176,28 +161,8 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>orientDeg</Name>
-      <ElementPath>textRendering|orientDeg</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>textString</Name>
       <ElementPath>textString</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -262,11 +227,6 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>orientDeg</Name>
-      <ElementPath>orientDeg</ElementPath>
-      <Type>Real</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>physicalLevel</Name>
       <ElementPath>physicalLevel</ElementPath>
       <Type>Integer</Type>
@@ -280,21 +240,6 @@
       <Name>referenceToFeature</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>filename</Name>
@@ -370,21 +315,6 @@
     <PropertyDefn>
       <Name>physicalPresence</Name>
       <ElementPath>physicalPresence</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -478,21 +408,6 @@
       <Name>referenceToFeature</Name>
       <ElementPath>referenceToFeature</ElementPath>
       <Type>Untyped</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>filename</Name>
@@ -596,21 +511,6 @@
     <PropertyDefn>
       <Name>physicalPresence</Name>
       <ElementPath>physicalPresence</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>themes</Name>
-      <ElementPath>themes</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveGroups</Name>
-      <ElementPath>descriptiveGroups</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>descriptiveTerms</Name>
-      <ElementPath>descriptiveTerms</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
