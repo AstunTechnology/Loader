@@ -123,8 +123,8 @@ class Loader:
             tasks.append(config)
 
         p = multiprocessing.Pool(initializer=init_worker, initargs=(running,))
-        for status_code in p.imap_unordered(load_file, tasks):
-            if status_code is 0:
+        for success in p.imap_unordered(load_file, tasks):
+            if success:
                 num_files += 1
         p.close()
         p.join()
