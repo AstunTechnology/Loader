@@ -6,7 +6,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -17,7 +17,7 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -28,7 +28,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -39,12 +39,12 @@
     <GeometryType>6</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctiveName</Name>
+      <Name>distName</Name>
       <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -55,7 +55,7 @@
       <Width>15</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -66,7 +66,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -77,12 +77,12 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctiveName</Name>
+      <Name>distName</Name>
       <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -93,7 +93,7 @@
       <Width>15</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -104,12 +104,12 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>junctionNumber</Name>
+      <Name>junctNum</Name>
       <ElementPath>junctionNumber</ElementPath>
       <Type>String</Type>
       <Width>2</Width>
@@ -121,17 +121,17 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctiveName</Name>
+      <Name>distName</Name>
       <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>18</Width>
@@ -143,13 +143,13 @@
       <Width>6</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>textOrientation</Name>
-      <ElementPath>texttextOrientationn</ElementPath>
+      <Name>orientatio</Name>
+      <ElementPath>textOrientation</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>textOrientation_uom</Name>
-      <ElementPath>texttextOrientationn_uom</ElementPath>
+      <Name>orientatio_uom</Name>
+      <ElementPath>textOrientation_uom</ElementPath>
       <Type>String</Type>
       <Width>7</Width>
     </PropertyDefn>
@@ -160,17 +160,17 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctiveName</Name>
+      <Name>distName</Name>
       <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -181,12 +181,12 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
@@ -198,7 +198,7 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -209,12 +209,12 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctiveName</Name>
+      <Name>distName</Name>
       <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -224,7 +224,7 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>40</Width>
@@ -236,7 +236,7 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -247,12 +247,12 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>12</Width>
@@ -264,7 +264,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -275,7 +275,7 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -286,12 +286,12 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
+      <Name>classifica</Name>
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>15</Width>
@@ -303,7 +303,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
@@ -314,7 +314,7 @@
     <GeometryType>3</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>featurecode</Name>
+      <Name>featcode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
