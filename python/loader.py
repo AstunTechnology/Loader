@@ -122,6 +122,11 @@ class Loader:
             config['file_path'] = self.src_dir
             tasks.append(config)
 
+        # Run the first task independently
+        task = tasks.pop(0)
+        if load_file(task):
+            num_files += 1
+
         p = multiprocessing.Pool(initializer=init_worker, initargs=(running,))
         for success in p.imap_unordered(load_file, tasks):
             if success:
@@ -140,67 +145,70 @@ def init_worker(running_):
     running = running_
 
 
-def load_file(config):
+def load_file_worker(config):
     if running.is_set():
         try:
-            exit_status = 0
-
-            file_path = config.get('file_path')
-            file_name = os.path.split(file_path)[1]
-            print("Processing: %s" % file_path)
-
-            # Run the script to prepare the GML if one is defined, otherwise just
-            # copy the existing file to the tmp directory
-            prep_file_name = os.path.splitext(file_name)[0]
-            prep_file_path = os.path.join(config.get('tmp_dir'), prep_file_name)
-            if config.get('debug'):
-                print("Prepared file: %s" % prep_file_path)
-            if config.get('prep_cmd'):
-                prep_args = shlex.split(Template(config.get('prep_cmd')).safe_substitute(file_path='\'' + file_path + '\''))
-                if config.get('debug'):
-                    print("Prep command: %s" % " ".join(prep_args))
-                with open(prep_file_path, 'w') as f:
-                    exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
-                    if exit_status is not 0:
-                        return False
-            else:
-                shutil.copy(file_path, prep_file_path)
-
-            # Copy over the template gfs file used by ogr2ogr
-            # to read the GML attributes, determine the geometry type etc.
-            # Using a template so we have control over the geometry type
-            # for each table
-            if config.get('gfs_file'):
-                shutil.copy(config.get('gfs_file'), os.path.join(config.get('tmp_dir'), prep_file_name + '.gfs'))
-
-            # Run ogr2ogr to do the actual load
-            print("Loading: %s" % file_path)
-            ogr_args = shlex.split(Template(config.get('ogr_cmd')).safe_substitute(output_dir='\'' + config.get('out_dir') + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
-            if config.get('debug'):
-                print("OGR command: %s" % " ".join(ogr_args))
-            exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
-            if exit_status is not 0:
-                return False
-
-            # If there is a post command defined then run it,
-            # commonly used to do some post processing of the
-            # output created by ogr2ogr
-            if config.get('post_cmd'):
-                post_cmd = Template(config.get('post_cmd'))
-                post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + config.get('out_dir') + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
-                if config.get('debug'):
-                    print("Post command: %s" % " ".join(post_args))
-                exit_status = subprocess.call(post_args, stderr=sys.stderr)
-                if exit_status is not 0:
-                    return False
-            if not config.get('debug'):
-                # Clean up by deleting the temporary prepared file
-                os.remove(config.get('tmp_dir'))
-
+            load_file(config)
         except (KeyboardInterrupt):
             running.clear()
 
-        return True
+
+def load_file(config):
+    exit_status = 0
+
+    file_path = config.get('file_path')
+    file_name = os.path.split(file_path)[1]
+    print("Processing: %s" % file_path)
+
+    # Run the script to prepare the GML if one is defined, otherwise just
+    # copy the existing file to the tmp directory
+    prep_file_name = os.path.splitext(file_name)[0]
+    prep_file_path = os.path.join(config.get('tmp_dir'), prep_file_name)
+    if config.get('debug'):
+        print("Prepared file: %s" % prep_file_path)
+    if config.get('prep_cmd'):
+        prep_args = shlex.split(Template(config.get('prep_cmd')).safe_substitute(file_path='\'' + file_path + '\''))
+        if config.get('debug'):
+            print("Prep command: %s" % " ".join(prep_args))
+        with open(prep_file_path, 'w') as f:
+            exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
+            if exit_status is not 0:
+                return False
+    else:
+        shutil.copy(file_path, prep_file_path)
+
+    # Copy over the template gfs file used by ogr2ogr
+    # to read the GML attributes, determine the geometry type etc.
+    # Using a template so we have control over the geometry type
+    # for each table
+    if config.get('gfs_file'):
+        shutil.copy(config.get('gfs_file'), os.path.join(config.get('tmp_dir'), prep_file_name + '.gfs'))
+
+    # Run ogr2ogr to do the actual load
+    print("Loading: %s" % file_path)
+    ogr_args = shlex.split(Template(config.get('ogr_cmd')).safe_substitute(output_dir='\'' + config.get('out_dir') + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
+    if config.get('debug'):
+        print("OGR command: %s" % " ".join(ogr_args))
+    exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
+    if exit_status is not 0:
+        return False
+
+    # If there is a post command defined then run it,
+    # commonly used to do some post processing of the
+    # output created by ogr2ogr
+    if config.get('post_cmd'):
+        post_cmd = Template(config.get('post_cmd'))
+        post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + config.get('out_dir') + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
+        if config.get('debug'):
+            print("Post command: %s" % " ".join(post_args))
+        exit_status = subprocess.call(post_args, stderr=sys.stderr)
+        if exit_status is not 0:
+            return False
+    if not config.get('debug'):
+        # Clean up by deleting the temporary prepared file
+        os.remove(config.get('tmp_dir'))
+
+    return True
 
 
 def main():
