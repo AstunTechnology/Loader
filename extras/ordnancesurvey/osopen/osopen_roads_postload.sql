@@ -62,11 +62,11 @@ case
   else length/16000  -- 10 m/hr 
 end as cost_bike,
 cast(loop as boolean),
-name1,
+name,
 roadclassificationnumber ,
   strategicroad ,
   name2 ,
-  name1_lang ,
+  name_lang ,
   structure ,
   name2_lang ,
   formspartof 
