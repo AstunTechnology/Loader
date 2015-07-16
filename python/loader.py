@@ -101,9 +101,6 @@ class Loader:
     def load(self):
         num_files = 0
 
-        running = multiprocessing.Event()
-        running.set()
-
         tasks = []
         if os.path.isdir(self.src_dir):
             for root, dirs, files in os.walk(self.src_dir):
@@ -128,8 +125,11 @@ class Loader:
         if load_file(task):
             num_files += 1
 
+        running = multiprocessing.Event()
+        running.set()
+
         p = multiprocessing.Pool(initializer=init_worker, initargs=(running,))
-        for success in p.imap_unordered(load_file, tasks):
+        for success in p.imap_unordered(load_file_worker, tasks):
             if success:
                 num_files += 1
         p.close()
