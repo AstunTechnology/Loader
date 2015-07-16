@@ -119,6 +119,7 @@ class Loader:
                         tasks.append(config)
         else:
             config = copy.copy(self.config)
+            config['tmp_dir'] = self.tmp_dir
             config['file_path'] = self.src_dir
             tasks.append(config)
 
