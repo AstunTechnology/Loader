@@ -98,6 +98,16 @@ class Loader:
             except OSError as ex:
                 raise RemoveTempDirError(ex.errno, ex.strerror, self.tmp_dir)
 
+    def create_task(self, file_path):
+        task = copy.copy(self.config)
+        try:
+            task['tmp_dir'] = tempfile.mkdtemp(dir=self.tmp_dir)
+        except (OSError) as ex:
+            raise CreateTempDirError(ex.errno, ex.strerror, self.tmp_dir)
+        task['debug'] = self.debug
+        task['file_path'] = file_path
+        return task
+
     def load(self):
         num_files = 0
 
@@ -107,18 +117,9 @@ class Loader:
                 for file_name in files:
                     ext = os.path.splitext(file_name)[1].lower()
                     if ext in ['.gz', '.gml', '.zip', '.kml']:
-                        config = copy.copy(self.config)
-                        try:
-                            config['tmp_dir'] = tempfile.mkdtemp(dir=self.tmp_dir)
-                        except (OSError) as ex:
-                            raise CreateTempDirError(ex.errno, ex.strerror, self.tmp_dir)
-                        config['file_path'] = os.path.join(root, file_name)
-                        tasks.append(config)
+                        tasks.append(self.create_task(os.path.join(root, file_name)))
         else:
-            config = copy.copy(self.config)
-            config['tmp_dir'] = self.tmp_dir
-            config['file_path'] = self.src_dir
-            tasks.append(config)
+            tasks.append(self.create_task(self.src_dir))
 
         # Run the first task independently
         task = tasks.pop(0)
@@ -205,9 +206,10 @@ def load_file(config):
         exit_status = subprocess.call(post_args, stderr=sys.stderr)
         if exit_status is not 0:
             return False
+
     if not config.get('debug'):
         # Clean up by deleting the temporary prepared file
-        os.remove(config.get('tmp_dir'))
+        shutil.rmtree(config.get('tmp_dir'))
 
     return True
 
