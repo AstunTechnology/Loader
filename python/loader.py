@@ -121,10 +121,9 @@ class Loader:
         else:
             tasks.append(self.create_task(self.src_dir))
 
-        # Run the first task independently
-        task = tasks.pop(0)
-        if load_file(task):
-            num_files += 1
+        # Load an empty file first to create the tables before the parallel
+        # load kicks in
+        load_file(self.create_task('../empty.gml'))
 
         running = multiprocessing.Event()
         running.set()
