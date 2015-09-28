@@ -567,6 +567,41 @@ class prep_osmm_water():
         return feat_elm
 
 
+class prep_emapsite_addressbase_premium(prep_osgml):
+    """
+    Prepare emapsite OS AddressBase Premium GML output by FME
+    """
+    def __init__(self, inputfile):
+        prep_osgml.__init__(self, inputfile)
+        # Looking at the sample data it doesn't appear as though the name of
+        # the AddressBaseT_Plus feature type is likely to be the same for each
+        # supply so as there is only one feature type simply specify the
+        # containing featureMember
+        self.feat_types = ['featureMember']
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_geom(feat_elm)
+
+        return feat_elm
+
+    def _add_geom(self, feat_elm):
+        """ Add a GML Point element to a feature with coordinates taken from
+            the x_coordinate and y_coordinate fields """
+
+        pos_elm = etree.SubElement(feat_elm, 'Pos')
+        pos_elm.text = '%s %s' % (feat_elm.findtext('.//x_coordinate'), feat_elm.findtext('.//y_coordinate'))
+
+        pnt_elm = etree.SubElement(feat_elm, 'Point')
+        pnt_elm.attrib['srsName'] = 'EPSG:27700'
+        pnt_elm.append(pos_elm)
+
+        # Append the Point element to the first child
+        list(feat_elm)[0].append(pnt_elm)
+
+        return feat_elm
+
+
 class ObjectifyJSONEncoder(json.JSONEncoder):
     """ JSON encoder that can handle simple lxml objectify types,
         based on the original: https://gist.github.com/aisipos/345559, extended
