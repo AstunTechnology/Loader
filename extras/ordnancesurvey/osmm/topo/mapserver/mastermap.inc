@@ -303,7 +303,7 @@ LAYER
 		TYPE ANNOTATION
 		STATUS DEFAULT
 		INCLUDE "pg_connection.inc"
-		DATA "wkb_geometry FROM (SELECT featurecode, wkb_geometry, textstring, ogc_fid, orientdeg, CASE anchorposition WHEN 2 THEN 'lr' WHEN 5 THEN 'lc' WHEN 8 THEN 'll' WHEN 1 THEN 'cr' WHEN 4 THEN 'cc' WHEN 7 THEN 'cl' WHEN 0 THEN 'ur' WHEN 3 THEN 'uc' WHEN 6 THEN 'ul' END as position FROM mapping.cartographictext) AS foo USING UNIQUE ogc_fid  USING SRID=27700"   
+		DATA "wkb_geometry FROM (SELECT featurecode, wkb_geometry, textstring, ogc_fid, orientation/10 as orientdeg, CASE anchorposition WHEN 2 THEN 'lr' WHEN 5 THEN 'lc' WHEN 8 THEN 'll' WHEN 1 THEN 'cr' WHEN 4 THEN 'cc' WHEN 7 THEN 'cl' WHEN 0 THEN 'ur' WHEN 3 THEN 'uc' WHEN 6 THEN 'ul' END as position FROM mapping.cartographictext) AS foo USING UNIQUE ogc_fid  USING SRID=27700"   
 		LABELITEM "textstring"
 		MINSCALEDENOM 1
 		MAXSCALEDENOM 2500
