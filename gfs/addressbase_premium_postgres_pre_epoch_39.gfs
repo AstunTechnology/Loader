@@ -2,7 +2,6 @@
     <GMLFeatureClass>
         <Name>BasicLandPropertyUnit</Name>
         <ElementPath>BasicLandPropertyUnit</ElementPath>
-        <GeometryElementPath>position</GeometryElementPath>
         <GeometryType>1</GeometryType>
         <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
         <PropertyDefn>
@@ -41,16 +40,9 @@
             <Type>Integer</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>country</Name>
-            <ElementPath>country</ElementPath>
+            <Name>postalAddressable</Name>
+            <ElementPath>postalAddressable</ElementPath>
             <Type>String</Type>
-            <Width>1</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>addressbasePostal</Name>
-            <ElementPath>addressbasePostal</ElementPath>
-            <Type>String</Type>
-            <Width>1</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>postcodeLocator</Name>
@@ -91,7 +83,7 @@
     <GMLFeatureClass>
         <Name>Classification</Name>
         <ElementPath>Classification</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>uprn</Name>
             <ElementPath>uprn</ElementPath>
@@ -115,7 +107,7 @@
         <PropertyDefn>
             <Name>schemeVersion</Name>
             <ElementPath>schemeVersion</ElementPath>
-            <Type>Integer</Type>
+            <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
             <Name>startDate</Name>
@@ -132,26 +124,27 @@
             <ElementPath>lastUpdateDate</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
-        <PropertyDefn>
-            <Name>endDate</Name>
-            <ElementPath>endDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
     </GMLFeatureClass>
     <GMLFeatureClass>
         <Name>DeliveryPointAddress</Name>
         <ElementPath>DeliveryPointAddress</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>uprn</Name>
             <ElementPath>uprn</ElementPath>
             <Type>Real</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>udprn</Name>
-            <ElementPath>udprn</ElementPath>
+            <Name>rmUDPRN</Name>
+            <ElementPath>rmUDPRN</ElementPath>
             <Type>Integer</Type>
+            <Width>8</Width>
+        </PropertyDefn>
+        <PropertyDefn>
+            <Name>parentAddressableUPRN</Name>
+            <ElementPath>parentAddressableUPRN</ElementPath>
+            <Type>Integer</Type>
+            <Width>12</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>organisationName</Name>
@@ -177,15 +170,16 @@
             <Name>buildingNumber</Name>
             <ElementPath>buildingNumber</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>dependentThoroughfare</Name>
-            <ElementPath>dependentThoroughfare</ElementPath>
+            <Name>dependentThoroughfareName</Name>
+            <ElementPath>dependentThoroughfareName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>thoroughfare</Name>
-            <ElementPath>thoroughfare</ElementPath>
+            <Name>thoroughfareName</Name>
+            <ElementPath>thoroughfareName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
@@ -214,13 +208,13 @@
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>welshDependentThoroughfare</Name>
-            <ElementPath>dependentThoroughfare</ElementPath>
+            <Name>welshDependentThoroughfareName</Name>
+            <ElementPath>dependentThoroughfareName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>welshThoroughfare</Name>
-            <ElementPath>thoroughfare</ElementPath>
+            <Name>welshThoroughfareName</Name>
+            <ElementPath>thoroughfareName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
@@ -241,11 +235,6 @@
         <PropertyDefn>
             <Name>poBoxNumber</Name>
             <ElementPath>poBoxNumber</ElementPath>
-            <Type>String</Type>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>deliveryPointSuffix</Name>
-            <ElementPath>deliveryPointSuffix</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
@@ -272,7 +261,7 @@
     <GMLFeatureClass>
         <Name>LandPropertyIdentifier</Name>
         <ElementPath>LandPropertyIdentifier</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>uprn</Name>
             <ElementPath>uprn</ElementPath>
@@ -287,11 +276,13 @@
             <Name>logicalStatus</Name>
             <ElementPath>logicalStatus</ElementPath>
             <Type>Integer</Type>
+            <Width>1</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>saoStartNumber</Name>
             <ElementPath>saoStartNumber</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>saoStartSuffix</Name>
@@ -302,6 +293,7 @@
             <Name>saoEndNumber</Name>
             <ElementPath>saoEndNumber</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>saoEndSuffix</Name>
@@ -317,6 +309,7 @@
             <Name>paoStartNumber</Name>
             <ElementPath>paoStartNumber</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>paoStartSuffix</Name>
@@ -327,6 +320,7 @@
             <Name>paoEndNumber</Name>
             <ElementPath>paoEndNumber</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>paoEndSuffix</Name>
@@ -342,11 +336,22 @@
             <Name>usrn</Name>
             <ElementPath>usrn</ElementPath>
             <Type>Integer</Type>
+            <Width>8</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>usrnMatchIndicator</Name>
             <ElementPath>usrnMatchIndicator</ElementPath>
-            <Type>Integer</Type>
+            <Type>String</Type>
+        </PropertyDefn>
+        <PropertyDefn>
+            <Name>areaName</Name>
+            <ElementPath>areaName</ElementPath>
+            <Type>String</Type>
+        </PropertyDefn>
+        <PropertyDefn>
+            <Name>level</Name>
+            <ElementPath>level</ElementPath>
+            <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
             <Name>officialFlag</Name>
@@ -373,16 +378,11 @@
             <ElementPath>lang</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
-        <PropertyDefn>
-            <Name>endDate</Name>
-            <ElementPath>endDate</ElementPath>
-            <Type>String</Type>
-        </PropertyDefn>
     </GMLFeatureClass>
     <GMLFeatureClass>
         <Name>Organisation</Name>
         <ElementPath>Organisation</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>uprn</Name>
             <ElementPath>uprn</ElementPath>
@@ -396,6 +396,11 @@
         <PropertyDefn>
             <Name>organisation</Name>
             <ElementPath>organisation</ElementPath>
+            <Type>String</Type>
+        </PropertyDefn>
+        <PropertyDefn>
+            <Name>legalName</Name>
+            <ElementPath>legalName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
@@ -413,17 +418,11 @@
             <ElementPath>lastUpdateDate</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
-        <PropertyDefn>
-            <Name>endDate</Name>
-            <ElementPath>endDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
     </GMLFeatureClass>
     <GMLFeatureClass>
         <Name>ApplicationCrossReference</Name>
         <ElementPath>ApplicationCrossReference</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>uprn</Name>
             <ElementPath>uprn</ElementPath>
@@ -443,6 +442,7 @@
             <Name>version</Name>
             <ElementPath>version</ElementPath>
             <Type>Integer</Type>
+            <Width>3</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>source</Name>
@@ -464,12 +464,6 @@
             <ElementPath>lastUpdateDate</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
-        <PropertyDefn>
-            <Name>endDate</Name>
-            <ElementPath>endDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
     </GMLFeatureClass>
     <GMLFeatureClass>
         <Name>Street</Name>
@@ -479,48 +473,54 @@
         <PropertyDefn>
             <Name>usrn</Name>
             <ElementPath>usrn</ElementPath>
-            <Type>Integer</Type>
+            <Type>Real</Type>
         </PropertyDefn>
         <PropertyDefn>
             <Name>recordType</Name>
             <ElementPath>recordType</ElementPath>
             <Type>Integer</Type>
+            <Width>1</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>swaOrgRefNaming</Name>
             <ElementPath>swaOrgRefNaming</ElementPath>
             <Type>Integer</Type>
+            <Width>4</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>state</Name>
             <ElementPath>state</ElementPath>
             <Type>Integer</Type>
+            <Width>1</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>stateDate</Name>
             <ElementPath>stateDate</ElementPath>
             <Type>String</Type>
-            <Width>10</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>streetSurface</Name>
             <ElementPath>streetSurface</ElementPath>
             <Type>Integer</Type>
+            <Width>1</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>streetClassification</Name>
             <ElementPath>streetClassification</ElementPath>
             <Type>Integer</Type>
+            <Width>2</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>version</Name>
             <ElementPath>version</ElementPath>
             <Type>Integer</Type>
+            <Width>3</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>streetTolerance</Name>
             <ElementPath>streetTolerance</ElementPath>
             <Type>Integer</Type>
+            <Width>3</Width>
         </PropertyDefn>
         <PropertyDefn>
             <Name>startDate</Name>
@@ -541,11 +541,11 @@
     <GMLFeatureClass>
         <Name>StreetDescriptiveIdentifier</Name>
         <ElementPath>StreetDescriptiveIdentifier</ElementPath>
-        <GeometryType>100</GeometryType>
+        <GeometryType>0</GeometryType>
         <PropertyDefn>
             <Name>usrn</Name>
             <ElementPath>usrn</ElementPath>
-            <Type>Integer</Type>
+            <Type>Real</Type>
         </PropertyDefn>
         <PropertyDefn>
             <Name>streetDescription</Name>
@@ -553,8 +553,8 @@
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
-            <Name>locality</Name>
-            <ElementPath>locality</ElementPath>
+            <Name>localityName</Name>
+            <ElementPath>localityName</ElementPath>
             <Type>String</Type>
         </PropertyDefn>
         <PropertyDefn>
@@ -571,37 +571,6 @@
             <Name>lang</Name>
             <ElementPath>lang</ElementPath>
             <Type>String</Type>
-            <Width>2</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>changeType</Name>
-            <ElementPath>changeType</ElementPath>
-            <Type>String</Type>
-            <Width>1</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>startDate</Name>
-            <ElementPath>startDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>entryDate</Name>
-            <ElementPath>entryDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>lastUpdateDate</Name>
-            <ElementPath>lastUpdateDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
-        </PropertyDefn>
-        <PropertyDefn>
-            <Name>endDate</Name>
-            <ElementPath>endDate</ElementPath>
-            <Type>String</Type>
-            <Width>10</Width>
         </PropertyDefn>
     </GMLFeatureClass>
 </GMLFeatureClassList>

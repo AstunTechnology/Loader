@@ -3,7 +3,7 @@
 -- DROP VIEW addressbase_premium.addresses_postal;
 
 CREATE OR REPLACE VIEW addressbase_premium.addresses_postal AS 
- SELECT blpu.ogc_fid, blpu.wkb_geometry, blpu.uprn, dpa.rmudprn AS rm_udprn, (((((((((
+ SELECT blpu.ogc_fid, blpu.wkb_geometry, blpu.uprn, dpa.udprn AS rm_udprn, (((((((((
         CASE
             WHEN dpa.organisationname IS NOT NULL THEN dpa.organisationname::text || ', '::text
             ELSE ''::text
@@ -25,11 +25,11 @@ CREATE OR REPLACE VIEW addressbase_premium.addresses_postal AS
             ELSE ''::text
         END) || 
         CASE
-            WHEN dpa.dependentthoroughfarename IS NOT NULL THEN dpa.dependentthoroughfarename::text || ', '::text
+            WHEN dpa.dependentthoroughfare IS NOT NULL THEN dpa.dependentthoroughfare::text || ', '::text
             ELSE ''::text
         END) || 
         CASE
-            WHEN dpa.thoroughfarename IS NOT NULL THEN dpa.thoroughfarename::text || ', '::text
+            WHEN dpa.thoroughfare IS NOT NULL THEN dpa.thoroughfare::text || ', '::text
             ELSE ''::text
         END) || 
         CASE
@@ -69,11 +69,11 @@ CREATE OR REPLACE VIEW addressbase_premium.addresses_postal AS
             ELSE ''::text
         END) || 
         CASE
-            WHEN dpa.dependentthoroughfarename IS NOT NULL THEN initcap(dpa.dependentthoroughfarename::text) || ', '::text
+            WHEN dpa.dependentthoroughfare IS NOT NULL THEN initcap(dpa.dependentthoroughfare::text) || ', '::text
             ELSE ''::text
         END) || 
         CASE
-            WHEN dpa.thoroughfarename IS NOT NULL THEN initcap(dpa.thoroughfarename::text) || ', '::text
+            WHEN dpa.thoroughfare IS NOT NULL THEN initcap(dpa.thoroughfare::text) || ', '::text
             ELSE ''::text
         END) || 
         CASE
@@ -102,7 +102,7 @@ CREATE OR REPLACE VIEW addressbase_premium.addresses_postal AS
 ALTER TABLE addressbase_premium.addresses_postal
   OWNER TO postgres;
 COMMENT ON VIEW addressbase_premium.addresses_postal
-  IS 'Simple, nicely formatted view of AddressBase (premium) postal addresses in PostgreSQL that has been imported with Loader!
+  IS 'Simple, nicely formatted view of AddressBase Premium postal addresses in PostgreSQL that has been imported with Loader
 
      Author: Mike Saunt, Astun Technology Ltd
      Version 0.1 - 15th November 2013
