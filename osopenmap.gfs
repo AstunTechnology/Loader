@@ -87,10 +87,9 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>siteTheme</Name>
-      <ElementPath>siteTheme</ElementPath>
+      <Name>buildingTheme</Name>
+      <ElementPath>buildingTheme</ElementPath>
       <Type>String</Type>
-      <Width>15</Width>
     </PropertyDefn>
     <PropertyDefn>
       <Name>classification</Name>
@@ -110,9 +109,8 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>junctionNumber</Name>
-      <ElementPath>junctionNumber</ElementPath>
-      <Type>String</Type>
-      <Width>2</Width>
+      <ElementPath>junctionnumber</ElementPath>
+      <Type>Integer</Type>
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
@@ -228,6 +226,17 @@
       <ElementPath>classification</ElementPath>
       <Type>String</Type>
       <Width>40</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>drawLevel</Name>
+      <ElementPath>drawLevel</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>override</Name>
+      <ElementPath>override</ElementPath>
+      <Type>String</Type>
+      <Width>1</Width>
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
