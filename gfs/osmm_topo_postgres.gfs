@@ -74,6 +74,16 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>CartographicText</Name>
@@ -170,6 +180,16 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>CartographicSymbol</Name>
@@ -246,6 +266,16 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>BoundaryLine</Name>
@@ -320,6 +350,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -412,6 +452,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -516,6 +566,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
