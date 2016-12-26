@@ -249,9 +249,30 @@ class prep_osmm_topo(prep_osgml):
             style_code = osmm_topo_style.sym_style.CalculateStyleCode(row)
             style_description = osmm_topo_style.sym_style.CalculateStyleDescription(row)
         elif feat_elm.tag == 'CartographicText':
-            row = ['', '', '', descriptiveGroups, descriptiveTerms, make]
+            anchorPosition = self._get_list_of_terms(feat_elm, 'anchorPosition')
+            orientation = float(self._get_list_of_terms(feat_elm, 'orientation'))
+            row = ['', '', '', descriptiveGroups, descriptiveTerms, make, anchorPosition, '', '', '', '', '', '', orientation]
             style_code = osmm_topo_style.txt_style.CalculateStyleCode(row)
             style_description = osmm_topo_style.txt_style.CalculateStyleDescription(row)
+
+            anchor = osmm_topo_style.txt_style.CalculateAnchor(row)
+            elm = etree.SubElement(feat_elm, 'anchor')
+            elm.text = unicode(anchor)
+            geo_x = osmm_topo_style.txt_style.CalculateGeoX(row)
+            elm = etree.SubElement(feat_elm, 'geo_x')
+            elm.text = unicode(geo_x)
+            geo_y = osmm_topo_style.txt_style.CalculateGeoY(row)
+            elm = etree.SubElement(feat_elm, 'geo_y')
+            elm.text = unicode(geo_y)
+            font_code = osmm_topo_style.txt_style.CalculateFontCode(row)
+            elm = etree.SubElement(feat_elm, 'font_code')
+            elm.text = unicode(font_code)
+            colour_code = osmm_topo_style.txt_style.CalculateColorCode(row)
+            elm = etree.SubElement(feat_elm, 'colour_code')
+            elm.text = unicode(colour_code)
+            rotation = osmm_topo_style.txt_style.CalculateRotation(row)
+            elm = etree.SubElement(feat_elm, 'rotation')
+            elm.text = unicode(rotation)
 
         elm = etree.SubElement(feat_elm, "%s" % 'styleCode')
         elm.text = unicode(style_code)
