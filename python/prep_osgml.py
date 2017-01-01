@@ -249,7 +249,7 @@ class prep_osmm_topo(prep_osgml):
             style_code = osmm_topo_style.sym_style.CalculateStyleCode(row)
             style_description = osmm_topo_style.sym_style.CalculateStyleDescription(row)
         elif feat_elm.tag == 'CartographicText':
-            anchorPosition = self._get_list_of_terms(feat_elm, 'anchorPosition')
+            anchorPosition = float(self._get_list_of_terms(feat_elm, 'anchorPosition'))
             orientation = float(self._get_list_of_terms(feat_elm, 'orientation'))
             row = ['', '', '', descriptiveGroups, descriptiveTerms, make, anchorPosition, '', '', '', '', '', '', orientation]
             style_code = osmm_topo_style.txt_style.CalculateStyleCode(row)
