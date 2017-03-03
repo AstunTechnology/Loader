@@ -204,13 +204,6 @@ LAYER
 		OPACITY 50
 		CLASSITEM "featurecode"
 		CLASS
-			EXPRESSION
-			STYLE
-				COLOR 212 212 212
-			END
-		END
-		#([FEATURECODE] == 10102 OR [FEATURECODE] == 10133)
-		CLASS
 			EXPRESSION ([featurecode] == 10017 OR [featurecode] == 10019 OR [featurecode] == 1002)
 			STYLE
 				COLOR 0 0 0
@@ -255,36 +248,9 @@ LAYER
 			END
 		END
 		CLASS
-			EXPRESSION
-			STYLE
-				COLOR 224 238 253
-			END
-		END
-		CLASS
 			EXPRESSION "10018"
 			STYLE
 				COLOR 0 0 0
-			END
-		END
-		CLASS
-			EXPRESSION
-			STYLE
-				COLOR 212 212 212
-			END
-		END
-		CLASS
-			EXPRESSION
-			STYLE
-				COLOR 212 212 212
-			END
-		END
-		CLASS
-			EXPRESSION
-			STYLE
-				COLOR 0 0 0
-				WIDTH 2
-				SYMBOL "line-dots"
-				PATTERN 1 5 1 5 END
 			END
 		END
 		CLASS
@@ -319,7 +285,6 @@ LAYER
 				OUTLINECOLOR 255 255 255
 				SIZE 7
 				POSITION [position]
-				OFFSET 0 -5
 				ANGLE [orientdeg]
 			END  		
 		END
