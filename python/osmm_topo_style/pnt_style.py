@@ -56,7 +56,7 @@ def CalculateStyleCode(row):
         returnVal = 12
     elif (descGroup == "Historic Interest"):
         returnVal = 13
-    elif (descGroup == "Landform"):
+    elif (descGroup == "Landform" or descTerm == "Positioned Boulder"):
         returnVal = 14
     elif (descGroup.find("Tidal Water") > -1):
         returnVal = 15
@@ -110,7 +110,7 @@ def CalculateStyleDescription(row):
         returnVal = "Triangulation Point Or Pillar Point"
     elif (descGroup == "Historic Interest"):
         returnVal = "Historic Point"
-    elif (descGroup == "Landform"):
+    elif (descGroup == "Landform" or descTerm == "Positioned Boulder"):
         returnVal = "Landform Point"
     elif (descGroup.find("Tidal Water") > -1):
         returnVal = "Tidal Water Point"
