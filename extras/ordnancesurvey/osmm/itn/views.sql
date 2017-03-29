@@ -79,3 +79,12 @@ SELECT array_to_string(road.roadname, ', ') AS roadname,
 FROM osmm_itn.roadlink AS roadlink
 LEFT JOIN osmm_itn.road_roadlink AS road_roadlink ON (roadlink.fid = road_roadlink.roadlink_fid)
 LEFT JOIN osmm_itn.road AS road ON (road_roadlink.road_fid = road.fid);
+
+-- Lookup between roadlinkinformation and roadlink on fid
+-- Used to link in additional RRI to the network
+CREATE OR REPLACE VIEW osmm_itn.roadlinkinformation_roadlink AS
+SELECT a.roadlinkinformation_fid,
+       replace(a.roadlink_fid, '#'::text, ''::text) AS roadlink_fid
+FROM (SELECT roadlinkinformation.fid AS roadlinkinformation_fid,
+       roadlinkinformation.referencetoroadlink_href::text AS roadlink_fid
+       FROM roadlinkinformation) a;
