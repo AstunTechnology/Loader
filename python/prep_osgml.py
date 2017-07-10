@@ -528,7 +528,7 @@ class prep_addressbase_premium(prep_addressbase):
 
             multi_elm = etree.SubElement(etree.SubElement(feat_elm, 'geom'),
                                          'MultiPoint')
-            point_elms = feat_elm.xpath('//Point')
+            point_elms = feat_elm.xpath('//streetStart/Point|//streetEnd/Point')
             for point_elm in point_elms:
                 etree.SubElement(multi_elm, 'pointMember').append(point_elm)
 
