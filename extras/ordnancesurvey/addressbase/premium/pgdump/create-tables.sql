@@ -28,7 +28,7 @@ ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "uprn" FLOAT8;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "classkey" VARCHAR;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "classificationcode" VARCHAR;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "classscheme" VARCHAR;
-ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "schemeversion" INTEGER;
+ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "schemeversion" FLOAT8;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "startdate" VARCHAR;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "entrydate" VARCHAR;
 ALTER TABLE "addressbase_premium"."classification" ADD COLUMN "lastupdatedate" VARCHAR;

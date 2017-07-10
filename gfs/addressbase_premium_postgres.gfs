@@ -115,7 +115,7 @@
         <PropertyDefn>
             <Name>schemeVersion</Name>
             <ElementPath>schemeVersion</ElementPath>
-            <Type>Integer</Type>
+            <Type>Real</Type>
         </PropertyDefn>
         <PropertyDefn>
             <Name>startDate</Name>
