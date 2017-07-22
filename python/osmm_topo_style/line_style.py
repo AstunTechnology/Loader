@@ -76,7 +76,7 @@ def CalculateStyleCode(row):
 
 
     # Descriptive group rules
-    elif (descGroup is not None and descGroup.find("General Feature") > -1 and physicalPres <> "Edge / Limit"):
+    elif (descGroup is not None and descGroup.find("General Feature") > -1 and physicalPres != "Edge / Limit"):
         returnVal = 23
     elif (descGroup is not None and descGroup.find("Building") > -1 and descTerm == "Outline" and physicalPres == "Obstructing"):
         returnVal = 24
@@ -167,7 +167,7 @@ def CalculateStyleDescription(row):
     elif (descTerm == "Normal Tidal Limit"):
         returnVal = "Normal Tidal Limit Line"
     # Descriptive group rules
-    elif (descGroup is not None and descGroup.find("General Feature") > -1 and physicalPres <> "Edge / Limit"):
+    elif (descGroup is not None and descGroup.find("General Feature") > -1 and physicalPres != "Edge / Limit"):
         returnVal = "Default Line"
     elif (descGroup is not None and descGroup.find("Building") > -1 and descTerm == "Outline" and physicalPres == "Obstructing"):
         returnVal = "Building Outline Line"
