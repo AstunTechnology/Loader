@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python 
 
 ''' SAX parser implementation to prepare an Ordnance Survey
     GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.9
@@ -35,7 +35,7 @@ class gmlhandler(ContentHandler):
             # outputting the declaration when we try and parse non XML content
             # as can happen when we parse all files in a zip archive
             self.first_elm = False
-            output('<?xml version="1.0" ?>')
+            output('<?xml version="1.0" encoding="UTF-8"?>\n')
         try:
             name = name.split(':')[1]
         except IndexError:

@@ -142,6 +142,7 @@ class prep_vmd(prep_osgml):
             'Building',
             'ElectricityTransmissionLine',
             'Foreshore',
+	    'FunctionalSite',
             'Glasshouse',
             'HeritageSite',
             'Land',
@@ -157,6 +158,42 @@ class prep_vmd(prep_osgml):
             'RoadTunnel',
             'Roundabout',
             'SpotHeight',
+            'SurfaceWater_Area',
+            'SurfaceWater_Line',
+            'TidalBoundary',
+            'TidalWater'
+        ]
+
+    def _add_fid_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "fid")
+        elm.text = feat_elm.get('id')
+
+        return feat_elm
+
+class prep_oml(prep_osgml):
+
+    def __init__(self, inputfile):
+        prep_osgml.__init__(self, inputfile)
+        self.feat_types = [
+            'AdministrativeBoundary',
+            'Building',
+	    'CarChargingPoint',
+            'ElectricityTransmissionLine',
+            'Foreshore',
+	    'FunctionalSite',
+            'Glasshouse',
+            'ImportantBuilding',
+            'NamedPlace',
+            'Woodland',
+            'RailwayStation',
+            'RailwayTrack',
+            'RailwayTunnel',
+            'Road',
+            'MotorwayJunction',
+            'RoadTunnel',
+            'Roundabout',
             'SurfaceWater_Area',
             'SurfaceWater_Line',
             'TidalBoundary',
@@ -566,6 +603,193 @@ class prep_osmm_water():
 
         return feat_elm
 
+class prep_orvs():
+    """
+    Preperation of OpenRiver Water Layer features
+
+    """
+    def __init__(self, inputfile):
+        self.inputfile = inputfile
+        self.feat_types = ['WatercourseLink', 'HydroNode']
+
+    def prepare_feature(self, feat_str):
+
+        # Parse the xml string into something useful
+        feat_elm = etree.fromstring(feat_str)
+        feat_elm = self._prepare_feat_elm(feat_elm)
+
+        return etree.tostring(feat_elm,
+                              encoding='UTF-8',
+                              pretty_print=True).decode('utf_8')
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_fid_elm(feat_elm)
+        #feat_elm = self._add_filename_elm(feat_elm)
+        #feat_elm = self._add_start_end_node_elm(feat_elm)
+        #feat_elm = self._add_code_list_values(feat_elm)
+
+        return feat_elm
+
+    def _add_fid_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "fid")
+        elm.text = feat_elm.get('id')
+
+        return feat_elm
+
+    def _add_filename_elm(self, feat_elm):
+
+        # Create an element with the filename
+        elm = etree.SubElement(feat_elm, "filename")
+        elm.text = os.path.basename(self.inputfile)
+
+        return feat_elm
+
+    def _add_start_end_node_elm(self, feat_elm):
+
+        start_elm = feat_elm.xpath('//startNode')
+        if len(start_elm):
+            etree.SubElement(feat_elm,
+                             'startNode').text = start_elm[0].get('href')[1:]
+        end_elm = feat_elm.xpath('//endNode')
+        if len(end_elm):
+            etree.SubElement(feat_elm,
+                             'endNode').text = end_elm[0].get('href')[1:]
+
+        return feat_elm
+
+    def _add_code_list_values(self, feat_elm):
+
+        list_elms = feat_elm.xpath("""//reasonForChange |
+                                        //form |
+                                        //provenance |
+                                        //levelOfDetail""")
+
+        r = re.compile('#(.*)$')
+        for elm in list_elms:
+            matches = r.findall(elm.get('href'))
+            if len(matches):
+                elm.text = matches[0]
+
+        return feat_elm
+
+
+class prep_ords():
+    """
+    Preperation of OpenRoads Layer features
+
+    """
+    def __init__(self, inputfile):
+        self.inputfile = inputfile
+        self.feat_types = ['RoadLink', 'RoadNode','MotorwayJunction']
+
+    def prepare_feature(self, feat_str):
+
+        # Parse the xml string into something useful
+        feat_elm = etree.fromstring(feat_str)
+        feat_elm = self._prepare_feat_elm(feat_elm)
+
+        return etree.tostring(feat_elm,
+                              encoding='UTF-8',
+                              pretty_print=True).decode('utf_8')
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_fid_elm(feat_elm)
+        feat_elm = self._add_filename_elm(feat_elm)
+        #feat_elm = self._add_start_end_node_elm(feat_elm)
+        #feat_elm = self._add_code_list_values(feat_elm)
+
+        return feat_elm
+
+    def _add_fid_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "fid")
+        elm.text = feat_elm.get('id')
+
+        return feat_elm
+
+    def _add_filename_elm(self, feat_elm):
+
+        # Create an element with the filename
+        elm = etree.SubElement(feat_elm, "filename")
+        elm.text = os.path.basename(self.inputfile)
+
+        return feat_elm
+
+    def _add_start_end_node_elm(self, feat_elm):
+
+        start_elm = feat_elm.xpath('//startNode')
+        if len(start_elm):
+            etree.SubElement(feat_elm,
+                             'startNode').text = start_elm[0].get('href')[1:]
+        end_elm = feat_elm.xpath('//endNode')
+        if len(end_elm):
+            etree.SubElement(feat_elm,
+                             'endNode').text = end_elm[0].get('href')[1:]
+
+        return feat_elm
+
+    def _add_code_list_values(self, feat_elm):
+
+        list_elms = feat_elm.xpath("""//reasonForChange |
+                                        //form |
+                                        //provenance |
+                                        //levelOfDetail""")
+
+        r = re.compile('#(.*)$')
+        for elm in list_elms:
+            matches = r.findall(elm.get('href'))
+            if len(matches):
+                elm.text = matches[0]
+
+        return feat_elm
+
+
+class prep_terr():
+    """
+    Preperation of terrain features
+
+    """
+    def __init__(self, inputfile):
+        self.inputfile = inputfile
+        self.feat_types = ['SpotHeight', 'ContourLine','LandWaterBoundary']
+
+    def prepare_feature(self, feat_str):
+
+        # Parse the xml string into something useful
+        feat_elm = etree.fromstring(feat_str)
+        feat_elm = self._prepare_feat_elm(feat_elm)
+
+        return etree.tostring(feat_elm,
+                              encoding='UTF-8',
+                              pretty_print=True).decode('utf_8')
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_fid_elm(feat_elm)
+        feat_elm = self._add_filename_elm(feat_elm)
+
+        return feat_elm
+
+    def _add_fid_elm(self, feat_elm):
+
+        # Create an element with the fid
+        elm = etree.SubElement(feat_elm, "fid")
+        elm.text = feat_elm.get('id')
+
+        return feat_elm
+
+    def _add_filename_elm(self, feat_elm):
+
+        # Create an element with the filename
+        elm = etree.SubElement(feat_elm, "filename")
+        elm.text = os.path.basename(self.inputfile)
+
+        return feat_elm
 
 class prep_emapsite_addressbase_premium(prep_osgml):
     """
