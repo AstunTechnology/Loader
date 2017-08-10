@@ -97,7 +97,7 @@ class prep_osgml():
 
 class prep_vml(prep_osgml):
     """
-    Preperation class for OS VectorMap Local features.
+    Preparation class for OS VectorMap Local features.
 
     """
     def __init__(self, inputfile):
@@ -184,7 +184,7 @@ class prep_vmd(prep_osgml):
 
 class prep_osmm_topo(prep_osgml):
     """
-    Preperation class for OS MasterMap features which in addition to the work
+    Preparation class for OS MasterMap features which in addition to the work
     performed by `prep_osgml` adds `themes`, `descriptiveGroups` and
     `descriptiveTerms` elements containing a delimited string of the attributes
     that can appear multiple times.
@@ -298,7 +298,7 @@ class prep_osmm_topo(prep_osgml):
 
 class prep_osmm_topo_qgis(prep_osmm_topo):
     """
-    Preperation class for OS MasterMap features which in addition to the work performed by
+    Preparation class for OS MasterMap features which in addition to the work performed by
     `prep_osmm_topo` adds QGIS specific label attributes such as `qFont` and `aAnchorPos`.
 
     """
@@ -446,7 +446,7 @@ class prep_osmm_itn(prep_osgml):
 
 class prep_addressbase():
     """
-    Simple preperation of AddressBase data
+    Simple preparation of AddressBase data
 
     """
     def __init__(self, inputfile):
@@ -481,7 +481,7 @@ class prep_addressbase():
 
 class prep_addressbase_premium(prep_addressbase):
     """
-    Preperation of AddressBase Premium data
+    Preparation of AddressBase Premium data
 
     """
     def __init__(self, inputfile):
@@ -577,7 +577,7 @@ class prep_addressbase_premium(prep_addressbase):
 
 class prep_osmm_water():
     """
-    Preperation of OSMM Water Layer features
+    Preparation of OSMM Water Layer features
 
     """
     def __init__(self, inputfile):
