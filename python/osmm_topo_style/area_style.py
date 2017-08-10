@@ -164,17 +164,17 @@ def CalculateStyleDescription(row):
         returnVal = "Bridge Fill"
     elif (descTerm.find("Level Crossing") > -1):
         returnVal = "Level Crossing Fill"
-    elif (descTerm == "Traffic Calming" > -1):
+    elif (descTerm == "Traffic Calming"):
         returnVal = "Traffic Calming Fill"
-    elif (descTerm == "Pylon" > -1):
+    elif (descTerm == "Pylon"):
         returnVal = "Pylon Fill"
-    elif (descTerm == "Track" > -1):
+    elif (descTerm == "Track"):
         returnVal = "Track Fill"
-    elif (descTerm == "Step" > -1):
+    elif (descTerm == "Step"):
         returnVal = "Step Fill"
-    elif (descTerm == "Canal" > -1):
+    elif (descTerm == "Canal"):
         returnVal = "Canal Fill"
-    elif (descTerm == "Footbridge" > -1):
+    elif (descTerm == "Footbridge"):
         returnVal = "Footbridge Fill"
 
     # Natural Environment Descriptive Term Rules
