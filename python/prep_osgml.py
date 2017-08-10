@@ -97,7 +97,7 @@ class prep_osgml():
 
 class prep_vml(prep_osgml):
     """
-    Preperation class for OS VectorMap Local features.
+    Preparation class for OS VectorMap Local features.
 
     """
     def __init__(self, inputfile):
@@ -184,7 +184,7 @@ class prep_vmd(prep_osgml):
 
 class prep_osmm_topo(prep_osgml):
     """
-    Preperation class for OS MasterMap features which in addition to the work
+    Preparation class for OS MasterMap features which in addition to the work
     performed by `prep_osgml` adds `themes`, `descriptiveGroups` and
     `descriptiveTerms` elements containing a delimited string of the attributes
     that can appear multiple times.
@@ -257,28 +257,28 @@ class prep_osmm_topo(prep_osgml):
 
             anchor = osmm_topo_style.txt_style.CalculateAnchor(row)
             elm = etree.SubElement(feat_elm, 'anchor')
-            elm.text = unicode(anchor)
+            elm.text = str(anchor)
             geo_x = osmm_topo_style.txt_style.CalculateGeoX(row)
             elm = etree.SubElement(feat_elm, 'geo_x')
-            elm.text = unicode(geo_x)
+            elm.text = str(geo_x)
             geo_y = osmm_topo_style.txt_style.CalculateGeoY(row)
             elm = etree.SubElement(feat_elm, 'geo_y')
-            elm.text = unicode(geo_y)
+            elm.text = str(geo_y)
             font_code = osmm_topo_style.txt_style.CalculateFontCode(row)
             elm = etree.SubElement(feat_elm, 'font_code')
-            elm.text = unicode(font_code)
+            elm.text = str(font_code)
             colour_code = osmm_topo_style.txt_style.CalculateColorCode(row)
             elm = etree.SubElement(feat_elm, 'colour_code')
-            elm.text = unicode(colour_code)
+            elm.text = str(colour_code)
             rotation = osmm_topo_style.txt_style.CalculateRotation(row)
             elm = etree.SubElement(feat_elm, 'rotation')
-            elm.text = unicode(rotation)
+            elm.text = str(rotation)
 
         elm = etree.SubElement(feat_elm, "%s" % 'styleCode')
-        elm.text = unicode(style_code)
+        elm.text = str(style_code)
 
         elm = etree.SubElement(feat_elm, "%s" % 'styleDescription')
-        elm.text = unicode(style_description)
+        elm.text = str(style_description)
 
         return feat_elm
 
@@ -298,7 +298,7 @@ class prep_osmm_topo(prep_osgml):
 
 class prep_osmm_topo_qgis(prep_osmm_topo):
     """
-    Preperation class for OS MasterMap features which in addition to the work performed by
+    Preparation class for OS MasterMap features which in addition to the work performed by
     `prep_osmm_topo` adds QGIS specific label attributes such as `qFont` and `aAnchorPos`.
 
     """
@@ -446,7 +446,7 @@ class prep_osmm_itn(prep_osgml):
 
 class prep_addressbase():
     """
-    Simple preperation of AddressBase data
+    Simple preparation of AddressBase data
 
     """
     def __init__(self, inputfile):
@@ -481,7 +481,7 @@ class prep_addressbase():
 
 class prep_addressbase_premium(prep_addressbase):
     """
-    Preperation of AddressBase Premium data
+    Preparation of AddressBase Premium data
 
     """
     def __init__(self, inputfile):
@@ -577,7 +577,7 @@ class prep_addressbase_premium(prep_addressbase):
 
 class prep_osmm_water():
     """
-    Preperation of OSMM Water Layer features
+    Preparation of OSMM Water Layer features
 
     """
     def __init__(self, inputfile):
