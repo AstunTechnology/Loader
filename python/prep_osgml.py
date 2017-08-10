@@ -2,6 +2,7 @@
 A collection of classes used to manipulate Ordnance Survey GB GML data,
 used with prepgml4ogr.py.
 """
+from builtins import str
 from lxml import etree
 from lxml import objectify
 import json
@@ -257,28 +258,28 @@ class prep_osmm_topo(prep_osgml):
 
             anchor = osmm_topo_style.txt_style.CalculateAnchor(row)
             elm = etree.SubElement(feat_elm, 'anchor')
-            elm.text = unicode(anchor)
+            elm.text = str(anchor)
             geo_x = osmm_topo_style.txt_style.CalculateGeoX(row)
             elm = etree.SubElement(feat_elm, 'geo_x')
-            elm.text = unicode(geo_x)
+            elm.text = str(geo_x)
             geo_y = osmm_topo_style.txt_style.CalculateGeoY(row)
             elm = etree.SubElement(feat_elm, 'geo_y')
-            elm.text = unicode(geo_y)
+            elm.text = str(geo_y)
             font_code = osmm_topo_style.txt_style.CalculateFontCode(row)
             elm = etree.SubElement(feat_elm, 'font_code')
-            elm.text = unicode(font_code)
+            elm.text = str(font_code)
             colour_code = osmm_topo_style.txt_style.CalculateColorCode(row)
             elm = etree.SubElement(feat_elm, 'colour_code')
-            elm.text = unicode(colour_code)
+            elm.text = str(colour_code)
             rotation = osmm_topo_style.txt_style.CalculateRotation(row)
             elm = etree.SubElement(feat_elm, 'rotation')
-            elm.text = unicode(rotation)
+            elm.text = str(rotation)
 
         elm = etree.SubElement(feat_elm, "%s" % 'styleCode')
-        elm.text = unicode(style_code)
+        elm.text = str(style_code)
 
         elm = etree.SubElement(feat_elm, "%s" % 'styleDescription')
-        elm.text = unicode(style_description)
+        elm.text = str(style_description)
 
         return feat_elm
 
