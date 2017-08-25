@@ -1,17 +1,9 @@
 <GMLFeatureClassList>
-  <SequentialLayers>true</SequentialLayers>
   <GMLFeatureClass>
     <Name>SpotHeight</Name>
     <ElementPath>SpotHeight</ElementPath>
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-    <DatasetSpecificInfo>
-      <FeatureCount>4</FeatureCount>
-      <ExtentXMin>546995.00000</ExtentXMin>
-      <ExtentXMax>549400.00000</ExtentXMax>
-      <ExtentYMin>97819.40000</ExtentYMin>
-      <ExtentYMax>99814.40000</ExtentYMax>
-    </DatasetSpecificInfo>
     <PropertyDefn>
       <Name>propertyValue</Name>
       <ElementPath>propertyValue</ElementPath>
@@ -35,25 +27,12 @@
       <Type>String</Type>
       <Width>20</Width>
     </PropertyDefn>
-    <PropertyDefn>
-      <Name>filename</Name>
-      <ElementPath>filename</ElementPath>
-      <Type>String</Type>
-      <Width>27</Width>
-    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>ContourLine</Name>
     <ElementPath>ContourLine</ElementPath>
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-    <DatasetSpecificInfo>
-      <FeatureCount>40</FeatureCount>
-      <ExtentXMin>543482.60000</ExtentXMin>
-      <ExtentXMax>550000.00000</ExtentXMax>
-      <ExtentYMin>97514.10000</ExtentYMin>
-      <ExtentYMax>100000.00000</ExtentYMax>
-    </DatasetSpecificInfo>
     <PropertyDefn>
       <Name>propertyValue</Name>
       <ElementPath>propertyValue</ElementPath>
@@ -77,25 +56,12 @@
       <Type>String</Type>
       <Width>20</Width>
     </PropertyDefn>
-    <PropertyDefn>
-      <Name>filename</Name>
-      <ElementPath>filename</ElementPath>
-      <Type>String</Type>
-      <Width>27</Width>
-    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>LandWaterBoundary</Name>
     <ElementPath>LandWaterBoundary</ElementPath>
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-    <DatasetSpecificInfo>
-      <FeatureCount>19</FeatureCount>
-      <ExtentXMin>543212.30000</ExtentXMin>
-      <ExtentXMax>550000.00000</ExtentXMax>
-      <ExtentYMin>97368.90000</ExtentYMin>
-      <ExtentYMax>100000.00000</ExtentYMax>
-    </DatasetSpecificInfo>
     <PropertyDefn>
       <Name>propertyValue</Name>
       <ElementPath>propertyValue</ElementPath>
@@ -118,12 +84,6 @@
       <ElementPath>fid</ElementPath>
       <Type>String</Type>
       <Width>20</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>filename</Name>
-      <ElementPath>filename</ElementPath>
-      <Type>String</Type>
-      <Width>27</Width>
     </PropertyDefn>
   </GMLFeatureClass>
 </GMLFeatureClassList>
