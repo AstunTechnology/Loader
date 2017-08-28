@@ -1,16 +1,16 @@
 -- View: addressbase_premium.address_point
 
 
-CREATE OR REPLACE VIEW addressbase_premium.address_point AS 
- SELECT deliverypointaddress.rmudprn AS OSAPR,  
+CREATE OR REPLACE VIEW addressbase_premium.address_point AS
+ SELECT deliverypointaddress.udprn AS OSAPR,
 		deliverypointaddress.departmentname AS departmentname,
 		deliverypointaddress.poboxnumber AS poboxnumber,
 		deliverypointaddress.organisationname AS organisationname,
 		deliverypointaddress.buildingnumber AS buildingnumber,
 		deliverypointaddress.subbuildingname AS subbuildingname,
 		deliverypointaddress.buildingname AS buildingname,
-		deliverypointaddress.thoroughfarename AS thoroughfarename,
-		deliverypointaddress.dependentthoroughfarename AS dependentthoroughfarename,
+		deliverypointaddress.thoroughfare AS thoroughfare,
+		deliverypointaddress.dependentthoroughfare AS dependentthoroughfare,
 		deliverypointaddress.posttown AS posttown,
 		deliverypointaddress.dependentlocality AS dependentlocality,
 		deliverypointaddress.doubledependentlocality AS doubledependentlocality,
@@ -25,7 +25,7 @@ CREATE OR REPLACE VIEW addressbase_premium.address_point AS
    FROM addressbase_premium.deliverypointaddress deliverypointaddress
    LEFT JOIN addressbase_premium.basiclandpropertyunit blpu ON deliverypointaddress.uprn = blpu.uprn;
 COMMENT ON VIEW addressbase_premium.address_point
-  IS 'Address Base Premium formated to look similar to Address Point!
+  IS 'AddressBase Premium formatted to look similar to AddressPoint
 
      Author: Andy Berry
      www.dragontail.co.uk

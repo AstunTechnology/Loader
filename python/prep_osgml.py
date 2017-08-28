@@ -2,13 +2,23 @@
 A collection of classes used to manipulate Ordnance Survey GB GML data,
 used with prepgml4ogr.py.
 """
-
-import os
-import re
-import json
-import lxml
 from lxml import etree
 from lxml import objectify
+import json
+import lxml
+import os
+import re
+
+import sys
+# Mock arcpy which is imported by not used in the ESRI UK modules used to
+# classify OSMM Topo features
+sys.modules['arcpy'] = __import__('sys')
+import osmm_topo_style.area_style
+import osmm_topo_style.bnd_style
+import osmm_topo_style.line_style
+import osmm_topo_style.pnt_style
+import osmm_topo_style.sym_style
+import osmm_topo_style.txt_style
 
 
 class prep_osgml():
@@ -87,7 +97,7 @@ class prep_osgml():
 
 class prep_vml(prep_osgml):
     """
-    Preperation class for OS VectorMap Local features.
+    Preparation class for OS VectorMap Local features.
 
     """
     def __init__(self, inputfile):
@@ -174,7 +184,7 @@ class prep_vmd(prep_osgml):
 
 class prep_osmm_topo(prep_osgml):
     """
-    Preperation class for OS MasterMap features which in addition to the work
+    Preparation class for OS MasterMap features which in addition to the work
     performed by `prep_osgml` adds `themes`, `descriptiveGroups` and
     `descriptiveTerms` elements containing a delimited string of the attributes
     that can appear multiple times.
@@ -196,6 +206,7 @@ class prep_osmm_topo(prep_osgml):
 
         feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
         feat_elm = self._add_lists_elms(feat_elm)
+        feat_elm = self._add_style_elms(feat_elm)
 
         return feat_elm
 
@@ -207,6 +218,70 @@ class prep_osmm_topo(prep_osgml):
 
         return feat_elm
 
+    def _add_style_elms(self, feat_elm):
+
+        descriptiveTerms = self._get_list_of_terms(feat_elm, 'descriptiveTerms')
+        descriptiveGroups = self._get_list_of_terms(feat_elm, 'descriptiveGroups')
+        make = self._get_list_of_terms(feat_elm, 'make')
+        physicalPresence = self._get_list_of_terms(feat_elm, 'physicalPresence')
+        featureCode = int(self._get_list_of_terms(feat_elm, 'featureCode'))
+
+        style_code = 99
+        style_description = 'Unclassified'
+        if feat_elm.tag == 'TopographicArea':
+            row = ['', '', '', descriptiveTerms, descriptiveGroups, make]
+            style_code = osmm_topo_style.area_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.area_style.CalculateStyleDescription(row)
+        elif feat_elm.tag == 'TopographicLine':
+            row = ['', '', '', descriptiveTerms, descriptiveGroups, make, physicalPresence]
+            style_code = osmm_topo_style.line_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.line_style.CalculateStyleDescription(row)
+        elif feat_elm.tag == 'TopographicPoint':
+            row = ['', '', '', descriptiveGroups, descriptiveTerms, make]
+            style_code = osmm_topo_style.pnt_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.pnt_style.CalculateStyleDescription(row)
+        elif feat_elm.tag == 'BoundaryLine':
+            row = ['', '', '', featureCode]
+            style_code = osmm_topo_style.bnd_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.bnd_style.CalculateStyleDescription(row)
+        elif feat_elm.tag == 'CartographicSymbol':
+            row = ['', '', '', featureCode]
+            style_code = osmm_topo_style.sym_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.sym_style.CalculateStyleDescription(row)
+        elif feat_elm.tag == 'CartographicText':
+            anchorPosition = float(self._get_list_of_terms(feat_elm, 'anchorPosition'))
+            orientation = float(self._get_list_of_terms(feat_elm, 'orientation'))
+            row = ['', '', '', descriptiveGroups, descriptiveTerms, make, anchorPosition, '', '', '', '', '', '', orientation]
+            style_code = osmm_topo_style.txt_style.CalculateStyleCode(row)
+            style_description = osmm_topo_style.txt_style.CalculateStyleDescription(row)
+
+            anchor = osmm_topo_style.txt_style.CalculateAnchor(row)
+            elm = etree.SubElement(feat_elm, 'anchor')
+            elm.text = unicode(anchor)
+            geo_x = osmm_topo_style.txt_style.CalculateGeoX(row)
+            elm = etree.SubElement(feat_elm, 'geo_x')
+            elm.text = unicode(geo_x)
+            geo_y = osmm_topo_style.txt_style.CalculateGeoY(row)
+            elm = etree.SubElement(feat_elm, 'geo_y')
+            elm.text = unicode(geo_y)
+            font_code = osmm_topo_style.txt_style.CalculateFontCode(row)
+            elm = etree.SubElement(feat_elm, 'font_code')
+            elm.text = unicode(font_code)
+            colour_code = osmm_topo_style.txt_style.CalculateColorCode(row)
+            elm = etree.SubElement(feat_elm, 'colour_code')
+            elm.text = unicode(colour_code)
+            rotation = osmm_topo_style.txt_style.CalculateRotation(row)
+            elm = etree.SubElement(feat_elm, 'rotation')
+            elm.text = unicode(rotation)
+
+        elm = etree.SubElement(feat_elm, "%s" % 'styleCode')
+        elm.text = unicode(style_code)
+
+        elm = etree.SubElement(feat_elm, "%s" % 'styleDescription')
+        elm.text = unicode(style_description)
+
+        return feat_elm
+
     def _create_list_of_terms(self, feat_elm, name):
         text_list = feat_elm.xpath('//%s/text()' % name)
         if len(text_list):
@@ -214,10 +289,16 @@ class prep_osmm_topo(prep_osgml):
             elm.text = self.list_seperator.join(text_list)
         return feat_elm
 
+    def _get_list_of_terms(self, feat_elm, name):
+        text_list = feat_elm.xpath('//%s/text()' % name)
+        if len(text_list):
+            return self.list_seperator.join(text_list)
+        return ''
+
 
 class prep_osmm_topo_qgis(prep_osmm_topo):
     """
-    Preperation class for OS MasterMap features which in addition to the work performed by
+    Preparation class for OS MasterMap features which in addition to the work performed by
     `prep_osmm_topo` adds QGIS specific label attributes such as `qFont` and `aAnchorPos`.
 
     """
@@ -365,7 +446,7 @@ class prep_osmm_itn(prep_osgml):
 
 class prep_addressbase():
     """
-    Simple preperation of AddressBase data
+    Simple preparation of AddressBase data
 
     """
     def __init__(self, inputfile):
@@ -400,7 +481,7 @@ class prep_addressbase():
 
 class prep_addressbase_premium(prep_addressbase):
     """
-    Preperation of AddressBase Premium data
+    Preparation of AddressBase Premium data
 
     """
     def __init__(self, inputfile):
@@ -447,7 +528,7 @@ class prep_addressbase_premium(prep_addressbase):
 
             multi_elm = etree.SubElement(etree.SubElement(feat_elm, 'geom'),
                                          'MultiPoint')
-            point_elms = feat_elm.xpath('//Point')
+            point_elms = feat_elm.xpath('//streetStart/Point|//streetEnd/Point')
             for point_elm in point_elms:
                 etree.SubElement(multi_elm, 'pointMember').append(point_elm)
 
@@ -496,7 +577,7 @@ class prep_addressbase_premium(prep_addressbase):
 
 class prep_osmm_water():
     """
-    Preperation of OSMM Water Layer features
+    Preparation of OSMM Water Layer features
 
     """
     def __init__(self, inputfile):
@@ -563,6 +644,41 @@ class prep_osmm_water():
             matches = r.findall(elm.get('href'))
             if len(matches):
                 elm.text = matches[0]
+
+        return feat_elm
+
+
+class prep_emapsite_addressbase_premium(prep_osgml):
+    """
+    Prepare emapsite OS AddressBase Premium GML output by FME
+    """
+    def __init__(self, inputfile):
+        prep_osgml.__init__(self, inputfile)
+        # Looking at the sample data it doesn't appear as though the name of
+        # the AddressBaseT_Plus feature type is likely to be the same for each
+        # supply so as there is only one feature type simply specify the
+        # containing featureMember
+        self.feat_types = ['featureMember']
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_geom(feat_elm)
+
+        return feat_elm
+
+    def _add_geom(self, feat_elm):
+        """ Add a GML Point element to a feature with coordinates taken from
+            the x_coordinate and y_coordinate fields """
+
+        pos_elm = etree.SubElement(feat_elm, 'Pos')
+        pos_elm.text = '%s %s' % (feat_elm.findtext('.//x_coordinate'), feat_elm.findtext('.//y_coordinate'))
+
+        pnt_elm = etree.SubElement(feat_elm, 'Point')
+        pnt_elm.attrib['srsName'] = 'EPSG:27700'
+        pnt_elm.append(pos_elm)
+
+        # Append the Point element to the first child
+        list(feat_elm)[0].append(pnt_elm)
 
         return feat_elm
 

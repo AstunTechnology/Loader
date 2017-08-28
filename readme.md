@@ -24,6 +24,10 @@ __Installation details are available on the [project wiki](https://github.com/As
 
 First configure Loader by editing `loader.config` specifying:
 
+## Changes
+
+See [CHANGELOG.md](./CHANGELOG.md).
+
 ### Basic configuration ###
 
 * `src_dir`
@@ -88,4 +92,6 @@ See [AUTHORS.md](./AUTHORS.md).
 
 ## License
 
-MIT, Copyright (c) 2014 Astun Technology Ltd. (http://astuntechnology.com). See LICENSE.txt for full terms.
+MIT, Copyright (c) 2017 Astun Technology Ltd. (http://astuntechnology.com). See [LICENSE.txt](./LICENSE.txt) for full terms.
+
+The logic to apply `style_code` and `style_description` values to OSMM Topography Layer data is derived from the ESRI UK [OSMM-Styling](https://github.com/EsriUK/OSMM-Styling) project licensed under Apache-2.0.

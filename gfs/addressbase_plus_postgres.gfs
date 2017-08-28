@@ -3,6 +3,7 @@
     <Name>Address</Name>
     <ElementPath>Address</ElementPath>
     <GeometryType>1</GeometryType>
+    <GeometryElementPath>position</GeometryElementPath>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
       <Name>uprn</Name>

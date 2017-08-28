@@ -74,6 +74,16 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>CartographicText</Name>
@@ -170,6 +180,46 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>anchor</Name>
+      <ElementPath>anchor</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>geo_x</Name>
+      <ElementPath>geo_x</ElementPath>
+      <Type>Real</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>geo_y</Name>
+      <ElementPath>geo_y</ElementPath>
+      <Type>Real</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>font_code</Name>
+      <ElementPath>font_code</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>colour_code</Name>
+      <ElementPath>colour_code</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>rotation</Name>
+      <ElementPath>rotation</ElementPath>
+      <Type>Real</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>CartographicSymbol</Name>
@@ -246,6 +296,16 @@
       <ElementPath>filename</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>BoundaryLine</Name>
@@ -320,6 +380,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -412,6 +482,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -516,6 +596,16 @@
     <PropertyDefn>
       <Name>filename</Name>
       <ElementPath>filename</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_code</Name>
+      <ElementPath>styleCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>style_description</Name>
+      <ElementPath>styleDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
