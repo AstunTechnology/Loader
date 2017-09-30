@@ -148,17 +148,14 @@ class prep_vmd(prep_osgml):
         prep_osgml.__init__(self, inputfile)
         self.feat_types = [
             'AdministrativeBoundary',
-            'Airport',
             'Building',
             'ElectricityTransmissionLine',
             'Foreshore',
+            'FunctionalSite',
             'Glasshouse',
-            'HeritageSite',
-            'Land',
             'NamedPlace',
             'Woodland',
             'Ornament',
-            'PublicAmenity',
             'RailwayStation',
             'RailwayTrack',
             'RailwayTunnel',
