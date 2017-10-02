@@ -21,27 +21,6 @@
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
-    <Name>Airport</Name>
-    <ElementPath>Airport</ElementPath>
-    <GeometryType>1</GeometryType>
-    <SRSName>EPSG:27700</SRSName>
-    <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>distinctivename</Name>
-      <ElementPath>distinctiveName</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>featureCode</Name>
-      <ElementPath>featureCode</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-  </GMLFeatureClass> 
-  <GMLFeatureClass>
     <Name>Building</Name>
     <ElementPath>Building</ElementPath>
     <GeometryType>3</GeometryType>
@@ -90,24 +69,8 @@
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
-    <Name>Glasshouse</Name>
-    <ElementPath>Glasshouse</ElementPath>
-    <GeometryType>3</GeometryType>
-    <SRSName>EPSG:27700</SRSName>
-    <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>featureCode</Name>
-      <ElementPath>featureCode</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-  </GMLFeatureClass>
-  <GMLFeatureClass>
-    <Name>HeritageSite</Name>
-    <ElementPath>HeritageSite</ElementPath>
+    <Name>FunctionalSite</Name>
+    <ElementPath>FunctionalSite</ElementPath>
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
@@ -121,14 +84,19 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
+      <Name>classification</Name>
+      <ElementPath>classification</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>featureCode</Name>
       <ElementPath>featureCode</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
-    <Name>Land</Name>
-    <ElementPath>Land</ElementPath>
+    <Name>Glasshouse</Name>
+    <ElementPath>Glasshouse</ElementPath>
     <GeometryType>3</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
@@ -158,24 +126,14 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>orientation</Name>
-      <ElementPath>orientation</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>fontType</Name>
-      <ElementPath>fontType</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>fontColour</Name>
-      <ElementPath>fontColour</ElementPath>
+      <Name>textorientation</Name>
+      <ElementPath>textOrientation</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>fontHeight</Name>
       <ElementPath>fontHeight</ElementPath>
-      <Type>Integer</Type>
+      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>featureCode</Name>
@@ -216,27 +174,6 @@
     </PropertyDefn>
   </GMLFeatureClass>
   <GMLFeatureClass>
-    <Name>PublicAmenity</Name>
-    <ElementPath>PublicAmenity</ElementPath>
-    <GeometryType>1</GeometryType>
-    <SRSName>EPSG:27700</SRSName>
-    <PropertyDefn>
-      <Name>fid</Name>
-      <ElementPath>fid</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>classification</Name>
-      <ElementPath>classification</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>featureCode</Name>
-      <ElementPath>featureCode</ElementPath>
-      <Type>Integer</Type>
-    </PropertyDefn>
-  </GMLFeatureClass>
-  <GMLFeatureClass>
     <Name>RailwayStation</Name>
     <ElementPath>RailwayStation</ElementPath>
     <GeometryType>1</GeometryType>
@@ -247,13 +184,13 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>classification</Name>
-      <ElementPath>classification</ElementPath>
+      <Name>distinctivename</Name>
+      <ElementPath>distinctiveName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>distinctivename</Name>
-      <ElementPath>distinctiveName</ElementPath>
+      <Name>classification</Name>
+      <ElementPath>classification</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -315,13 +252,23 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>dftNumber</Name>
-      <ElementPath>dftNumber</ElementPath>
+      <Name>roadnumber</Name>
+      <ElementPath>roadNumber</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>classification</Name>
       <ElementPath>classification</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>drawlevel</Name>
+      <ElementPath>drawLevel</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>override</Name>
+      <ElementPath>override</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -341,7 +288,7 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>junctionNumber</Name>
+      <Name>junctionnumber</Name>
       <ElementPath>junctionNumber</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
