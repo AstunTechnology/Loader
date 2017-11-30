@@ -1,3 +1,7 @@
+# Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Distributed under the terms of the MIT License (MIT).
+# See LICENSE.txt file in the project root for full license information.
+
 """
 prep_kml class used to manipulate police.uk KML data, used with prepgml4ogr.py
 """
@@ -21,7 +25,7 @@ class prep_kml():
         feat_elm = etree.fromstring(feat_str)
         feat_elm = self._prepare_feat_elm(feat_elm)
 
-        return etree.tostring(feat_elm, encoding='UTF-8', pretty_print=True).decode('utf_8');
+        return etree.tostring(feat_elm, encoding='UTF-8', pretty_print=True).decode('utf_8')
 
     def _prepare_feat_elm(self, feat_elm):
 

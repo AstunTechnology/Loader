@@ -1,3 +1,7 @@
+# Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Distributed under the terms of the MIT License (MIT).
+# See LICENSE.txt file in the project root for full license information.
+
 """
 A collection of classes used to manipulate Ordnance Survey GB GML data,
 used with prepgml4ogr.py.

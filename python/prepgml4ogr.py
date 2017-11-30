@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Distributed under the terms of the MIT License (MIT).
+# See LICENSE.txt file in the project root for full license information.
 
 ''' SAX parser implementation to prepare an Ordnance Survey
     GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.9
