@@ -1,3 +1,6 @@
+# Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Licensed under [MIT License](https://git.io/fAxH0).
+
 """
 A collection of classes used to manipulate Ordnance Survey GB GML data,
 used with prepgml4ogr.py.

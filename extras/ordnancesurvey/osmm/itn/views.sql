@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Lookup between road and roadlink on fid
 CREATE OR REPLACE VIEW osmm_itn.road_roadlink AS
 SELECT road_fid,

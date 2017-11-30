@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Creates a spatial index for each VML table.
 
 CREATE INDEX "text_geom_idx" ON "vml"."text" USING GIST ("wkb_geometry");

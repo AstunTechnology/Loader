@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Drops any existing VML related tables and creates fresh tables ready to
 -- receive data.
 

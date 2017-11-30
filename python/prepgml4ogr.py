@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Licensed under [MIT License](https://git.io/fAxH0).
 
 ''' SAX parser implementation to prepare an Ordnance Survey
     GML file (.gml or .gz) so that it is ready to be loaded by OGR 1.9

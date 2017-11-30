@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+# Licensed under [MIT License](https://git.io/fAxH0).
 
 """Simple GML/KML loader that provides an easy way of preparing the document before
    passing it to OGR for loading, handles loading a directory of files and uncompresses

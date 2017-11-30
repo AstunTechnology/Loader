@@ -1,3 +1,6 @@
+## Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+## Licensed under [MIT License](https://git.io/fAxH0).
+
 LAYER
 		METADATA
 			 WMS_TITLE "TopoArea"        

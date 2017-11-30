@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Create tables suitable for archiving superseded VML features. Assumes there
 -- is a schema called vml_archive. The script apply-update.sql manages moving
 -- superseded features to the archive tables.

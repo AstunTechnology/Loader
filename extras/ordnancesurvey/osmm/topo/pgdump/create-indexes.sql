@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Creates a spatial index for each OSMM Topo table
 
 CREATE INDEX "boundaryline_geom_idx" ON "osmm_topo"."boundaryline" USING GIST ("wkb_geometry");

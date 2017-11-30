@@ -1,4 +1,8 @@
 <GMLFeatureClassList>
+  <!--
+  Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+  Licensed under [MIT License](https://git.io/fAxH0).
+  -->
   <SequentialLayers>true</SequentialLayers>
   <GMLFeatureClass>
     <Name>RoadLink</Name>

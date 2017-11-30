@@ -1,4 +1,8 @@
 <GMLFeatureClassList>
+    <!--
+    Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+    Licensed under [MIT License](https://git.io/fAxH0).
+    -->
     <GMLFeatureClass>
         <Name>BasicLandPropertyUnit</Name>
         <ElementPath>BasicLandPropertyUnit</ElementPath>
