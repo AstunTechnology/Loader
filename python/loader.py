@@ -145,7 +145,7 @@ class Loader:
 
         # Run ogr2ogr to do the actual load
         print("Loading: %s" % file_path)
-        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
+        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\'', gfs_file='\'' + self.gfs_file + '\''))
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
         exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
