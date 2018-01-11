@@ -1,4 +1,4 @@
-﻿-- Drops any existing OSMM Topo related tables and creates fresh tables ready to receive data
+-- Drops any existing OSMM Topo related tables and creates fresh tables ready to receive data
 
 DROP TABLE IF EXISTS "osmm_topo"."boundaryline" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'boundaryline' AND f_table_schema = 'osmm_topo';
@@ -19,6 +19,8 @@ ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "make" VARCHAR;
 ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "physicalpresence" VARCHAR;
 ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."boundaryline" ADD COLUMN "style_description" VARCHAR;
 
 DROP TABLE IF EXISTS "osmm_topo"."cartographicsymbol" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'cartographicsymbol' AND f_table_schema = 'osmm_topo';
@@ -39,6 +41,8 @@ ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "physicalpresence" VARCHAR;
 ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "referencetofeature" VARCHAR;
 ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."cartographicsymbol" ADD COLUMN "style_description" VARCHAR;
 
 DROP TABLE IF EXISTS "osmm_topo"."cartographictext" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'cartographictext' AND f_table_schema = 'osmm_topo';
@@ -63,6 +67,14 @@ ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "height" FLOAT8;
 ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "orientation" INTEGER;
 ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "textstring" VARCHAR;
 ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "style_description" VARCHAR;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "anchor" VARCHAR;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "geo_x" REAL;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "geo_y" REAL;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "font_code" INTEGER;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "colour_code" INTEGER;
+ALTER TABLE "osmm_topo"."cartographictext" ADD COLUMN "rotation" REAL;
 
 DROP TABLE IF EXISTS "osmm_topo"."topographicarea" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicarea' AND f_table_schema = 'osmm_topo';
@@ -83,6 +95,8 @@ ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "make" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "physicalpresence" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."topographicarea" ADD COLUMN "style_description" VARCHAR;
 
 DROP TABLE IF EXISTS "osmm_topo"."topographicline" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicline' AND f_table_schema = 'osmm_topo';
@@ -108,6 +122,8 @@ ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "make" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "physicalpresence" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."topographicline" ADD COLUMN "style_description" VARCHAR;
 
 DROP TABLE IF EXISTS "osmm_topo"."topographicpoint" CASCADE;
 DELETE FROM geometry_columns WHERE f_table_name = 'topographicpoint' AND f_table_schema = 'osmm_topo';
@@ -131,3 +147,5 @@ ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "physicallevel" INTEGER;
 ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "physicalpresence" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "referencetofeature" VARCHAR;
 ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "filename" VARCHAR;
+ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "style_code" INTEGER;
+ALTER TABLE "osmm_topo"."topographicpoint" ADD COLUMN "style_description" VARCHAR;
