@@ -441,6 +441,64 @@ class prep_osmm_itn(prep_osgml):
         return feat_elm
 
 
+class prep_osmm_highways(prep_osgml):
+    """
+    Preparation class for OS MasterMap Highways features.
+
+    """
+
+    def __init__(self, filename):
+
+        prep_osgml.__init__(self, filename)
+
+        self.feat_types = [
+            'AccessRestriction',
+            'HighwayDedication',
+            'FerryLink',
+            'FerryNode',
+            'FerryTerminal',
+            'Hazard',
+            'Maintenance',
+            'Reinstatement',
+            'RestrictionForVehicles',
+            'Road',
+            'RoadJunction',
+            'RoadLink',
+            'RoadNode',
+            'SpecialDesignation',
+            'Street',
+            'Structure',
+            'TurnRestriction'
+        ]
+
+    def _prepare_feat_elm(self, feat_elm):
+
+        feat_elm = self._add_time_interval_json(feat_elm)
+        feat_elm = self._remove_id_hash(feat_elm)
+
+        return feat_elm
+
+    def _remove_id_hash(self, feat_elm):
+
+        for attr in feat_elm.xpath('//@href'):
+            if attr.startswith('#'):
+                elm = attr.getparent()
+                elm.attrib['href'] = attr[1:]
+
+        return feat_elm
+
+    def _add_time_interval_json(self, feat_elm):
+        """ Add a JSON representation of timeInterval elements """
+
+        elms = feat_elm.xpath('//timeInterval')
+        if elms:
+            objs = [objectify.fromstring(etree.tostring(elm)) for elm in elms]
+            sub_elm = etree.SubElement(feat_elm, 'timeInterval_json')
+            sub_elm.text = ObjectifyJSONEncoder().encode(objs)
+
+        return feat_elm
+
+
 class prep_addressbase():
     """
     Simple preparation of AddressBase data
