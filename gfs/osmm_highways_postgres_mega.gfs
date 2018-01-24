@@ -17,7 +17,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|PointReference|element_href</ElementPath>
+      <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -27,7 +27,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -75,7 +75,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>restriction_href</Name>
-      <ElementPath>restriction_href</ElementPath>
+      <ElementPath>restriction@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -184,7 +184,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|NetworkReference|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -304,7 +304,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -316,12 +316,12 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>endNode_href</Name>
-      <ElementPath>endNode_href</ElementPath>
+      <ElementPath>endNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>startNode_href</Name>
-      <ElementPath>startNode_href</ElementPath>
+      <ElementPath>startNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -395,7 +395,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -417,7 +417,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>formOfWaterwayNode_href</Name>
-      <ElementPath>formOfWaterwayNode_href</ElementPath>
+      <ElementPath>formOfWaterwayNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -463,7 +463,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -473,7 +473,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>type_href</Name>
-      <ElementPath>type_href</ElementPath>
+      <ElementPath>type@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -483,7 +483,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>element_href</ElementPath>
+      <ElementPath>element@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -508,7 +508,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>refToFunctionalSite_href</Name>
-      <ElementPath>refToFunctionalSite_href</ElementPath>
+      <ElementPath>refToFunctionalSite@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -535,7 +535,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|PointReference|element_href</ElementPath>
+      <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -545,7 +545,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -608,7 +608,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|LinkReference|element_href</Name>
-      <ElementPath>networkRef|LinkReference|element_href</ElementPath>
+      <ElementPath>networkRef|LinkReference|element@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -618,17 +618,17 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|LinkReference|applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NodeReference|element_href</Name>
-      <ElementPath>networkRef|NodeReference|element_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>linkReference_href</Name>
-      <ElementPath>networkRef|NodeReference|linkReference_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     </GMLFeatureClass>
@@ -648,7 +648,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|NetworkReference|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -715,7 +715,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NetworkReferenceLocation|element_href</Name>
-      <ElementPath>networkRef|NetworkReferenceLocation|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -740,7 +740,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|NetworkReference|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -799,7 +799,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NetworkReferenceLocation|element_href</Name>
-      <ElementPath>networkRef|NetworkReferenceLocation|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -826,7 +826,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|PointReference|element_href</ElementPath>
+      <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -836,7 +836,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -894,7 +894,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>restrictionType_href</Name>
-      <ElementPath>restrictionType_href</ElementPath>
+      <ElementPath>restrictionType@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -929,12 +929,12 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NodeReference|element_href</Name>
-      <ElementPath>networkRef|NodeReference|element_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>linkReference_href</Name>
-      <ElementPath>networkRef|NodeReference|linkReference_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -990,12 +990,12 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>link_href</Name>
-      <ElementPath>link_href</ElementPath>
+      <ElementPath>link@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1088,7 +1088,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1128,7 +1128,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>node_href</Name>
-      <ElementPath>node_href</ElementPath>
+      <ElementPath>node@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1172,7 +1172,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1184,12 +1184,12 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>endNode_href</Name>
-      <ElementPath>endNode_href</ElementPath>
+      <ElementPath>endNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>startNode_href</Name>
-      <ElementPath>startNode_href</ElementPath>
+      <ElementPath>startNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1290,7 +1290,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>directionality_href</Name>
-      <ElementPath>directionality_href</ElementPath>
+      <ElementPath>directionality@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1355,7 +1355,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>relatedRoadArea_href</Name>
-      <ElementPath>relatedRoadArea_href</ElementPath>
+      <ElementPath>relatedRoadArea@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1365,7 +1365,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>formsPartOf_href</Name>
-      <ElementPath>formsPartOf_href</ElementPath>
+      <ElementPath>formsPartOf@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1487,7 +1487,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1509,7 +1509,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>formOfRoadNode_href</Name>
-      <ElementPath>formOfRoadNode_href</ElementPath>
+      <ElementPath>formOfRoadNode@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1524,7 +1524,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>relatedRoadArea_href</Name>
-      <ElementPath>relatedRoadArea_href</ElementPath>
+      <ElementPath>relatedRoadArea@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
        <PropertyDefn>
@@ -1559,7 +1559,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|NetworkReferenceLocation|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1628,7 +1628,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NetworkReference|element_href</Name>
-      <ElementPath>networkRef|NetworkReference|element_href</ElementPath>
+      <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1672,12 +1672,12 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
-      <ElementPath>inNetwork_href</ElementPath>
+      <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>link_href</Name>
-      <ElementPath>link_href</ElementPath>
+      <ElementPath>link@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1782,7 +1782,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>gssCode_href</Name>
-      <ElementPath>gssCode_href</ElementPath>
+      <ElementPath>gssCode@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1869,7 +1869,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
-      <ElementPath>networkRef|PointReference|element_href</ElementPath>
+      <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1879,7 +1879,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1942,17 +1942,17 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|NodeReference|element_href</Name>
-      <ElementPath>networkRef|NodeReference|element_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>linkReference_href</Name>
-      <ElementPath>networkRef|NodeReference|linkReference_href</ElementPath>
+      <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|LinkReference|element_href</Name>
-      <ElementPath>networkRef|LinkReference|element_href</ElementPath>
+      <ElementPath>networkRef|LinkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1962,7 +1962,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>networkRef|LinkReference|applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -1992,7 +1992,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>linkref_applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection_href</ElementPath>
+      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
