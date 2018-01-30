@@ -473,6 +473,9 @@ class prep_osmm_highways(prep_osgml):
 
     def _prepare_feat_elm(self, feat_elm):
 
+        # Expose the gml:id as fid which OGR will detect
+        feat_elm.attrib['fid'] = feat_elm.attrib['id']
+
         feat_elm = self._add_time_interval_json(feat_elm)
         feat_elm = self._remove_id_hash(feat_elm)
 
