@@ -6,28 +6,13 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>element_href</Name>
+      <Name>roadlink_href</Name>
       <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title</Name>
+      <Name>applicableDirection</Name>
       <ElementPath>networkRef|PointReference|applicableDirection@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -47,11 +32,6 @@
       <Subtype>Integer64</Subtype>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -69,23 +49,23 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>restriction_title</Name>
+      <Name>restriction</Name>
       <ElementPath>restriction@title</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>restriction_href</Name>
-      <ElementPath>restriction@href</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>vehicle_codeSpace</Name>
-      <ElementPath>inclusion|VehicleQualifier|vehicle@codeSpace</ElementPath>
+      <Name>inclusion_vehicle</Name>
+      <ElementPath>inclusion|VehicleQualifier|vehicle</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>vehicle</Name>
-      <ElementPath>inclusion|VehicleQualifier|vehicle</ElementPath>
+      <Name>inclusion_use</Name>
+      <ElementPath>inclusion|VehicleQualifier|use</ElementPath>
+      <Type>StringList</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>inclusion_load</Name>
+      <ElementPath>inclusion|VehicleQualifier|load</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -94,33 +74,23 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>use_codeSpace</Name>
-      <ElementPath>exemption|VehicleQualifier|use@codeSpace</ElementPath>
+      <Name>exemption_vehicle</Name>
+      <ElementPath>exemption|VehicleQualifier|vehicle</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>use</Name>
+      <Name>exemption_use</Name>
       <ElementPath>exemption|VehicleQualifier|use</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>use_codeSpace_</Name>
-      <ElementPath>inclusion|VehicleQualifier|use@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>inclusion|VehicleQualifier|use</Name>
-      <ElementPath>inclusion|VehicleQualifier|use</ElementPath>
+      <Name>exemption_load</Name>
+      <ElementPath>exemption|VehicleQualifier|load</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -128,38 +98,8 @@
       <ElementPath>timeInterval_json</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
-    <PropertyDefn>
-      <Name>vehicle_codeSpace_</Name>
-      <ElementPath>exemption|VehicleQualifier|vehicle@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>exemption|VehicleQualifier|vehicle</Name>
-      <ElementPath>exemption|VehicleQualifier|vehicle</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>load_codeSpace</Name>
-      <ElementPath>inclusion|VehicleQualifier|load@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>load</Name>
-      <ElementPath>inclusion|VehicleQualifier|load</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>load_codeSpace_</Name>
-      <ElementPath>exemption|VehicleQualifier|load@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>exemption|VehicleQualifier|load</Name>
-      <ElementPath>exemption|VehicleQualifier|load</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
   </GMLFeatureClass>
-  <GMLFeatureClass>
+ <GMLFeatureClass>
     <Name>HighwayDedication</Name>
     <ElementPath>insert|HighwayDedication</ElementPath>
     <GeometryName>geometry</GeometryName>
@@ -168,17 +108,7 @@
     <GeometryType>2</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>element_title</Name>
+      <Name>element_type</Name>
       <ElementPath>networkRef|NetworkReference|element@title</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
@@ -193,11 +123,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -208,18 +133,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>dedication_codeSpace</Name>
-      <ElementPath>dedication@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -277,16 +192,6 @@
     <GeometryType>-2147483646</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -296,11 +201,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -349,11 +249,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
@@ -368,16 +263,6 @@
     <GeometryType>-2147483647</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -387,11 +272,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -411,18 +291,8 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>formOfWaterwayNode_title</Name>
+      <Name>formOfWaterwayNode</Name>
       <ElementPath>formOfWaterwayNode@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>formOfWaterwayNode_href</Name>
-      <ElementPath>formOfWaterwayNode@href</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -436,16 +306,6 @@
     <ElementPath>insert|FerryTerminal</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -457,23 +317,13 @@
       <Subtype>Integer64</Subtype>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>inNetwork_href</Name>
       <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>type_title</Name>
+      <Name>type</Name>
       <ElementPath>type@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>type_href</Name>
-      <ElementPath>type@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -497,11 +347,6 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
@@ -517,35 +362,20 @@
       <Type>StringList</Type>
     </PropertyDefn>
   </GMLFeatureClass>
-  <GMLFeatureClass>
+    <GMLFeatureClass>
     <Name>Hazard</Name>
     <ElementPath>insert|Hazard</ElementPath>
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-<PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>element_href</Name>
+      <Name>point_href</Name>
       <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title</Name>
+      <Name>point_applicableDirection</Name>
       <ElementPath>networkRef|PointReference|applicableDirection@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -565,11 +395,6 @@
       <Subtype>Integer64</Subtype>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -587,18 +412,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>hazard_codeSpace</Name>
-      <ElementPath>hazard@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>hazard</Name>
       <ElementPath>hazard</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -607,45 +422,30 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|LinkReference|element_href</Name>
+      <Name>Link_href</Name>
       <ElementPath>networkRef|LinkReference|element@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title_</Name>
+      <Name>link_applicableDirection</Name>
       <ElementPath>networkRef|LinkReference|applicableDirection@title</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|LinkReference|applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>networkRef|NodeReference|element_href</Name>
+      <Name>Node_href</Name>
       <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>linkReference_href</Name>
+      <Name>Node_link_href</Name>
       <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     </GMLFeatureClass>
-  <GMLFeatureClass>
+    <GMLFeatureClass>
     <Name>Maintenance</Name>
     <ElementPath>insert|Maintenance</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-    <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
       <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
@@ -654,11 +454,6 @@
     <PropertyDefn>
       <Name>localId</Name>
       <ElementPath>inspireId|Identifier|localId</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -677,12 +472,12 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>maintenanceAuthority|ResponsibleAuthority|identifier</Name>
+      <Name>maintenanceResponsibleAuthorityId</Name>
       <ElementPath>maintenanceAuthority|ResponsibleAuthority|identifier</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>authorityName</Name>
+      <Name>maintenanceResponsibleAuthorityName</Name>
       <ElementPath>maintenanceAuthority|ResponsibleAuthority|authorityName</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -694,18 +489,13 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>highwayAuthority|ResponsibleAuthority|identifier</Name>
+      <Name>highwayAuthorityResponsibleAuthorityID</Name>
       <ElementPath>highwayAuthority|ResponsibleAuthority|identifier</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>highwayAuthority|ResponsibleAuthority|authorityName</Name>
+      <Name>highwayAuthorityResponsibleAuthorityName</Name>
       <ElementPath>highwayAuthority|ResponsibleAuthority|authorityName</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -714,7 +504,7 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|NetworkReferenceLocation|element_href</Name>
+      <Name>networkref_href</Name>
       <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -728,16 +518,6 @@
     <Name>Reinstatement</Name>
     <ElementPath>insert|Reinstatement</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
       <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
@@ -746,11 +526,6 @@
     <PropertyDefn>
       <Name>localId</Name>
       <ElementPath>inspireId|Identifier|localId</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -771,11 +546,6 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reinstatementType_codeSpace</Name>
-      <ElementPath>reinstatementType@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reinstatementType</Name>
       <ElementPath>reinstatementType</ElementPath>
       <Type>String</Type>
@@ -788,17 +558,12 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|NetworkReferenceLocation|element_href</Name>
+      <Name>NetworkReferenceLocation_href</Name>
       <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -814,11 +579,6 @@
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>identifier</Name>
       <ElementPath>identifier</ElementPath>
@@ -830,13 +590,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title</Name>
+      <Name>applicableDirection</Name>
       <ElementPath>networkRef|PointReference|applicableDirection@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -854,11 +609,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
@@ -888,23 +638,13 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>restrictionType_title</Name>
+      <Name>restrictionType</Name>
       <ElementPath>restrictionType@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>restrictionType_href</Name>
-      <ElementPath>restrictionType@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>sourceOfMeasure</Name>
       <ElementPath>sourceOfMeasure</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>structure_codeSpace</Name>
-      <ElementPath>structure@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -918,22 +658,17 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|NodeReference|element_href</Name>
+      <Name>Node_href</Name>
       <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>linkReference_href</Name>
+      <Name>link_href</Name>
       <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
@@ -948,30 +683,40 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>use_codeSpace</Name>
-      <ElementPath>exemption|VehicleQualifier|use@codeSpace</ElementPath>
+      <Name>inclusion_use</Name>
+      <ElementPath>inclusion|VehicleQualifier|use</ElementPath>
       <Type>String</Type>
-    </PropertyDefn>
+    </PropertyDefn>      
     <PropertyDefn>
-      <Name>use</Name>
-      <ElementPath>exemption|VehicleQualifier|use</ElementPath>
+    <Name>inclusion_vehicle</Name>
+      <ElementPath>inclusion|VehicleQualifier|vehicle</ElementPath>
       <Type>String</Type>
-    </PropertyDefn>
+    </PropertyDefn>      
+    <PropertyDefn>
+    <Name>inclusion_load</Name>
+      <ElementPath>inclusion|VehicleQualifier|load</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>      
+    <PropertyDefn>
+      <Name>exemption_use</Name>
+     <ElementPath>exemption|VehicleQualifier|use</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>      
+    <PropertyDefn>
+      <Name>exemption_vehicle</Name>
+      <ElementPath>exemption|VehicleQualifier|vehicle</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>      
+    <PropertyDefn>
+      <Name>exemption_load</Name>
+      <ElementPath>exemption|VehicleQualifier|load</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>       
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Road</Name>
     <ElementPath>insert|Road</ElementPath>
     <GeometryType>100</GeometryType>
-    <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
@@ -982,11 +727,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -1011,24 +751,19 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>name</Name>
+      <Name>designatedName</Name>
       <ElementPath>designatedName|DesignatedNameType|name</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|identifier</Name>
+      <Name>namingAuthorityId</Name>
       <ElementPath>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|identifier</ElementPath>
       <Type>IntegerList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>authorityName</Name>
+      <Name>namingAuthorityName</Name>
       <ElementPath>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|authorityName</ElementPath>
       <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>reasonForChange</Name>
@@ -1038,11 +773,6 @@
     <PropertyDefn>
       <Name>nationalRoadCode</Name>
       <ElementPath>nationalRoadCode</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>roadClassification_codeSpace</Name>
-      <ElementPath>roadClassification@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1061,16 +791,6 @@
     <ElementPath>insert|RoadJunction</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -1082,28 +802,13 @@
       <Subtype>Integer64</Subtype>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>inNetwork_href</Name>
       <ElementPath>inNetwork@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>junctionType_codeSpace</Name>
-      <ElementPath>junctionType@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1145,16 +850,6 @@
     <GeometryElementPath>centrelineGeometry</GeometryElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -1164,11 +859,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -1205,18 +895,8 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>roadClassification_codeSpace</Name>
-      <ElementPath>roadClassification@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1225,18 +905,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>routeHierarchy_codeSpace</Name>
-      <ElementPath>routeHierarchy@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>routeHierarchy</Name>
       <ElementPath>routeHierarchy</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>formOfWay_codeSpace</Name>
-      <ElementPath>formOfWay@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1264,18 +934,8 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>operationalState_codeSpace</Name>
-      <ElementPath>operationalState@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>operationalState</Name>
       <ElementPath>operationalState</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>provenance_codeSpace</Name>
-      <ElementPath>provenance@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1284,13 +944,8 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>directionality_title</Name>
+      <Name>directionality</Name>
       <ElementPath>directionality@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>directionality_href</Name>
-      <ElementPath>directionality@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1304,17 +959,12 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>matchStatus_codeSpace</Name>
-      <ElementPath>matchStatus@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>matchStatus</Name>
       <ElementPath>matchStatus</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>alternateIdentifier|ThematicIdentifier|identifier</Name>
+      <Name>alternateIdentifier</Name>
       <ElementPath>alternateIdentifier|ThematicIdentifier|identifier</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
@@ -1334,22 +984,22 @@
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inDirection</Name>
+      <Name>elevationGain_inDirection</Name>
       <ElementPath>elevationGain|ElevationGainType|inDirection</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inDirection_uom</Name>
+      <Name>elevationGain_inDirection_uom</Name>
       <ElementPath>elevationGain|ElevationGainType|inDirection_uom</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inOppositeDirection</Name>
+      <Name>elevationGain_inOppositeDirection</Name>
       <ElementPath>elevationGain|ElevationGainType|inOppositeDirection</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inOppositeDirection_uom</Name>
+      <Name>elevationGain_inOppositeDirection_uom</Name>
       <ElementPath>elevationGain|ElevationGainType|inOppositeDirection_uom</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -1369,32 +1019,27 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>averageWidth</Name>
+      <Name>roadWidth_averageWidth</Name>
       <ElementPath>roadWidth|RoadWidthType|averageWidth</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>averageWidth_uom</Name>
+      <Name>roadWidth_averageWidth_uom</Name>
       <ElementPath>roadWidth|RoadWidthType|averageWidth_uom</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>minimumWidth</Name>
+      <Name>roadWidth_minimumWidth</Name>
       <ElementPath>roadWidth|RoadWidthType|minimumWidth</ElementPath>
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>minimumWidth_uom</Name>
+      <Name>roadWidth_minimumWidth_uom</Name>
       <ElementPath>roadWidth|RoadWidthType|minimumWidth_uom</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>confidenceLevel_codeSpace</Name>
-      <ElementPath>roadWidth|RoadWidthType|confidenceLevel@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>confidenceLevel</Name>
+      <Name>roadWidth_confidenceLevel</Name>
       <ElementPath>roadWidth|RoadWidthType|confidenceLevel</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -1419,18 +1064,8 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>roadStructure_codeSpace</Name>
-      <ElementPath>roadStructure@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>roadStructure</Name>
       <ElementPath>roadStructure</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>cycleFacility_codeSpace</Name>
-      <ElementPath>cycleFacility|CycleFacilityType|cycleFacility@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1439,18 +1074,18 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>wholeLink_nil</Name>
+      <Name>cycleFacility_wholeLink_nil</Name>
       <ElementPath>cycleFacility|CycleFacilityType|wholeLink@nil</ElementPath>
       <Type>String</Type>
       <Subtype>Boolean</Subtype>
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>wholeLink_nilReason</Name>
+      <Name>cycleFacility_wholeLink_nilReason</Name>
       <ElementPath>cycleFacility|CycleFacilityType|wholeLink@nilReason</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
-  </GMLFeatureClass>
+   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadNode</Name>
     <ElementPath>insert|RoadNode</ElementPath>
@@ -1459,16 +1094,6 @@
     <!--POINTZ-->
     <GeometryType>-2147483647</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-    <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
@@ -1479,11 +1104,6 @@
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
       <Subtype>Integer64</Subtype>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -1503,18 +1123,8 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>formOfRoadNode_title</Name>
+      <Name>formOfRoadNode</Name>
       <ElementPath>formOfRoadNode@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>formOfRoadNode_href</Name>
-      <ElementPath>formOfRoadNode@href</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1526,11 +1136,6 @@
       <Name>relatedRoadArea_href</Name>
       <ElementPath>relatedRoadArea@href</ElementPath>
       <Type>StringList</Type>
-    </PropertyDefn>
-       <PropertyDefn>
-      <Name>classification_codeSpace</Name>
-      <ElementPath>classification@codeSpace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>classification</Name>
@@ -1547,16 +1152,6 @@
     <Name>SpecialDesignation</Name>
     <ElementPath>insert|SpecialDesignation</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
-   <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
     <PropertyDefn>
       <Name>element_href</Name>
       <ElementPath>networkRef|NetworkReferenceLocation|element@href</ElementPath>
@@ -1565,11 +1160,6 @@
     <PropertyDefn>
       <Name>localId</Name>
       <ElementPath>inspireId|Identifier|localId</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1588,11 +1178,6 @@
       <Type>String</Type>
       <Subtype>Boolean</Subtype>
       <Width>0</Width>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>designation_codeSpace</Name>
-      <ElementPath>designation@codeSpace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>designation</Name>
@@ -1617,22 +1202,17 @@
       <Width>0</Width>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|NetworkReference|element_href</Name>
+      <Name>networkRef_href</Name>
       <ElementPath>networkRef|NetworkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>locationDescription</Name>
+      <Name>networkRef_locationDescription</Name>
       <ElementPath>networkRef|NetworkReferenceLocation|locationDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -1646,16 +1226,6 @@
     <GeometryType>5</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -1664,11 +1234,6 @@
       <Name>localId</Name>
       <ElementPath>inspireId|Identifier|localId</ElementPath>
       <Type>Integer</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>inNetwork_href</Name>
@@ -1686,33 +1251,23 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>name</Name>
+      <Name>designatedName</Name>
       <ElementPath>designatedName|DesignatedNameType|name</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|identifier</Name>
+      <Name>namingAuthorityID</Name>
       <ElementPath>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|identifier</ElementPath>
       <Type>IntegerList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>authorityName</Name>
+      <Name>namingAuthorityName</Name>
       <ElementPath>designatedName|DesignatedNameType|namingAuthority|ResponsibleAuthority|authorityName</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>streetType_codeSpace</Name>
-      <ElementPath>streetType@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1721,27 +1276,22 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>state_codeSpace</Name>
-      <ElementPath>operationalState|OperationalStateType|state@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>state</Name>
+      <Name>operationalState</Name>
       <ElementPath>operationalState|OperationalStateType|state</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>TimePeriod_id</Name>
+      <Name>operationalState_TimePeriod_id</Name>
       <ElementPath>operationalState|OperationalStateType|validTime|TimePeriod@id</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>beginPosition</Name>
+      <Name>operationalState_beginPosition</Name>
       <ElementPath>operationalState|OperationalStateType|validTime|TimePeriod|beginPosition</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>endPosition_indeterminatePosition</Name>
+      <Name>operationalState_endPosition_indeterminatePosition</Name>
       <ElementPath>operationalState|OperationalStateType|validTime|TimePeriod|endPosition@indeterminatePosition</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
@@ -1756,18 +1306,13 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>responsibleAuthority|ResponsibleAuthority|identifier</Name>
+      <Name>responsibleAuthorityID</Name>
       <ElementPath>responsibleAuthority|ResponsibleAuthority|identifier</ElementPath>
       <Type>Integer</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>responsibleAuthority|ResponsibleAuthority|authorityName</Name>
+      <Name>responsibleAuthorityName</Name>
       <ElementPath>responsibleAuthority|ResponsibleAuthority|authorityName</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>geometryProvenance_codeSpace</Name>
-      <ElementPath>geometryProvenance@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1798,11 +1343,6 @@
     <PropertyDefn>
       <Name>nationalRoadCode</Name>
       <ElementPath>nationalRoadCode</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>roadClassification_codeSpace</Name>
-      <ElementPath>roadClassification@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1858,28 +1398,13 @@
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>element_href</Name>
+      <Name>networkRef_href</Name>
       <ElementPath>networkRef|PointReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title</Name>
+      <Name>applicableDirection</Name>
       <ElementPath>networkRef|PointReference|applicableDirection@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>applicableDirection_href</Name>
-      <ElementPath>networkRef|PointReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1899,11 +1424,6 @@
       <Subtype>Integer64</Subtype>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>beginLifespanVersion</Name>
       <ElementPath>beginLifespanVersion</ElementPath>
       <Type>String</Type>
@@ -1918,11 +1438,6 @@
     <PropertyDefn>
       <Name>validFrom_nilReason</Name>
       <ElementPath>validFrom@nilReason</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>structure_codeSpace</Name>
-      <ElementPath>structure@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -1931,38 +1446,28 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>reasonForChange</Name>
       <ElementPath>reasonForChange</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|NodeReference|element_href</Name>
+      <Name>NodeReference_href</Name>
       <ElementPath>networkRef|NodeReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>linkReference_href</Name>
+      <Name>NodeReference_linkReference_href</Name>
       <ElementPath>networkRef|NodeReference|linkReference@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>networkRef|LinkReference|element_href</Name>
+      <Name>LinkReference_href</Name>
       <ElementPath>networkRef|LinkReference|element@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>applicableDirection_title_</Name>
+      <Name>Link_applicableDirection</Name>
       <ElementPath>networkRef|LinkReference|applicableDirection@title</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>networkRef|LinkReference|applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -1971,38 +1476,18 @@
     <ElementPath>insert|TurnRestriction</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
-      <Name>identifier_codeSpace</Name>
-      <ElementPath>identifier@codeSpace</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>identifier</Name>
-      <ElementPath>identifier</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>linkref_element</Name>
       <ElementPath>networkRef|LinkReference|element@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>linkref_applicableDirection_title</Name>
+      <Name>linkref_applicableDirection</Name>
       <ElementPath>networkRef|LinkReference|applicableDirection@title</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>linkref_applicableDirection_href</Name>
-      <ElementPath>networkRef|LinkReference|applicableDirection@href</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>localId</Name>
       <ElementPath>inspireId|Identifier|localId</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>localId_namespace</Name>
-      <ElementPath>inspireId|Identifier|namespace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -2020,11 +1505,6 @@
     <PropertyDefn>
       <Name>validFrom_nilReason</Name>
       <ElementPath>validFrom@nilReason</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>restriction_codeSpace</Name>
-      <ElementPath>restriction@codeSpace</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -2038,28 +1518,18 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>exemption_vehicle_codeSpace</Name>
-      <ElementPath>exemption|VehicleQualifier|vehicle@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>exemption_vehicle</Name>
       <ElementPath>exemption|VehicleQualifier|vehicle</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>excemption_use_codeSpace</Name>
-      <ElementPath>exemption|VehicleQualifier|use@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>excemption_use</Name>
+      <Name>ecemption_use</Name>
       <ElementPath>exemption|VehicleQualifier|use</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inclusion_vehicle_codeSpace</Name>
-      <ElementPath>inclusion|VehicleQualifier|vehicle@codeSpace</ElementPath>
+      <Name>ecemption_load</Name>
+      <ElementPath>exemption|VehicleQualifier|load</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
@@ -2068,19 +1538,14 @@
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>inclusion_load_codeSpace</Name>
-      <ElementPath>inclusion|VehicleQualifier|load@codeSpace</ElementPath>
-      <Type>StringList</Type>
-    </PropertyDefn>
-    <PropertyDefn>
       <Name>inclusion_load</Name>
       <ElementPath>inclusion|VehicleQualifier|load</ElementPath>
       <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>reasonForChange_codeSpace</Name>
-      <ElementPath>reasonForChange@codeSpace</ElementPath>
-      <Type>String</Type>
+      <Name>inclusion_use</Name>
+      <ElementPath>inclusion|VehicleQualifier|use</ElementPath>
+      <Type>StringList</Type>
     </PropertyDefn>
     <PropertyDefn>
       <Name>reasonForChange</Name>
