@@ -52,6 +52,10 @@ constitutes a bare minimum; more info is almost always better:
 
 ## Contributing changes
 
+### Contributor License Agreement
+
+Your contribution will be under our [license](https://raw.githubusercontent.com/AstunTechnology/Loader/master/LICENSE.txt) as per [GitHub's terms of service](https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license).
+
 ### Version control branching
 
 * Always __make a new branch__ for your work, no matter how small. This makes
