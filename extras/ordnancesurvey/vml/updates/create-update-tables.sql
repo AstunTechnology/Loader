@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Create tables suitable for loading a VML update. Drops any existing VML
 -- update tables. Assumes there is a schema called vml_update. The ogc_fid
 -- column is dropped to avoid issues with inserting into the main tables as

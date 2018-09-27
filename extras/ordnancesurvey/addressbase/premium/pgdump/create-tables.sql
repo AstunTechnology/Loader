@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Drops any existing AddressBase Premium tables and creates fresh tables to recieve data
 
 DROP TABLE "addressbase_premium"."basiclandpropertyunit" CASCADE;

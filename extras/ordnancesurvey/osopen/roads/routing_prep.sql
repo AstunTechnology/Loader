@@ -1,4 +1,7 @@
-﻿--remove duplicated roadlink and roadnodes
+﻿-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
+--remove duplicated roadlink and roadnodes
 
 select count(*) from 
               (SELECT ogc_fid,

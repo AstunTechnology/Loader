@@ -1,4 +1,7 @@
-﻿-- View: addressbase_plus.addresses_postal
+﻿-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
+-- View: addressbase_plus.addresses_postal
 
 -- DROP VIEW addressbase_plus.addresses_postal;
 

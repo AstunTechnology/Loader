@@ -1,3 +1,6 @@
+-- Loader. Copyright (c) Astun Technology Ltd. (http://astuntechnology.com).
+-- Licensed under [MIT License](https://git.io/fAxH0).
+
 -- Drops any existing OSMM Topo related tables and creates fresh tables ready to receive data
 
 DROP TABLE IF EXISTS "osmm_topo"."boundaryline" CASCADE;
