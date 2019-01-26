@@ -5,7 +5,7 @@
   -->
   <GMLFeatureClass>
     <Name>AccessRestriction</Name>
-    <ElementPath>insert|AccessRestriction</ElementPath>
+    <ElementPath>AccessRestriction</ElementPath>
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
@@ -105,7 +105,7 @@
   </GMLFeatureClass>
  <GMLFeatureClass>
     <Name>HighwayDedication</Name>
-    <ElementPath>insert|HighwayDedication</ElementPath>
+    <ElementPath>HighwayDedication</ElementPath>
     <GeometryName>geometry</GeometryName>
     <GeometryElementPath>geometry</GeometryElementPath>
     <!--LINESTRING-->
@@ -191,7 +191,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>FerryLink</Name>
-    <ElementPath>insert|FerryLink</ElementPath>
+    <ElementPath>FerryLink</ElementPath>
     <!--LINESTRINGZ-->
     <GeometryType>-2147483646</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
@@ -260,7 +260,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>FerryNode</Name>
-    <ElementPath>insert|FerryNode</ElementPath>
+    <ElementPath>FerryNode</ElementPath>
     <GeometryName>geometry</GeometryName>
     <GeometryElementPath>geometry</GeometryElementPath>
     <!--POINTZ-->
@@ -307,7 +307,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>FerryTerminal</Name>
-    <ElementPath>insert|FerryTerminal</ElementPath>
+    <ElementPath>FerryTerminal</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
@@ -368,7 +368,7 @@
   </GMLFeatureClass>
     <GMLFeatureClass>
     <Name>Hazard</Name>
-    <ElementPath>insert|Hazard</ElementPath>
+    <ElementPath>Hazard</ElementPath>
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
@@ -448,7 +448,7 @@
     </GMLFeatureClass>
     <GMLFeatureClass>
     <Name>Maintenance</Name>
-    <ElementPath>insert|Maintenance</ElementPath>
+    <ElementPath>Maintenance</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
       <Name>element_href</Name>
@@ -520,7 +520,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Reinstatement</Name>
-    <ElementPath>insert|Reinstatement</ElementPath>
+    <ElementPath>Reinstatement</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
       <Name>element_href</Name>
@@ -579,7 +579,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RestrictionForVehicles</Name>
-    <ElementPath>insert|RestrictionForVehicles</ElementPath>
+    <ElementPath>RestrictionForVehicles</ElementPath>
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
@@ -719,7 +719,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Road</Name>
-    <ElementPath>insert|Road</ElementPath>
+    <ElementPath>Road</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
@@ -792,7 +792,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadJunction</Name>
-    <ElementPath>insert|RoadJunction</ElementPath>
+    <ElementPath>RoadJunction</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>beginLifespanVersion</Name>
@@ -848,7 +848,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadLink</Name>
-    <ElementPath>insert|RoadLink</ElementPath>
+    <ElementPath>RoadLink</ElementPath>
     <!--LINESTRINGZ-->
     <GeometryType>-2147483646</GeometryType>
     <GeometryElementPath>centrelineGeometry</GeometryElementPath>
@@ -1092,7 +1092,7 @@
    </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>RoadNode</Name>
-    <ElementPath>insert|RoadNode</ElementPath>
+    <ElementPath>RoadNode</ElementPath>
     <GeometryName>geometry</GeometryName>
     <GeometryElementPath>geometry</GeometryElementPath>
     <!--POINTZ-->
@@ -1154,7 +1154,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>SpecialDesignation</Name>
-    <ElementPath>insert|SpecialDesignation</ElementPath>
+    <ElementPath>SpecialDesignation</ElementPath>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
     <PropertyDefn>
       <Name>element_href</Name>
@@ -1223,7 +1223,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Street</Name>
-    <ElementPath>insert|Street</ElementPath>
+    <ElementPath>Street</ElementPath>
     <GeometryName>geometry</GeometryName>
     <GeometryElementPath>geometry</GeometryElementPath>
     <!--MULTILINESTRING-->
@@ -1397,7 +1397,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Structure</Name>
-    <ElementPath>insert|Structure</ElementPath>
+    <ElementPath>Structure</ElementPath>
     <!--POINT-->
     <GeometryType>1</GeometryType>
     <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
@@ -1477,7 +1477,7 @@
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>TurnRestriction</Name>
-    <ElementPath>insert|TurnRestriction</ElementPath>
+    <ElementPath>TurnRestriction</ElementPath>
     <GeometryType>100</GeometryType>
     <PropertyDefn>
       <Name>linkref_element</Name>
