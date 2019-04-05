@@ -6,6 +6,11 @@ All notable changes to Loader will be documented in this file.
 
 None
 
+## [1.1.0]
+
+* Update VectorMap Local to match new schema - @coastalrocket, @walkermatt
+* Add OSMM Highways support - @aileenheal, @archaeogeek, @GeoWill, @coastalrocket, @walkermatt
+
 ## [1.0.1] - 2017-11-28
 
 * Update VectorMap District to match new schema - @thomparker
