@@ -111,6 +111,7 @@ class prep_vml(prep_osgml):
             'Line',
             'RoadCLine',
             'Area',
+            'RailCLine',
             'creationDate'
         ]
 
@@ -126,8 +127,8 @@ class prep_vml(prep_osgml):
             return feat_elm
         else:
             feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
-            feat_elm = self._add_tile_elm(feat_elm)
-            feat_elm = self._add_creation_date_elm(feat_elm)
+            #feat_elm = self._add_tile_elm(feat_elm)
+            #feat_elm = self._add_creation_date_elm(feat_elm)
             return feat_elm
 
     def _add_tile_elm(self, feat_elm):
