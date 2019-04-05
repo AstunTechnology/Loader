@@ -111,37 +111,19 @@ class prep_vml(prep_osgml):
             'Line',
             'RoadCLine',
             'Area',
-            'RailCLine',
-            'creationDate'
+            'RailCLine'
         ]
 
     def _prepare_feat_elm(self, feat_elm):
 
-        # We need to record the creation date so that we can include it as an
-        # attribute on all features, when we are passed the creationDate
-        # element simply record it's text value and return it as is. This is
-        # potentially brittle as it assumes that the creationDate element
-        # appears before the features in the source GML.
-        if feat_elm.tag == 'creationDate':
-            self.creation_date = feat_elm.text
-            return feat_elm
-        else:
-            feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
-            #feat_elm = self._add_tile_elm(feat_elm)
-            #feat_elm = self._add_creation_date_elm(feat_elm)
-            return feat_elm
+        feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
+        feat_elm = self._add_tile_elm(feat_elm)
+        return feat_elm
 
     def _add_tile_elm(self, feat_elm):
 
         elm = etree.SubElement(feat_elm, "tile")
         elm.text = os.path.splitext(os.path.basename(self.inputfile))[0]
-
-        return feat_elm
-
-    def _add_creation_date_elm(self, feat_elm):
-
-        elm = etree.SubElement(feat_elm, "creationDate")
-        elm.text = self.creation_date
 
         return feat_elm
 
