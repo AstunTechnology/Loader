@@ -9,6 +9,11 @@
     <GeometryType>1</GeometryType>
     <SRSName>EPSG:27700</SRSName>
     <PropertyDefn>
+      <Name>featureid</Name>
+      <ElementPath>featureid</ElementPath>
+      <Type>String</Type>
+    </PropertyDefn>
+    <PropertyDefn>
       <Name>fid</Name>
       <ElementPath>fid</ElementPath>
       <Type>String</Type>
@@ -49,18 +54,14 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
+      <Name>orientation_uom</Name>
+      <ElementPath>textRendering|textRenderingType|orientation_uom</ElementPath>
+      <Type>String</Type>
+      <Width>6</Width>
+    </PropertyDefn>    
+    <PropertyDefn>
       <Name>textString</Name>
       <ElementPath>textString</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>tile</Name>
-      <ElementPath>tile</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>creationDate</Name>
-      <ElementPath>creationDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -95,15 +96,11 @@
       <Type>Real</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>tile</Name>
-      <ElementPath>tile</ElementPath>
+      <Name>orientation_uom</Name>
+      <ElementPath>textRendering|textRenderingType|orientation_uom</ElementPath>
       <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>creationDate</Name>
-      <ElementPath>creationDate</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
+      <Width>6</Width>
+    </PropertyDefn>    
   </GMLFeatureClass>
   <GMLFeatureClass>
     <Name>Line</Name>
@@ -123,16 +120,6 @@
     <PropertyDefn>
       <Name>featureDescription</Name>
       <ElementPath>featureDescription</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>tile</Name>
-      <ElementPath>tile</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>creationDate</Name>
-      <ElementPath>creationDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -167,16 +154,67 @@
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>tile</Name>
-      <ElementPath>tile</ElementPath>
+      <Name>drawLevel</Name>
+      <ElementPath>drawLevel</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>override</Name>
+      <ElementPath>override</ElementPath>
+      <Type>String</Type>
+      <Subtype>Boolean</Subtype>
+      <Width>0</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>suppressed</Name>
+      <ElementPath>suppressed</ElementPath>
+      <Type>String</Type>
+      <Subtype>Boolean</Subtype>
+      <Width>0</Width>
+    </PropertyDefn>      
+    <PropertyDefn>
+      <Name>inTunnel</Name>
+      <ElementPath>inTunnel</ElementPath>
+      <Type>String</Type>
+      <Subtype>Boolean</Subtype>
+      <Width>0</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+<GMLFeatureClass>
+    <Name>RailCLine</Name>
+    <ElementPath>RailCLine</ElementPath>
+    <GeometryType>2</GeometryType>
+    <SRSName>EPSG:27700</SRSName>
+    <PropertyDefn>
+      <Name>fid</Name>
+      <ElementPath>fid</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
     <PropertyDefn>
-      <Name>creationDate</Name>
-      <ElementPath>creationDate</ElementPath>
+      <Name>featureCode</Name>
+      <ElementPath>featureCode</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>featureDescription</Name>
+      <ElementPath>featureDescription</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
-  </GMLFeatureClass>
+    <PropertyDefn>
+      <Name>suppressed</Name>
+      <ElementPath>suppressed</ElementPath>
+      <Type>String</Type>
+      <Subtype>Boolean</Subtype>
+      <Width>0</Width>
+    </PropertyDefn>      
+    <PropertyDefn>
+      <Name>inTunnel</Name>
+      <ElementPath>inTunnel</ElementPath>
+      <Type>String</Type>
+      <Subtype>Boolean</Subtype>
+      <Width>0</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>  
   <GMLFeatureClass>
     <Name>Area</Name>
     <ElementPath>Area</ElementPath>
@@ -195,16 +233,6 @@
     <PropertyDefn>
       <Name>featureDescription</Name>
       <ElementPath>featureDescription</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>tile</Name>
-      <ElementPath>tile</ElementPath>
-      <Type>String</Type>
-    </PropertyDefn>
-    <PropertyDefn>
-      <Name>creationDate</Name>
-      <ElementPath>creationDate</ElementPath>
       <Type>String</Type>
     </PropertyDefn>
   </GMLFeatureClass>
