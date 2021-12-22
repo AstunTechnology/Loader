@@ -149,7 +149,7 @@ class Loader:
 
         # Run ogr2ogr to do the actual load
         print("Loading: %s" % file_path)
-        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\'', gfs_file='\'' + self.gfs_file + '\''))
+        ogr_args = shlex.split(self.ogr_cmd.safe_substitute(out_dir='\'' + self.out_dir + '\'', output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\'', gfs_file='\'' + self.gfs_file + '\''))
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
         exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
@@ -161,7 +161,7 @@ class Loader:
         # output created by ogr2ogr
         if self.post_cmd:
             post_cmd = Template(self.post_cmd)
-            post_args = shlex.split(post_cmd.safe_substitute(output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
+            post_args = shlex.split(post_cmd.safe_substitute(out_dir='\'' + self.out_dir + '\'', output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\''))
             if self.debug:
                 print("Post command: %s" % " ".join(post_args))
             exit_status = subprocess.call(post_args, stderr=sys.stderr)
