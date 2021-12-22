@@ -6,7 +6,13 @@ All notable changes to Loader will be documented in this file.
 
 None
 
-## [1.1.0]
+## [1.2.0] - 2021-12-22
+
+* Add support for loading OS Terrain - @coastalrocket
+* Support `out_dir` as well as existing `output_dir` placeholder in `ogr_cmd` and `post_cmd`
+* Set the encoding of the text output by the `prep_cmd` to `UTF-8`
+
+## [1.1.0] - 2019-04-05
 
 * Update VectorMap Local to match new schema - @coastalrocket, @walkermatt
 * Add OSMM Highways support - @aileenheal, @archaeogeek, @GeoWill, @coastalrocket, @walkermatt
