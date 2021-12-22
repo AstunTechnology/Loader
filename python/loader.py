@@ -79,6 +79,8 @@ class Loader:
         self.debug = (str(self.debug).lower() == 'true')
         if self.debug:
             print("Config: %s" % self.config)
+        # Set the encoding of the text output by the prep_cmd
+        os.environ['PYTHONIOENCODING'] = 'utf-8'
         # Check that a valid gfs is file specified
         if not os.path.isfile(self.gfs_file):
             self.gfs_file = None
