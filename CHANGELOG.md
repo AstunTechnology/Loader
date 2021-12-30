@@ -6,6 +6,10 @@ All notable changes to Loader will be documented in this file.
 
 None
 
+## [1.2.1] - 2021-12-30
+
+* Fix issues loading OSMM Topo with Python 3, should support Python 2.7 and 3
+
 ## [1.2.0] - 2021-12-22
 
 * Add support for loading OS Terrain - @coastalrocket
