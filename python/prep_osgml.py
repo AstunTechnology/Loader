@@ -23,6 +23,9 @@ import osmm_topo_style.pnt_style
 import osmm_topo_style.sym_style
 import osmm_topo_style.txt_style
 
+# Expose unicode type to provide
+# Python 3 compatibility
+unicode = u''.__class__
 
 class prep_osgml():
     """
