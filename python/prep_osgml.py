@@ -100,6 +100,16 @@ class prep_osgml():
 
         return feat_elm
 
+    def _remove_href_hash(self, feat_elm):
+
+        for attr in feat_elm.xpath('//@href'):
+            if attr.startswith('#'):
+                elm = attr.getparent()
+                elm.attrib['href'] = attr[1:]
+
+        return feat_elm
+
+
 
 class prep_vml(prep_osgml):
     """
@@ -193,6 +203,7 @@ class prep_osmm_topo(prep_osgml):
         feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
         feat_elm = self._add_lists_elms(feat_elm)
         feat_elm = self._add_style_elms(feat_elm)
+        feat_elm = self._remove_href_hash(feat_elm)
 
         return feat_elm
 
@@ -466,16 +477,7 @@ class prep_osmm_highways(prep_osgml):
         feat_elm.attrib['fid'] = feat_elm.attrib['id']
 
         feat_elm = self._add_time_interval_json(feat_elm)
-        feat_elm = self._remove_id_hash(feat_elm)
-
-        return feat_elm
-
-    def _remove_id_hash(self, feat_elm):
-
-        for attr in feat_elm.xpath('//@href'):
-            if attr.startswith('#'):
-                elm = attr.getparent()
-                elm.attrib['href'] = attr[1:]
+        feat_elm = self._remove_href_hash(feat_elm)
 
         return feat_elm
 
