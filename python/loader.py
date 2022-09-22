@@ -135,7 +135,7 @@ class Loader:
                 print("Prep command: %s" % " ".join(prep_args))
             with open(prep_file_path, 'w') as f:
                 exit_status = subprocess.call(prep_args, stdout=f, stderr=sys.stderr)
-                if exit_status is not 0:
+                if exit_status != 0:
                     return False
         else:
             shutil.copy(file_path, prep_file_path)
@@ -153,7 +153,7 @@ class Loader:
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
         exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
-        if exit_status is not 0:
+        if exit_status != 0:
             return False
 
         # If there is a post command defined then run it,
@@ -165,7 +165,7 @@ class Loader:
             if self.debug:
                 print("Post command: %s" % " ".join(post_args))
             exit_status = subprocess.call(post_args, stderr=sys.stderr)
-            if exit_status is not 0:
+            if exit_status != 0:
                 return False
         if not self.debug:
             # Clean up by deleting the temporary prepared file
@@ -183,7 +183,7 @@ def main():
         # Build a dict of configuration expanding
         # any environment variables found in the values
         config = {}
-        with open(config_file, 'rU') as f:
+        with open(config_file, 'r') as f:
             for line in f.readlines():
                 line = line.replace('\n', '').strip()
                 if len(line) and line[0:1] != '#':
