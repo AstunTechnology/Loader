@@ -245,7 +245,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>refToFtr</Name>
-      <ElementPath>referenceToFeature</ElementPath>
+      <ElementPath>referenceToFeature@href</ElementPath>
       <Type>Untyped</Type>
     </PropertyDefn>
   </GMLFeatureClass>
@@ -400,7 +400,7 @@
     </PropertyDefn>
     <PropertyDefn>
       <Name>refToFtr</Name>
-      <ElementPath>referenceToFeature</ElementPath>
+      <ElementPath>referenceToFeature@href</ElementPath>
       <Type>Untyped</Type>
     </PropertyDefn>
   </GMLFeatureClass>
