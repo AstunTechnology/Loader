@@ -11,6 +11,7 @@ import json
 import lxml
 import os
 import re
+import unicodedata
 
 import sys
 # Mock arcpy which is imported by not used in the ESRI UK modules used to
@@ -201,10 +202,24 @@ class prep_osmm_topo(prep_osgml):
     def _prepare_feat_elm(self, feat_elm):
 
         feat_elm = prep_osgml._prepare_feat_elm(self, feat_elm)
+        feat_elm = self._normalize_unicode(feat_elm)
         feat_elm = self._add_lists_elms(feat_elm)
         feat_elm = self._add_style_elms(feat_elm)
         feat_elm = self._remove_href_hash(feat_elm)
 
+        return feat_elm
+
+    def _normalize_unicode(self, feat_elm):
+        if feat_elm.tag == 'CartographicText':
+            # Ensure any decomposed unicode characters are replaced
+            # with precomposed counterparts.
+            # As per https://www.postgresql.org/message-id/1523.1407287675%40sss.pgh.pa.us
+            # Postgres doesn't support decomposed UTF8. In practice decomposed characters
+            # such as 'a' followed by 'acute' can be stored but causes an issue when trying
+            # to output to LATIN1. Replacing decomposed with the precomposed counterparts
+            # resolves the issue.
+            text_string = feat_elm.find('textString')
+            text_string.text = unicodedata.normalize('NFC',text_string.text)
         return feat_elm
 
     def _add_lists_elms(self, feat_elm):
