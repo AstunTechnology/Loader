@@ -2,9 +2,9 @@
 
 All notable changes to Loader will be documented in this file.
 
-## [Unreleased]
+## [1.3.0] - 2023-02-22
 
-None
+[Replace decomposed unicode characters with precomposed equivalents](https://github.com/AstunTechnology/Loader/pull/72).
 
 ## [1.2.1] - 2021-12-30
 
