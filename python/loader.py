@@ -14,6 +14,7 @@ import shlex
 import subprocess
 from string import Template
 import tempfile
+import platform
 
 
 class LoaderError(Exception):
@@ -152,7 +153,10 @@ class Loader:
         ogr_args = shlex.split(self.ogr_cmd.safe_substitute(out_dir='\'' + self.out_dir + '\'', output_dir='\'' + self.out_dir + '\'', base_file_name='\'' + prep_file_name + '\'', file_path='\'' + prep_file_path + '\'', gfs_file='\'' + self.gfs_file + '\''))
         if self.debug:
             print("OGR command: %s" % " ".join(ogr_args))
-        exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
+        if platform.system()== 'Windows':
+            exit_status = subprocess.call(ogr_args, shell=True, stderr=sys.stderr)
+        else:
+            exit_status = subprocess.call(ogr_args, stderr=sys.stderr)
         if exit_status != 0:
             return False
 
