@@ -319,14 +319,14 @@ class prep_osmm_topo_qgis(prep_osmm_topo):
         prep_osmm_topo.__init__(self, filename)
 
         # AC - define the font
-        if os.name is 'posix':
+        if os.name == 'posix':
             # Will probably need different font names
             self.fonts = ('Garamond', 'Arial', 'Roman', 'ScriptC')
-        elif os.name is 'nt':
+        elif os.name == 'nt':
             # Ordnance Survey use
             #   'Lutheran', 'Normal', 'Light Roman', 'Suppressed text'
             self.fonts = ('GothicE', 'Monospac821 BT', 'Consolas', 'ScriptC', 'Arial Narrow')
-        elif os.name is 'mac':
+        elif os.name == 'mac':
             # Will probably need different font name
             self.fonts = ('Garamond', 'Arial', 'Roman', 'ScriptC')
 

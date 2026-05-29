@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: Loader
+Version: 1.3.0
+Summary: A loader for geographic data in GML
+Home-page: https://github.com/AstunTechnology/Loader
+Author: Matt Walker
+Author-email: mattwalker@astuntechnology.com
+License: MIT
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+Requires-Dist: lxml
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+A loader for geographic data in GML that needs some preparation before loading via ogr2ogr.

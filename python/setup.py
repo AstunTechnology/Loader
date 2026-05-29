@@ -12,4 +12,5 @@ setup(name='Loader',
       long_description_content_type="text/plain",
       python_requires='>=3.6',
       install_requires=['lxml'],
-      zip_safe=False)
+      zip_safe=False,
+      py_modules=['loader'])
